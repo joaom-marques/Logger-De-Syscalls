@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/ptrace.h>
 #include <sys/reg.h>
@@ -69,25 +68,6 @@ void log_syscall_entry(pid_t pid, unhandled_syscall_t *scall,
         case ARG_TYPE_FD:
             printf("%d", (int)arg_val);
             break;
-        case ARG_TYPE_MODE:
-            printf("0%o", (mode_t)arg_val); // Print mode in octal
-            break;
-        case ARG_TYPE_FLAGS:
-            printf("0x%llx", arg_val); // Print flags in hex
-            break;
-        case ARG_TYPE_POINTER:
-            printf("%#llx", arg_val); // Print pointer address
-            break;
-        case ARG_TYPE_STRING: {
-            char *str = ""; // Implementar função de conversão para string
-            if (str) {
-                printf("\"%s\"", str);
-                free(str);
-            } else {
-                printf("%#llx (BAD_ADDRESS)", arg_val);
-            }
-            break;
-        }
         }
 
         if (i < info->num_args - 1) {
