@@ -1,7 +1,6 @@
 
 #include "syscall_helpers.h"
 #include "syscall_types.h"
-#include <errno.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -28,6 +27,7 @@ int main(int argc, char *argv[]) {
         int status;
         bool syscall_entry = true;
         waitpid(child, &status, 0);
+        const syscall_info_t *info = NULL;
 
         while (1) {
             ptrace(PTRACE_SYSCALL, child, NULL, NULL);
@@ -37,9 +37,9 @@ int main(int argc, char *argv[]) {
             }
 
             if (syscall_entry == true) {
-                get_syscall_info(child);
+                get_syscall_info(child, info);
             } else {
-                handle_syscall_return(child);
+                handle_syscall_return(child, info);
             }
             syscall_entry = !syscall_entry;
         }
