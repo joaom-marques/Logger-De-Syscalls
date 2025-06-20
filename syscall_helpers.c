@@ -15,6 +15,7 @@
 
 void get_syscall_info(pid_t pid, const syscall_info_t *info) {
     struct user_regs_struct regs;
+    // le os registradores sem saber o que são
     ptrace(PTRACE_GETREGS, pid, 0, &regs);
 
     ll syscall_num = regs.orig_rax;
@@ -25,15 +26,18 @@ void get_syscall_info(pid_t pid, const syscall_info_t *info) {
            args[0], args[1]);
     unhandled_syscall_t syscall = {pid,     syscall_num, args[0], args[1],
                                    args[2], args[3],     args[4], args[5]};
-    return log_syscall_entry(pid, &syscall, info);
+    // chama a função que vai tratar os tipos de dados.
+    log_syscall_entry(pid, &syscall, info);
 }
 
 void handle_syscall_return(pid_t pid, const syscall_info_t *info) {
     struct user_regs_struct regs;
+    // le os registradores sem saber o que são
     ptrace(PTRACE_GETREGS, pid, 0, &regs);
 
     ll return_val = regs.rax;
 
+    // chama a função que vai tratar o tipo de retorno
     log_syscall_return(return_val, info); // Ex: printf("= %ld\n", return_val);
 }
 
@@ -41,7 +45,7 @@ void log_syscall_entry(pid_t pid, unhandled_syscall_t *scall,
                        const syscall_info_t *info) {
     long syscall_num = scall->call_number;
 
-    // 1. Look up the syscall in our table
+    // Pesquisar a syscall na tabela
     if (syscall_num >= SYSCALL_TABLE_SIZE || !syscall_table[syscall_num].name) {
         printf("Unknown Syscall (%ld)\n", syscall_num);
         info = NULL;
@@ -51,7 +55,7 @@ void log_syscall_entry(pid_t pid, unhandled_syscall_t *scall,
 
     printf("%s(", info->name);
 
-    // 2. The GENERIC loop. This is the core of the design.
+    // Tratar os argumentos
     for (int i = 0; i < info->num_args; ++i) {
         syscall_arg_type_t arg_type = info->arg_types[i];
         ll arg_val = scall->args[i];
@@ -75,17 +79,17 @@ void log_syscall_entry(pid_t pid, unhandled_syscall_t *scall,
         }
     }
     printf(")");
-    fflush(stdout); // We need to flush because there's no newline yet
+    fflush(stdout); // Flush para print sem newline
 }
 
 void log_syscall_return(ll return_code, const syscall_info_t *info) {
-    // STEP 1: UNIVERSAL ERROR CHECKING (ALWAYS DO THIS FIRST)
+    // Verificando erros
     if (return_code < 0 && return_code > -4096) {
         printf(" -> %lld %s\n", return_code, strerror(-return_code));
         return;
     }
 
-    // STEP 2: GENERIC SUCCESS FORMATTING (DRIVEN BY THE ENUM)
+    // quase o mesmo raciocinio dos argumentos
     printf(" = ");
     switch (info->return_type) {
     case RETURN_TYPE_INT:

@@ -9,7 +9,7 @@ typedef struct syscall_struct {
     int call_number;
     uintptr_t args[6];
     int return_value;
-    // + runtime at syscall moment
+    // + tempo que a syscall ocorreu (nao implementado)
 
 } unhandled_syscall_t;
 
@@ -44,7 +44,7 @@ typedef enum {
     // Add other specific types as needed
 } syscall_return_type_t;
 
-// Metadata for a single system call
+// Tipo da syscall
 typedef struct {
     const char *name;
     syscall_return_type_t return_type;
