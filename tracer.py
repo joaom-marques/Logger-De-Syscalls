@@ -105,7 +105,7 @@ def trace_command(program: str, args: list):
                         entry = {
                             "timestamp": time.time(),
                             "pid": pid,
-                            "syscall_nr": num,
+                            "syscall_number": num,
                             "syscall_name": name,
                             "args": [],
                         }
