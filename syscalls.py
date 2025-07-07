@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+from types_helper import read_raw_values
 
 
 # Função para ler o arquivo JSON
@@ -35,6 +36,7 @@ def main():
             filename = "user_regs_data.json"
             if os.path.exists(filename):
                 syscalls = read_json_file(filename)
+                read_raw_values(syscalls)
             else:
                 print(
                     f"Arquivo '{filename}' não encontrado. Por favor, inicie a captura de syscalls primeiro."
