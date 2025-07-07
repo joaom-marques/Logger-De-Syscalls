@@ -12,3 +12,7 @@ def read_raw_values(syscalls):
         size = len(ref["args"])
         print(f"Arguments: {size}")
         # prosseguir com o tratamento dos tipos dos argumentos e retorno
+        print(f"Timestamp (ms): {syscall['timestamp']}")
+        print(f"Arguments (ms): {len(ref['args'])}")
+        # tratamendo dos argumentos pid e timestamp
+
