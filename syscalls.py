@@ -1,29 +1,19 @@
-import json
 import os
 import subprocess
+from shlex import split
+from tracer import trace_command
 from types_helper import read_raw_values
-
-
-# Função para ler o arquivo JSON
-def read_json_file(filename):
-    with open(filename, "xr") as file:
-        data = json.load(file)
-    return data
-
-# Função para guardar dados no arquivo JSON
-def save_in_json_file(syscalls):
-    with open("copia_syscalls.json", "w") as f:
-        json.dump(syscalls, f, indent=4)
-    print("Cópia dos dados salva em 'copia_syscalls.json'.")
+import json_helpers
 
 
 # Função para iniciar a captura de syscalls
 def start_syscall_capture():
-    program = input("Qual programa você gostaria de rastrear?")
+    program = input("Qual programa você gostaria de rastrear? (Ex: ls -l): ")
     print("Iniciando a captura de syscalls...")
     # Aqui chama o programa C que captura as syscalls
     try:
-        subprocess.run(["./process_tracer", program], check=True)
+        args = split(program)
+        trace_command(args[0], args)
         print("Captura de syscalls finalizada.")
     except subprocess.CalledProcessError as e:
         print(f"Ocorreu um erro ao executar o programa: {e}")
@@ -42,9 +32,9 @@ def main():
         elif choice == "2":
             filename = "user_regs_data.json"
             if os.path.exists(filename):
-                syscalls = read_json_file(filename)
-                read_raw_values(syscalls)
-                save_in_json_file(syscalls)
+                syscalls = json_helpers.read_json_file(filename)
+                # read_raw_values(syscalls)
+                json_helpers.save_in_json_file(syscalls)
             else:
                 print(
                     f"Arquivo '{filename}' não encontrado. Por favor, inicie a captura de syscalls primeiro."

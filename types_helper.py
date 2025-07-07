@@ -17,4 +17,3 @@ def read_raw_values(syscalls):
         print(f"Timestamp (ms): {syscall['timestamp']}")
         print(f"Arguments (ms): {len(ref['args'])}")
         # tratamendo dos argumentos pid e timestamp
-
