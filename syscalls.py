@@ -13,10 +13,11 @@ def read_json_file(filename):
 
 # Função para iniciar a captura de syscalls
 def start_syscall_capture():
+    program = input("Qual programa você gostaria de rastrear?")
     print("Iniciando a captura de syscalls...")
     # Aqui chama o programa C que captura as syscalls
     try:
-        subprocess.run(["./seu_programa_c", "comando", "argumentos"], check=True)
+        subprocess.run(["./process_tracer", program], check=True)
         print("Captura de syscalls finalizada.")
     except subprocess.CalledProcessError as e:
         print(f"Ocorreu um erro ao executar o programa: {e}")

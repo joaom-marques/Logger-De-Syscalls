@@ -4,15 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/ptrace.h>
+#include <sys/time.h>
 #include <sys/user.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
-void add_regs_to_json_array(cJSON *json_array, struct user_regs_struct *regs, pid_t pid) {
+void add_regs_to_json_array(cJSON *json_array, struct user_regs_struct *regs,
+                            pid_t pid) {
     cJSON *json_object = cJSON_CreateObject();
     struct timeval tv;
-    gettimeofday(&tv,NULL);
-    long long timestamp = (long long)(tv.tv_sec)*1000 + (tv.tv_usec/1000); // em milissegundos
+    gettimeofday(&tv, NULL);
+    long long timestamp =
+        (long long)(tv.tv_sec) * 1000 + (tv.tv_usec / 1000); // em milissegundos
 
     cJSON_AddNumberToObject(json_object, "syscall_number", regs->orig_rax);
     cJSON_AddNumberToObject(json_object, "return_value", regs->rax);
@@ -24,7 +27,7 @@ void add_regs_to_json_array(cJSON *json_array, struct user_regs_struct *regs, pi
     cJSON_AddNumberToObject(json_object, "arg_6", regs->r9);
     cJSON_AddNumberToObject(json_object, "pid", pid);
     cJSON_AddNumberToObject(json_object, "timestamp", timestamp);
-    
+
     cJSON_AddItemToArray(json_array, json_object);
 }
 
@@ -80,7 +83,7 @@ int main(int argc, char *argv[]) {
                 //        "[3]: %lld, [4]: %lld, [5]: %lld, [6]: %lld\n",
                 //        info.orig_rax, info.rax, info.rdi, info.rsi, info.rdx,
                 //        info.rcx, info.r8, info.r9);
-                add_regs_to_json_array(json_array, &info,child);
+                add_regs_to_json_array(json_array, &info, child);
             }
             syscall_entry = !syscall_entry;
         }
