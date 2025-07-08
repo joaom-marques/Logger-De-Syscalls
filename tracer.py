@@ -5,6 +5,7 @@ import json
 import ctypes
 import ctypes.util
 from tracing_helpers import format_arg
+from json_helpers import save_in_json_file
 
 # Constants from <sys/ptrace.h>
 PTRACE_TRACEME = 0
@@ -129,9 +130,7 @@ def trace_command(program: str, args: list):
         except KeyboardInterrupt:
             sys.stderr.write("Interrompido pelo usuário\n")
 
-        with open("user_regs_data.json", "w") as out:
-            json.dump(entries, out, indent=4)
-        print("Arquivo 'user_regs_data.json' gerado com sucesso.")
+        save_in_json_file(entries, program)
 
 
 # if __name__ == "__main__":

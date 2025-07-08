@@ -13,6 +13,8 @@ def start_syscall_capture():
     # Aqui chama o programa C que captura as syscalls
     try:
         args = split(program)
+        global TRACEE
+        TRACEE = args[0]
         trace_command(args[0], args)
         print("Captura de syscalls finalizada.")
     except subprocess.CalledProcessError as e:
@@ -34,7 +36,7 @@ def main():
             if os.path.exists(filename):
                 syscalls = json_helpers.read_json_file(filename)
                 # read_raw_values(syscalls)
-                json_helpers.save_in_json_file(syscalls)
+                json_helpers.save_in_json_file(syscalls, TRACEE)
             else:
                 print(
                     f"Arquivo '{filename}' não encontrado. Por favor, inicie a captura de syscalls primeiro."

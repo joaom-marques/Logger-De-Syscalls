@@ -1,7 +1,7 @@
 [
     {
-        "timestamp": 1751911350.2115505,
-        "pid": 598466,
+        "timestamp": 1752006310.3418596,
+        "pid": 870515,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
@@ -23,13 +23,13 @@
                 "value": "0x1430"
             },
             {
-                "value": "0x7ffd83cc80bc"
+                "value": "0x7ffe0e7580dc"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2117248,
-        "pid": 598466,
+        "timestamp": 1752006310.3423288,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -66,8 +66,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.211822,
-        "pid": 598466,
+        "timestamp": 1752006310.3425918,
+        "pid": 870515,
         "syscall_number": 21,
         "syscall_name": "access",
         "args": [
@@ -91,13 +91,13 @@
                 "value": "0x1100"
             },
             {
-                "value": "0x7ffd83cc7d3c"
+                "value": "0x7ffe0e757d5c"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2119408,
-        "pid": 598466,
+        "timestamp": 1752006310.3428774,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -122,16 +122,16 @@
                 "value": 0
             },
             {
-                "value": "0x7f9f736d3700"
+                "value": "0x7eff90841700"
             },
             {
-                "value": "0x55b124409158"
+                "value": "0x555f9c701158"
             }
         ]
     },
     {
-        "timestamp": 1751911350.212043,
-        "pid": 598466,
+        "timestamp": 1752006310.3430994,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -143,7 +143,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc72a0"
+                "value": "0x7ffe0e7572c0"
             },
             {
                 "value": "0xffffffffffffffff"
@@ -152,16 +152,16 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f736d3700"
+                "value": "0x7eff90841700"
             },
             {
-                "value": "0x55b124409158"
+                "value": "0x555f9c701158"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2121031,
-        "pid": 598466,
+        "timestamp": 1752006310.3432271,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -198,8 +198,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2121663,
-        "pid": 598466,
+        "timestamp": 1752006310.3433719,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -212,7 +212,7 @@
                 "value": "0x1a303"
             },
             {
-                "value": "0x7f9f73677000"
+                "value": "0x7eff907e5000"
             },
             {
                 "value": "0x2"
@@ -226,8 +226,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.212237,
-        "pid": 598466,
+        "timestamp": 1752006310.3434942,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -252,7 +252,7 @@
                 "value": 0
             },
             {
-                "value": "0x7ffd83cc73e7"
+                "value": "0x7ffe0e757407"
             },
             {
                 "value": "0x0"
@@ -260,8 +260,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2123241,
-        "pid": 598466,
+        "timestamp": 1752006310.3436222,
+        "pid": 870515,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -284,7 +284,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7ffd83cc73e7"
+                "value": "0x7ffe0e757407"
             },
             {
                 "value": "0x0"
@@ -292,8 +292,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2123802,
-        "pid": 598466,
+        "timestamp": 1752006310.3437507,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -305,7 +305,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc7290"
+                "value": "0x7ffe0e7572b0"
             },
             {
                 "value": "0x3"
@@ -314,16 +314,16 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f736920a0"
+                "value": "0x7eff908000a0"
             },
             {
-                "value": "0x7f9f736d3310"
+                "value": "0x7eff90841310"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2124286,
-        "pid": 598466,
+        "timestamp": 1752006310.3438532,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -360,15 +360,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.21248,
-        "pid": 598466,
+        "timestamp": 1752006310.3439598,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1936089088
+                "value": 2424127488
             },
             {
                 "description": "len",
@@ -398,15 +398,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.212536,
-        "pid": 598466,
+        "timestamp": 1752006310.3440804,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1936142336
+                "value": 2424180736
             },
             {
                 "description": "len",
@@ -436,15 +436,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2125964,
-        "pid": 598466,
+        "timestamp": 1752006310.3441987,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1936150528
+                "value": 2424188928
             },
             {
                 "description": "len",
@@ -474,8 +474,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2126572,
-        "pid": 598466,
+        "timestamp": 1752006310.3443418,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -485,7 +485,7 @@
                 "value": 3
             },
             {
-                "value": "0x7f9f73672a08"
+                "value": "0x7eff907e0a08"
             },
             {
                 "value": "0x2"
@@ -494,7 +494,7 @@
                 "value": "0xc0010001"
             },
             {
-                "value": "0x7f9f736729f0"
+                "value": "0x7eff907e09f0"
             },
             {
                 "value": "0xeffffef5"
@@ -502,8 +502,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2127035,
-        "pid": 598466,
+        "timestamp": 1752006310.3444364,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -528,7 +528,7 @@
                 "value": 0
             },
             {
-                "value": "0x7ffd83cc73c7"
+                "value": "0x7ffe0e7573e7"
             },
             {
                 "value": "0x0"
@@ -536,8 +536,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2127802,
-        "pid": 598466,
+        "timestamp": 1752006310.3445766,
+        "pid": 870515,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -549,7 +549,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": "\ufffd is"
+                "value": "\ufffd"
             },
             {
                 "description": "count",
@@ -560,7 +560,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7ffd83cc73c7"
+                "value": "0x7ffe0e7573e7"
             },
             {
                 "value": "0x0"
@@ -568,8 +568,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.212837,
-        "pid": 598466,
+        "timestamp": 1752006310.3446884,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -581,7 +581,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc7270"
+                "value": "0x7ffe0e757290"
             },
             {
                 "value": "0x3"
@@ -590,16 +590,16 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f736925d0"
+                "value": "0x7eff908005d0"
             },
             {
-                "value": "0x7f9f736d3310"
+                "value": "0x7eff90841310"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2128892,
-        "pid": 598466,
+        "timestamp": 1752006310.3447795,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -636,15 +636,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2129483,
-        "pid": 598466,
+        "timestamp": 1752006310.3448844,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1935933440
+                "value": 2423971840
             },
             {
                 "description": "len",
@@ -674,15 +674,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.213019,
-        "pid": 598466,
+        "timestamp": 1752006310.3450003,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1935949824
+                "value": 2423988224
             },
             {
                 "description": "len",
@@ -712,8 +712,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.213094,
-        "pid": 598466,
+        "timestamp": 1752006310.3451362,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -723,7 +723,7 @@
                 "value": 3
             },
             {
-                "value": "0x7f9f73643478"
+                "value": "0x7eff907b1478"
             },
             {
                 "value": "0x2"
@@ -732,7 +732,7 @@
                 "value": "0xc0010001"
             },
             {
-                "value": "0x7f9f73643460"
+                "value": "0x7eff907b1460"
             },
             {
                 "value": "0xeffffef5"
@@ -740,8 +740,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.213158,
-        "pid": 598466,
+        "timestamp": 1752006310.3452284,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -766,7 +766,7 @@
                 "value": 0
             },
             {
-                "value": "0x7ffd83cc73a7"
+                "value": "0x7ffe0e7573c7"
             },
             {
                 "value": "0x0"
@@ -774,8 +774,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2132335,
-        "pid": 598466,
+        "timestamp": 1752006310.3453789,
+        "pid": 870515,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -787,7 +787,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": "\ufffd%is"
+                "value": "\ufffd\u0005\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd tu\u000e"
             },
             {
                 "description": "count",
@@ -798,7 +798,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7ffd83cc73a7"
+                "value": "0x7ffe0e7573c7"
             },
             {
                 "value": "0x0"
@@ -806,8 +806,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2132823,
-        "pid": 598466,
+        "timestamp": 1752006310.3455024,
+        "pid": 870515,
         "syscall_number": 17,
         "syscall_name": "pread64",
         "args": [
@@ -834,7 +834,7 @@
             {
                 "description": "poslo",
                 "type": "u32",
-                "value": 2211214247
+                "value": 242578375
             },
             {
                 "value": "0x0"
@@ -842,8 +842,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2133565,
-        "pid": 598466,
+        "timestamp": 1752006310.3456337,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -855,7 +855,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc7250"
+                "value": "0x7ffe0e757270"
             },
             {
                 "value": "0x3"
@@ -864,16 +864,16 @@
                 "value": "0x40"
             },
             {
-                "value": "0x7f9f73692b00"
+                "value": "0x7eff90800b00"
             },
             {
-                "value": "0x7f9f736d3310"
+                "value": "0x7eff90841310"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2134306,
-        "pid": 598466,
+        "timestamp": 1752006310.3457675,
+        "pid": 870515,
         "syscall_number": 17,
         "syscall_name": "pread64",
         "args": [
@@ -908,8 +908,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.213491,
-        "pid": 598466,
+        "timestamp": 1752006310.3458774,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -946,15 +946,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2135432,
-        "pid": 598466,
+        "timestamp": 1752006310.3459895,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1935372288
+                "value": 2423410688
             },
             {
                 "description": "len",
@@ -984,15 +984,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2136142,
-        "pid": 598466,
+        "timestamp": 1752006310.346102,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1935851520
+                "value": 2423889920
             },
             {
                 "description": "len",
@@ -1022,15 +1022,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2136714,
-        "pid": 598466,
+        "timestamp": 1752006310.3462238,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1935876096
+                "value": 2423914496
             },
             {
                 "description": "len",
@@ -1060,8 +1060,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2137399,
-        "pid": 598466,
+        "timestamp": 1752006310.3463686,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -1071,7 +1071,7 @@
                 "value": 3
             },
             {
-                "value": "0x7f9f7362ba58"
+                "value": "0x7eff90799a58"
             },
             {
                 "value": "0x1"
@@ -1080,7 +1080,7 @@
                 "value": "0xc0000002"
             },
             {
-                "value": "0x7f9f7362ba30"
+                "value": "0x7eff90799a30"
             },
             {
                 "value": "0xeffffef5"
@@ -1088,8 +1088,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2137876,
-        "pid": 598466,
+        "timestamp": 1752006310.346466,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -1114,7 +1114,7 @@
                 "value": 0
             },
             {
-                "value": "0x7ffd83cc7387"
+                "value": "0x7ffe0e7573a7"
             },
             {
                 "value": "0x0"
@@ -1122,8 +1122,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2138498,
-        "pid": 598466,
+        "timestamp": 1752006310.34659,
+        "pid": 870515,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -1146,7 +1146,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7ffd83cc7387"
+                "value": "0x7ffe0e7573a7"
             },
             {
                 "value": "0x0"
@@ -1154,8 +1154,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2138982,
-        "pid": 598466,
+        "timestamp": 1752006310.3466883,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -1167,7 +1167,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc7230"
+                "value": "0x7ffe0e757250"
             },
             {
                 "value": "0x3"
@@ -1176,16 +1176,16 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73693030"
+                "value": "0x7eff90801030"
             },
             {
-                "value": "0x7f9f736920c0"
+                "value": "0x7eff908000c0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2139473,
-        "pid": 598466,
+        "timestamp": 1752006310.3468108,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -1222,15 +1222,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2140012,
-        "pid": 598466,
+        "timestamp": 1752006310.346915,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1933680640
+                "value": 2421719040
             },
             {
                 "description": "len",
@@ -1260,15 +1260,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.2140598,
-        "pid": 598466,
+        "timestamp": 1752006310.34703,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 1933860864
+                "value": 2421899264
             },
             {
                 "description": "len",
@@ -1298,8 +1298,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2141328,
-        "pid": 598466,
+        "timestamp": 1752006310.3471606,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -1309,7 +1309,7 @@
                 "value": 3
             },
             {
-                "value": "0x7f9f73445ce8"
+                "value": "0x7eff905b3ce8"
             },
             {
                 "value": "0x2"
@@ -1318,7 +1318,7 @@
                 "value": "0xc0010001"
             },
             {
-                "value": "0x7f9f73445cd0"
+                "value": "0x7eff905b3cd0"
             },
             {
                 "value": "0xeffffef5"
@@ -1326,8 +1326,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.214191,
-        "pid": 598466,
+        "timestamp": 1752006310.347292,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -1364,8 +1364,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2142503,
-        "pid": 598466,
+        "timestamp": 1752006310.3474135,
+        "pid": 870515,
         "syscall_number": 158,
         "syscall_name": "arch_prctl",
         "args": [
@@ -1377,10 +1377,10 @@
             {
                 "description": "arg2",
                 "type": "unsigned",
-                "value": 1933164032
+                "value": 2421202432
             },
             {
-                "value": "0x7f9f7339c890"
+                "value": "0x7eff9050a890"
             },
             {
                 "value": "0x0"
@@ -1389,26 +1389,26 @@
                 "value": "0x1298"
             },
             {
-                "value": "0x7ffd83cc7dcc"
+                "value": "0x7ffe0e757dec"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2143104,
-        "pid": 598466,
+        "timestamp": 1752006310.3475168,
+        "pid": 870515,
         "syscall_number": 218,
         "syscall_name": "set_tid_address",
         "args": [
             {
                 "description": null,
                 "type": "int __user *",
-                "value": 1933164752
+                "value": 2421203152
             },
             {
-                "value": "0x7f9f736d2b10"
+                "value": "0x7eff90840b10"
             },
             {
-                "value": "0x7f9f7339be00"
+                "value": "0x7eff90509e00"
             },
             {
                 "value": "0x0"
@@ -1417,20 +1417,20 @@
                 "value": "0x1298"
             },
             {
-                "value": "0x7ffd83cc7dcc"
+                "value": "0x7ffe0e757dec"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2143655,
-        "pid": 598466,
+        "timestamp": 1752006310.3476038,
+        "pid": 870515,
         "syscall_number": 273,
         "syscall_name": "set_robust_list",
         "args": [
             {
                 "description": null,
                 "type": "struct robust_list_head __user *",
-                "value": "0x7f9f7339c0e0"
+                "value": "0x7eff9050a0e0"
             },
             {
                 "description": null,
@@ -1438,7 +1438,7 @@
                 "value": 24
             },
             {
-                "value": "0x7f9f7339be00"
+                "value": "0x7eff90509e00"
             },
             {
                 "value": "0x0"
@@ -1447,20 +1447,20 @@
                 "value": "0x1298"
             },
             {
-                "value": "0x7ffd83cc7dcc"
+                "value": "0x7ffe0e757dec"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2144194,
-        "pid": 598466,
+        "timestamp": 1752006310.3477488,
+        "pid": 870515,
         "syscall_number": 334,
         "syscall_name": "rseq",
         "args": [
             {
                 "description": null,
                 "type": "struct rseq __user *",
-                "value": "0x7f9f7339bc60"
+                "value": "0x7eff90509c60"
             },
             {
                 "description": null,
@@ -1481,20 +1481,20 @@
                 "value": "0xfffffffffffffe60"
             },
             {
-                "value": "0x7ffd83cc7dec"
+                "value": "0x7ffe0e757e0c"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2145467,
-        "pid": 598466,
+        "timestamp": 1752006310.3480046,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322812379136
+                "value": 139636105650176
             },
             {
                 "description": null,
@@ -1507,26 +1507,26 @@
                 "value": 1
             },
             {
-                "value": "0x7f9f735dd9c8"
+                "value": "0x7eff9074b9c8"
             },
             {
-                "value": "0x7f9f7362c000"
+                "value": "0x7eff9079a000"
             },
             {
-                "value": "0x7ffd83cc7dc0"
+                "value": "0x7ffe0e757de0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2146158,
-        "pid": 598466,
+        "timestamp": 1752006310.3481457,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322810388480
+                "value": 139636103659520
             },
             {
                 "description": null,
@@ -1542,23 +1542,23 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73446000"
+                "value": "0x7eff905b4000"
             },
             {
-                "value": "0x7ffd83cc7dc0"
+                "value": "0x7ffe0e757de0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.214681,
-        "pid": 598466,
+        "timestamp": 1752006310.348296,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322812477440
+                "value": 139636105748480
             },
             {
                 "description": null,
@@ -1574,23 +1574,23 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73644000"
+                "value": "0x7eff907b2000"
             },
             {
-                "value": "0x7ffd83cc7dc0"
+                "value": "0x7ffe0e757de0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2147684,
-        "pid": 598466,
+        "timestamp": 1752006310.34847,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322812669952
+                "value": 139636105940992
             },
             {
                 "description": null,
@@ -1606,23 +1606,23 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73673000"
+                "value": "0x7eff907e1000"
             },
             {
-                "value": "0x7ffd83cc7dc0"
+                "value": "0x7ffe0e757de0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2148438,
-        "pid": 598466,
+        "timestamp": 1752006310.3486323,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 94219305820160
+                "value": 93869134880768
             },
             {
                 "description": null,
@@ -1638,23 +1638,23 @@
                 "value": "0x0"
             },
             {
-                "value": "0x55b124412000"
+                "value": "0x555f9c70a000"
             },
             {
-                "value": "0x7ffd83cc7dc0"
+                "value": "0x7ffe0e757de0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.214895,
-        "pid": 598466,
+        "timestamp": 1752006310.3487399,
+        "pid": 870515,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322813050880
+                "value": 139636106321920
             },
             {
                 "description": null,
@@ -1670,7 +1670,7 @@
                 "value": "0x3de00ec7"
             },
             {
-                "value": "0x7f9f736d0000"
+                "value": "0x7eff9083e000"
             },
             {
                 "value": "0x0"
@@ -1678,8 +1678,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2149584,
-        "pid": 598466,
+        "timestamp": 1752006310.3488834,
+        "pid": 870515,
         "syscall_number": 302,
         "syscall_name": "prlimit64",
         "args": [
@@ -1701,7 +1701,7 @@
             {
                 "description": null,
                 "type": "struct rlimit64 __user *",
-                "value": "0x7ffd83cc7de0"
+                "value": "0x7ffe0e757e00"
             },
             {
                 "value": "0xffff"
@@ -1712,15 +1712,15 @@
         ]
     },
     {
-        "timestamp": 1751911350.215026,
-        "pid": 598466,
+        "timestamp": 1752006310.3490233,
+        "pid": 870515,
         "syscall_number": 11,
         "syscall_name": "munmap",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322812686336
+                "value": 139636105957376
             },
             {
                 "description": null,
@@ -1728,22 +1728,22 @@
                 "value": 107267
             },
             {
-                "value": "0x7f9f736d2000"
+                "value": "0x7eff90840000"
             },
             {
-                "value": "0x7ffd83cc7de0"
+                "value": "0x7ffe0e757e00"
             },
             {
                 "value": "0x7f8"
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2150922,
-        "pid": 598466,
+        "timestamp": 1752006310.3491642,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1765,7 +1765,7 @@
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322812480392
+                "value": 139636105751432
             },
             {
                 "description": null,
@@ -1773,13 +1773,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2151456,
-        "pid": 598466,
+        "timestamp": 1752006310.3492887,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1801,7 +1801,7 @@
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322811397214
+                "value": 139636104668254
             },
             {
                 "description": null,
@@ -1809,13 +1809,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.215193,
-        "pid": 598466,
+        "timestamp": 1752006310.3493905,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1845,13 +1845,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2152483,
-        "pid": 598466,
+        "timestamp": 1752006310.3494835,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1873,7 +1873,7 @@
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 140322811397214
+                "value": 139636104668254
             },
             {
                 "description": null,
@@ -1881,13 +1881,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2152915,
-        "pid": 598466,
+        "timestamp": 1752006310.3495724,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1917,13 +1917,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2153485,
-        "pid": 598466,
+        "timestamp": 1752006310.3496702,
+        "pid": 870515,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1953,13 +1953,13 @@
                 "value": 2040
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2154121,
-        "pid": 598466,
+        "timestamp": 1752006310.3497772,
+        "pid": 870515,
         "syscall_number": 137,
         "syscall_name": "statfs",
         "args": [
@@ -1971,7 +1971,7 @@
             {
                 "description": "buf",
                 "type": "struct statfs __user *",
-                "value": "0x7ffd83cc8020"
+                "value": "0x7ffe0e758040"
             },
             {
                 "value": "0x0"
@@ -1983,13 +1983,13 @@
                 "value": "0x7f8"
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2154775,
-        "pid": 598466,
+        "timestamp": 1752006310.3499033,
+        "pid": 870515,
         "syscall_number": 137,
         "syscall_name": "statfs",
         "args": [
@@ -2001,7 +2001,7 @@
             {
                 "description": "buf",
                 "type": "struct statfs __user *",
-                "value": "0x7ffd83cc7f10"
+                "value": "0x7ffe0e757f30"
             },
             {
                 "value": "0x0"
@@ -2013,13 +2013,13 @@
                 "value": "0x7f8"
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2155292,
-        "pid": 598466,
+        "timestamp": 1752006310.350011,
+        "pid": 870515,
         "syscall_number": 318,
         "syscall_name": "getrandom",
         "args": [
@@ -2045,13 +2045,13 @@
                 "value": "0x7f8"
             },
             {
-                "value": "0x7ffd83cc7df4"
+                "value": "0x7ffe0e757e14"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2155795,
-        "pid": 598466,
+        "timestamp": 1752006310.3501122,
+        "pid": 870515,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
@@ -2070,7 +2070,7 @@
                 "value": "0x2b0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             },
             {
                 "value": "0x280"
@@ -2078,27 +2078,27 @@
         ]
     },
     {
-        "timestamp": 1751911350.215618,
-        "pid": 598466,
+        "timestamp": 1752006310.3502026,
+        "pid": 870515,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
             {
                 "description": null,
                 "type": "unsigned long",
-                "value": 94219821121536
+                "value": 93869426114560
             },
             {
                 "value": "0x21000"
             },
             {
-                "value": "0x55b142f5f000"
+                "value": "0x555fadca7000"
             },
             {
                 "value": "0x2b0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             },
             {
                 "value": "0x280"
@@ -2106,8 +2106,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2156706,
-        "pid": 598466,
+        "timestamp": 1752006310.3503132,
+        "pid": 870515,
         "syscall_number": 21,
         "syscall_name": "access",
         "args": [
@@ -2122,13 +2122,13 @@
                 "value": 0
             },
             {
-                "value": "0x7f9f736741a8"
+                "value": "0x7eff907e21a8"
             },
             {
                 "value": "0x4"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             },
             {
                 "value": "0x10"
@@ -2136,8 +2136,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2157605,
-        "pid": 598466,
+        "timestamp": 1752006310.3504317,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -2162,16 +2162,16 @@
                 "value": 0
             },
             {
-                "value": "0x55b142f5f2b0"
+                "value": "0x555fadca72b0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2158296,
-        "pid": 598466,
+        "timestamp": 1752006310.3505642,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2183,7 +2183,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7f9f73631800"
+                "value": "0x7eff9079f800"
             },
             {
                 "value": "0x0"
@@ -2192,16 +2192,16 @@
                 "value": "0x0"
             },
             {
-                "value": "0x55b142f5f2b0"
+                "value": "0x555fadca72b0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2158735,
-        "pid": 598466,
+        "timestamp": 1752006310.3506658,
+        "pid": 870515,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -2238,8 +2238,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.215979,
-        "pid": 598466,
+        "timestamp": 1752006310.3507807,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2266,8 +2266,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2160738,
-        "pid": 598466,
+        "timestamp": 1752006310.3509586,
+        "pid": 870515,
         "syscall_number": 16,
         "syscall_name": "ioctl",
         "args": [
@@ -2284,13 +2284,13 @@
             {
                 "description": "arg",
                 "type": "unsigned",
-                "value": 2211217120
+                "value": 242581248
             },
             {
                 "value": "0x4"
             },
             {
-                "value": "0x7ffd83cc7f20"
+                "value": "0x7ffe0e757f40"
             },
             {
                 "value": "0x0"
@@ -2298,8 +2298,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2161229,
-        "pid": 598466,
+        "timestamp": 1752006310.351055,
+        "pid": 870515,
         "syscall_number": 16,
         "syscall_name": "ioctl",
         "args": [
@@ -2316,13 +2316,13 @@
             {
                 "description": "arg",
                 "type": "unsigned",
-                "value": 2211217392
+                "value": 242581520
             },
             {
                 "value": "0x4"
             },
             {
-                "value": "0x7ffd83cc7f20"
+                "value": "0x7ffe0e757f40"
             },
             {
                 "value": "0x0"
@@ -2330,8 +2330,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2161686,
-        "pid": 598466,
+        "timestamp": 1752006310.3511543,
+        "pid": 870515,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -2356,7 +2356,7 @@
                 "value": 0
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             },
             {
                 "value": "0x2"
@@ -2364,8 +2364,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.216449,
-        "pid": 598466,
+        "timestamp": 1752006310.3513007,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2377,7 +2377,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc7bb0"
+                "value": "0x7ffe0e757bd0"
             },
             {
                 "value": "0x0"
@@ -2386,7 +2386,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             },
             {
                 "value": "0x2"
@@ -2394,8 +2394,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2165565,
-        "pid": 598466,
+        "timestamp": 1752006310.3514009,
+        "pid": 870515,
         "syscall_number": 217,
         "syscall_name": "getdents64",
         "args": [
@@ -2407,7 +2407,7 @@
             {
                 "description": "dirent",
                 "type": "struct linux_dirent64 __user *",
-                "value": "0x55b142f65710"
+                "value": "0x555fadcad710"
             },
             {
                 "description": "count",
@@ -2418,7 +2418,7 @@
                 "value": "0x4"
             },
             {
-                "value": "0x55b142f656e4"
+                "value": "0x555fadcad6e4"
             },
             {
                 "value": "0x8030"
@@ -2426,8 +2426,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.2166784,
-        "pid": 598466,
+        "timestamp": 1752006310.351538,
+        "pid": 870515,
         "syscall_number": 217,
         "syscall_name": "getdents64",
         "args": [
@@ -2439,7 +2439,7 @@
             {
                 "description": "dirent",
                 "type": "struct linux_dirent64 __user *",
-                "value": "0x55b142f65710"
+                "value": "0x555fadcad710"
             },
             {
                 "description": "count",
@@ -2450,7 +2450,7 @@
                 "value": "0x4"
             },
             {
-                "value": "0x55b142f656e4"
+                "value": "0x555fadcad6e4"
             },
             {
                 "value": "0x10"
@@ -2458,8 +2458,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.216742,
-        "pid": 598466,
+        "timestamp": 1752006310.3516314,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2469,7 +2469,7 @@
                 "value": 3
             },
             {
-                "value": "0x55b142f656d0"
+                "value": "0x555fadcad6d0"
             },
             {
                 "value": "0x8041"
@@ -2478,16 +2478,16 @@
                 "value": "0x8040"
             },
             {
-                "value": "0x7f9f73630b20"
+                "value": "0x7eff9079eb20"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2168324,
-        "pid": 598466,
+        "timestamp": 1752006310.3517776,
+        "pid": 870515,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2499,25 +2499,57 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "0x7ffd83cc59a0"
+                "value": "0x7ffe0e7559c0"
             },
             {
-                "value": "0x7f9f7362ee80"
+                "value": "0x7eff9079ce80"
             },
             {
-                "value": "0x55b142f6d7f0"
+                "value": "0x555fadcb5760"
             },
             {
                 "value": "0x1"
             },
             {
-                "value": "0xf"
+                "value": "0x13"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2168958,
-        "pid": 598466,
+        "timestamp": 1752006310.3518753,
+        "pid": 870515,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "copi"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 80
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": 1752006310.351998,
+        "pid": 870515,
         "syscall_number": 1,
         "syscall_name": "write",
         "args": [
@@ -2534,7 +2566,7 @@
             {
                 "description": "count",
                 "type": "size_t",
-                "value": 97
+                "value": 100
             },
             {
                 "value": "0x0"
@@ -2548,40 +2580,8 @@
         ]
     },
     {
-        "timestamp": 1751911350.216988,
-        "pid": 598466,
-        "syscall_number": 1,
-        "syscall_name": "write",
-        "args": [
-            {
-                "description": "fd",
-                "type": "unsigned",
-                "value": 1
-            },
-            {
-                "description": "buf",
-                "type": "const char __user *",
-                "value": "__py"
-            },
-            {
-                "description": "count",
-                "type": "size_t",
-                "value": 55
-            },
-            {
-                "value": "0x0"
-            },
-            {
-                "value": "0x0"
-            },
-            {
-                "value": "0x0"
-            }
-        ]
-    },
-    {
-        "timestamp": 1751911350.2170649,
-        "pid": 598466,
+        "timestamp": 1752006310.352106,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2591,25 +2591,25 @@
                 "value": 1
             },
             {
-                "value": "0x55b142f65a10"
+                "value": "0x555fadcadaa0"
             },
             {
-                "value": "0x7f9f7362ee80"
-            },
-            {
-                "value": "0x0"
+                "value": "0x7eff9079ce80"
             },
             {
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x0"
+            },
+            {
+                "value": "0x7eff9079eac0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2171276,
-        "pid": 598466,
+        "timestamp": 1752006310.352209,
+        "pid": 870515,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2622,7 +2622,7 @@
                 "value": "0x0"
             },
             {
-                "value": "0x7f9f7362ee80"
+                "value": "0x7eff9079ce80"
             },
             {
                 "value": "0x0"
@@ -2631,13 +2631,13 @@
                 "value": "0xffffffff"
             },
             {
-                "value": "0x7f9f73630ac0"
+                "value": "0x7eff9079eac0"
             }
         ]
     },
     {
-        "timestamp": 1751911350.2172043,
-        "pid": 598466,
+        "timestamp": 1752006310.352381,
+        "pid": 870515,
         "syscall_number": 231,
         "syscall_name": "exit_group",
         "args": [
@@ -2650,7 +2650,7 @@
                 "value": "0xfffffffffffffea0"
             },
             {
-                "value": "0x7f9f7339c108"
+                "value": "0x7eff9050a108"
             },
             {
                 "value": "0x1"
@@ -2664,4 +2664,3 @@
         ]
     }
 ]
-
