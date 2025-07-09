@@ -1,3 +1,4 @@
+import datetime
 import json_helpers
 
 
@@ -7,13 +8,16 @@ def read_raw_values(syscalls):
     for syscall in syscalls:
         number = syscall["syscall_number"]
         ref = syscall_table[f"{number}"]
-        # prints temporarios
-        print(f"Syscall: {ref['name']} ({number})")
-        size = len(ref["args"])
-        print(f"Arguments: {size}")
-        # prosseguir com o tratamento dos tipos dos argumentos e retorno
+        
+        # Converte o timestamp numérico para um objeto datetime
+        dt_object = datetime.datetime.fromtimestamp(syscall['timestamp'])
+        
+        # Formata o objeto datetime para o padrão desejado
+        formatted_timestamp = dt_object.strftime("%Y-%m-%d %H:%M:%S")
+
+        # --- prints ---
         print(f"Syscall: {ref['name']} ({number})")
         print(f"PID: {syscall['pid']}")
-        print(f"Timestamp (ms): {syscall['timestamp']}")
-        print(f"Arguments (ms): {len(ref['args'])}")
-        # tratamendo dos argumentos pid e timestamp
+        print(f"Timestamp: {formatted_timestamp}") # Usa a variável formatada
+        print(f"Arguments: {len(ref['args'])}")
+        print("-" * 20) # Separador para clareza

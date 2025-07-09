@@ -35,7 +35,7 @@ def main():
             filename = "user_regs_data.json"
             if os.path.exists(filename):
                 syscalls = json_helpers.read_json_file(filename)
-                # read_raw_values(syscalls)
+                read_raw_values(syscalls)
                 json_helpers.save_in_json_file(syscalls, TRACEE)
             else:
                 print(
