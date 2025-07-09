@@ -1,9 +1,9 @@
 import os
 import sys
-import time
 import ctypes
-import signal
 import datetime
+import json
+import ctypes.util
 from collections import deque
 from tracing_helpers import format_arg
 from json_helpers import save_in_json_file
@@ -26,22 +26,45 @@ PTRACE_EVENT_VFORK = 2
 PTRACE_EVENT_CLONE = 3
 
 
-
 class user_regs_struct(ctypes.Structure):
     _fields_ = [
-        ("r15", ctypes.c_ulong), ("r14", ctypes.c_ulong), ("r13", ctypes.c_ulong),
-        ("r12", ctypes.c_ulong), ("rbp", ctypes.c_ulong), ("rbx", ctypes.c_ulong),
-        ("r11", ctypes.c_ulong), ("r10", ctypes.c_ulong), ("r9", ctypes.c_ulong),
-        ("r8", ctypes.c_ulong), ("rax", ctypes.c_ulong), ("rcx", ctypes.c_ulong),
-        ("rdx", ctypes.c_ulong), ("rsi", ctypes.c_ulong), ("rdi", ctypes.c_ulong),
-        ("orig_rax", ctypes.c_ulong), ("rip", ctypes.c_ulong), ("cs", ctypes.c_ulong),
-        ("eflags", ctypes.c_ulong), ("rsp", ctypes.c_ulong), ("ss", ctypes.c_ulong),
-        ("fs_base", ctypes.c_ulong), ("gs_base", ctypes.c_ulong), ("ds", ctypes.c_ulong),
-        ("es", ctypes.c_ulong), ("fs", ctypes.c_ulong), ("gs", ctypes.c_ulong),
+        ("r15", ctypes.c_ulong),
+        ("r14", ctypes.c_ulong),
+        ("r13", ctypes.c_ulong),
+        ("r12", ctypes.c_ulong),
+        ("rbp", ctypes.c_ulong),
+        ("rbx", ctypes.c_ulong),
+        ("r11", ctypes.c_ulong),
+        ("r10", ctypes.c_ulong),
+        ("r9", ctypes.c_ulong),
+        ("r8", ctypes.c_ulong),
+        ("rax", ctypes.c_ulong),
+        ("rcx", ctypes.c_ulong),
+        ("rdx", ctypes.c_ulong),
+        ("rsi", ctypes.c_ulong),
+        ("rdi", ctypes.c_ulong),
+        ("orig_rax", ctypes.c_ulong),
+        ("rip", ctypes.c_ulong),
+        ("cs", ctypes.c_ulong),
+        ("eflags", ctypes.c_ulong),
+        ("rsp", ctypes.c_ulong),
+        ("ss", ctypes.c_ulong),
+        ("fs_base", ctypes.c_ulong),
+        ("gs_base", ctypes.c_ulong),
+        ("ds", ctypes.c_ulong),
+        ("es", ctypes.c_ulong),
+        ("fs", ctypes.c_ulong),
+        ("gs", ctypes.c_ulong),
     ]
 
-# Carregamento do libc
-libc = ctypes.CDLL(ctypes.util.find_library("c"), use_errno=True)
+
+# Load libc
+libc_path = ctypes.util.find_library("c")
+if not libc_path:
+    sys.stderr.write("Não foi possível encontrar libc\n")
+    sys.exit(1)
+libc = ctypes.CDLL(libc_path, use_errno=True)
+
 
 def get_syscall_table():
     try:
@@ -50,7 +73,9 @@ def get_syscall_table():
     except Exception:
         return {}
 
-syscall_table = get_syscall_table()	
+
+syscall_table = get_syscall_table()
+
 
 def ptrace(request, pid, addr, data=0):
     res = libc.ptrace(request, pid, ctypes.c_void_p(addr), ctypes.c_void_p(data))
@@ -71,10 +96,10 @@ def trace_command(program: str, args: list):
             PTRACE_SETOPTIONS,
             pid,
             0,
-            PTRACE_O_TRACESYSGOOD |
-            PTRACE_O_TRACEFORK |
-            PTRACE_O_TRACEVFORK |
-            PTRACE_O_TRACECLONE
+            PTRACE_O_TRACESYSGOOD
+            | PTRACE_O_TRACEFORK
+            | PTRACE_O_TRACEVFORK
+            | PTRACE_O_TRACECLONE,
         )
         ptrace(PTRACE_SYSCALL, pid, 0)
 
@@ -113,23 +138,34 @@ def trace_command(program: str, args: list):
                         args_meta = meta.get("args", [])
 
                         entry = {
-                            "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            "timestamp": datetime.datetime.now().strftime(
+                                "%Y-%m-%d %H:%M:%S"
+                            ),
                             "pid": wpid,
                             "syscall_number": syscall_num,
                             "syscall_name": name,
                             "args": [],
                         }
 
-                        raw_args = [regs.rdi, regs.rsi, regs.rdx, regs.r10, regs.r8, regs.r9]
+                        raw_args = [
+                            regs.rdi,
+                            regs.rsi,
+                            regs.rdx,
+                            regs.r10,
+                            regs.r8,
+                            regs.r9,
+                        ]
                         for i, val in enumerate(raw_args):
                             if i < len(args_meta):
                                 arg_info = args_meta[i]
                                 formatted = format_arg(wpid, val, arg_info["type"])
-                                entry["args"].append({
-                                    "description": arg_info["description"],
-                                    "type": arg_info["type"],
-                                    "value": formatted
-                                })
+                                entry["args"].append(
+                                    {
+                                        "description": arg_info["description"],
+                                        "type": arg_info["type"],
+                                        "value": formatted,
+                                    }
+                                )
                             else:
                                 entry["args"].append({"value": hex(val)})
 
