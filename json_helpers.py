@@ -11,6 +11,8 @@ def read_json_file(filename):
 
 # Função para guardar dados no arquivo JSON
 def save_in_json_file(syscalls, tracee):
+    # Substitui '/' por '_' para evitar problemas de nome de arquivo
+    tracee = tracee.replace("/", "_")
     with open(f"log_syscalls_{tracee}.json", "w") as f:
         json.dump(syscalls, f, indent=4)
     print(f"Log das syscalls salvo em 'log_syscalls_{tracee}.json'.")

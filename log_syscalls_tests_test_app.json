@@ -1,0 +1,2295 @@
+[
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x1078"
+            },
+            {
+                "value": "0x1430"
+            },
+            {
+                "value": "0x7fff7a5b759c"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 21,
+        "syscall_name": "access",
+        "args": [
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "mode",
+                "type": "int",
+                "value": 4
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x22"
+            },
+            {
+                "value": "0x1100"
+            },
+            {
+                "value": "0x7fff7a5b721c"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            },
+            {
+                "value": "0x7fb909dd2700"
+            },
+            {
+                "value": "0x401200"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "0x7fff7a5b6780"
+            },
+            {
+                "value": "0xffffffffffffffff"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909dd2700"
+            },
+            {
+                "value": "0x401200"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 107267
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "value": "0x1a303"
+            },
+            {
+                "value": "0x7fb909d76000"
+            },
+            {
+                "value": "0x2"
+            },
+            {
+                "value": "0x3"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            },
+            {
+                "value": "0x7fff7a5b68c7"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fff7a5b68c7"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "compat_size_t",
+                "value": 784
+            },
+            {
+                "description": "poshi",
+                "type": "u32",
+                "value": 64
+            },
+            {
+                "description": "poslo",
+                "type": "u32",
+                "value": 2052810951
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "0x7fff7a5b6770"
+            },
+            {
+                "value": "0x3"
+            },
+            {
+                "value": "0x40"
+            },
+            {
+                "value": "0x7fb909d910a0"
+            },
+            {
+                "value": "0x7fb909dd2310"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "compat_size_t",
+                "value": 784
+            },
+            {
+                "description": "poshi",
+                "type": "u32",
+                "value": 64
+            },
+            {
+                "description": "poslo",
+                "type": "u32",
+                "value": 49407
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 2038872
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 164573184
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 479232
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 1503232
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 165052416
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 24576
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 1978368
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 165076992
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 31832
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "value": "0x7fb909d67a58"
+            },
+            {
+                "value": "0x1"
+            },
+            {
+                "value": "0xc0000002"
+            },
+            {
+                "value": "0x7fb909d67a30"
+            },
+            {
+                "value": "0xeffffef5"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 12288
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 158,
+        "syscall_name": "arch_prctl",
+        "args": [
+            {
+                "description": "option",
+                "type": "int",
+                "value": 4098
+            },
+            {
+                "description": "arg2",
+                "type": "unsigned",
+                "value": 163059520
+            },
+            {
+                "value": "0x7fb909b821e0"
+            },
+            {
+                "value": "0x22"
+            },
+            {
+                "value": "0xffffffff"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 218,
+        "syscall_name": "set_tid_address",
+        "args": [
+            {
+                "description": null,
+                "type": "int __user *",
+                "value": 163060240
+            },
+            {
+                "value": "0x7fb909dd1b10"
+            },
+            {
+                "value": "0x7fb909b81740"
+            },
+            {
+                "value": "0x22"
+            },
+            {
+                "value": "0xffffffff"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 273,
+        "syscall_name": "set_robust_list",
+        "args": [
+            {
+                "description": null,
+                "type": "struct robust_list_head __user *",
+                "value": "0x7fb909b81a20"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 24
+            },
+            {
+                "value": "0x7fb909b81740"
+            },
+            {
+                "value": "0x22"
+            },
+            {
+                "value": "0xffffffff"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 334,
+        "syscall_name": "rseq",
+        "args": [
+            {
+                "description": null,
+                "type": "struct rseq __user *",
+                "value": "0x7fb909b81680"
+            },
+            {
+                "description": null,
+                "type": "uint32_t",
+                "value": 32
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "uint32_t",
+                "value": 1392848979
+            },
+            {
+                "value": "0xffffffffffffff40"
+            },
+            {
+                "value": "0x7fff7a5b72cc"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 140432710729728
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 16384
+            },
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 1
+            },
+            {
+                "value": "0x7fb909d199c8"
+            },
+            {
+                "value": "0x7fb909d68000"
+            },
+            {
+                "value": "0x7fff7a5b72a0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 4202496
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 1
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x402000"
+            },
+            {
+                "value": "0x7fff7a5b72a0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 140432711151616
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 1
+            },
+            {
+                "value": "0x3de00ec7"
+            },
+            {
+                "value": "0x7fb909dcf000"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 302,
+        "syscall_name": "prlimit64",
+        "args": [
+            {
+                "description": null,
+                "type": "pid_t",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "unsigned int",
+                "value": 3
+            },
+            {
+                "description": null,
+                "type": "const struct rlimit64 __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "struct rlimit64 __user *",
+                "value": "0x7fff7a5b72c0"
+            },
+            {
+                "value": "0xffff"
+            },
+            {
+                "value": "0x1"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 11,
+        "syscall_name": "munmap",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 140432710787072
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 107267
+            },
+            {
+                "value": "0x7fb909dd1000"
+            },
+            {
+                "value": "0x7fff7a5b72c0"
+            },
+            {
+                "value": "0x7f8"
+            },
+            {
+                "value": "0x7fff7a5b72d4"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x7fb909d3f7c8"
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": [
+                    "SIGILL",
+                    "SIGABRT",
+                    "SIGFPE",
+                    "SIGUSR1",
+                    "SIGSEGV",
+                    "SIGPIPE",
+                    "SIGALRM",
+                    "SIGTERM",
+                    "SIGCHLD",
+                    "SIGCONT",
+                    "SIGTSTP",
+                    "SIGTTIN",
+                    "SIGURG",
+                    "SIGVTALRM",
+                    "SIGWINCH",
+                    "SIGIO",
+                    "SIGPWR",
+                    "SIGSYS"
+                ]
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x7fb909d6c680"
+            },
+            {
+                "value": "0x7fb909d6e000"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 56,
+        "syscall_name": "clone",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned",
+                "value": 18874385
+            },
+            {
+                "description": null,
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "int __user *",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "unsigned",
+                "value": 163060240
+            },
+            {
+                "description": null,
+                "type": "int __user *",
+                "value": 0
+            },
+            {
+                "value": "0x7fb909d6e000"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 273,
+        "syscall_name": "set_robust_list",
+        "args": [
+            {
+                "description": null,
+                "type": "struct robust_list_head __user *",
+                "value": "0x7fb909b81a20"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 24
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909b81a10"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909d6e000"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": []
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x7fb909d6db60"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 39,
+        "syscall_name": "getpid",
+        "args": [
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909d6db60"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": []
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x7fb909d6db60"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "0x7fff7a5b71b0"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            },
+            {
+                "value": "0x1"
+            },
+            {
+                "value": "0x150"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 39,
+        "syscall_name": "getpid",
+        "args": [
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909d6db60"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 318,
+        "syscall_name": "getrandom",
+        "args": [
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "value": "0x1"
+            },
+            {
+                "value": "0x150"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "value": "0x21000"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x2b0"
+            },
+            {
+                "value": "0x7fb909d6cac0"
+            },
+            {
+                "value": "0x280"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "0x7fff7a5b71b0"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            },
+            {
+                "value": "0x1"
+            },
+            {
+                "value": "0x150"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 846270464
+            },
+            {
+                "value": "0x21000"
+            },
+            {
+                "value": "0x326f0000"
+            },
+            {
+                "value": "0x2b0"
+            },
+            {
+                "value": "0x7fb909d6cac0"
+            },
+            {
+                "value": "0x280"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 318,
+        "syscall_name": "getrandom",
+        "args": [
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "value": "0x1"
+            },
+            {
+                "value": "0x150"
+            },
+            {
+                "value": "0x7fb909d6ae80"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Pare"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 41
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Pare"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 49
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "value": "0x21000"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x2b0"
+            },
+            {
+                "value": "0x7fb909d6cac0"
+            },
+            {
+                "value": "0x280"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 846270464
+            },
+            {
+                "value": "0x21000"
+            },
+            {
+                "value": "0x326f0000"
+            },
+            {
+                "value": "0x2b0"
+            },
+            {
+                "value": "0x7fb909d6cac0"
+            },
+            {
+                "value": "0x280"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Pare"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 37
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Chil"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 40
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 13,
+        "syscall_name": "rt_sigaction",
+        "args": [
+            {
+                "description": "sig",
+                "type": "int",
+                "value": 33
+            },
+            {
+                "description": "act",
+                "type": "const struct sigaction __user *",
+                "value": "0x7fff7a5b72d0"
+            },
+            {
+                "description": "oact",
+                "type": "struct sigaction __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "sigsetsize",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "restorer",
+                "type": "void __user *",
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288816,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": null,
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "const struct __kernel_timespec __user *",
+                "value": "0x7fff7a5b7530"
+            },
+            {
+                "description": null,
+                "type": "struct __kernel_timespec __user *",
+                "value": "0x7fff7a5b7530"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": [
+                    "SIGRTMIN",
+                    "SIGRTMAX"
+                ]
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8392704
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 131106
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 140432700346368
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8388608
+            },
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 3
+            },
+            {
+                "value": "0x1000"
+            },
+            {
+                "value": "0xffffffff"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x7fb909d3f7c8"
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": [
+                    "SIGABRT",
+                    "SIGFPE",
+                    "SIGUSR1",
+                    "SIGCHLD",
+                    "SIGCONT",
+                    "SIGSTOP",
+                    "SIGTSTP",
+                    "SIGTTOU",
+                    "SIGURG",
+                    "SIGVTALRM",
+                    "SIGIO",
+                    "SIGPWR"
+                ]
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x7fff80"
+            },
+            {
+                "value": "0x78"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 435,
+        "syscall_name": "clone3",
+        "args": [
+            {
+                "description": null,
+                "type": "struct clone_args __user *",
+                "value": "0x7fff7a5b7380"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 88
+            },
+            {
+                "value": "0x7fb909bf4ef0"
+            },
+            {
+                "value": "0x8"
+            },
+            {
+                "value": "0x7fb909b806c0"
+            },
+            {
+                "value": "0x7fff7a5b7487"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 334,
+        "syscall_name": "rseq",
+        "args": [
+            {
+                "description": null,
+                "type": "struct rseq __user *",
+                "value": "0x7fb909b80600"
+            },
+            {
+                "description": null,
+                "type": "uint32_t",
+                "value": 32
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "uint32_t",
+                "value": 1392848979
+            },
+            {
+                "value": "0x80"
+            },
+            {
+                "value": "0x20"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": []
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x7fb909b806c0"
+            },
+            {
+                "value": "0x7fff7a5b7487"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 273,
+        "syscall_name": "set_robust_list",
+        "args": [
+            {
+                "description": null,
+                "type": "struct robust_list_head __user *",
+                "value": "0x7fb909b809a0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 24
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x53053053"
+            },
+            {
+                "value": "0x80"
+            },
+            {
+                "value": "0x20"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288814,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": null,
+                "type": "u32 __user *",
+                "value": 163056016
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 265
+            },
+            {
+                "description": null,
+                "type": "u32",
+                "value": 1288817
+            },
+            {
+                "description": null,
+                "type": "const struct __kernel_timespec __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "u32",
+                "value": 4294967295
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": []
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x20"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 186,
+        "syscall_name": "gettid",
+        "args": [
+            {
+                "value": "0x7fb909b80fb0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x7fb909bf5046"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x20"
+            },
+            {
+                "value": "0x7fb909b806c0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Thre"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 45
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:48",
+        "pid": 1288817,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": null,
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "const struct __kernel_timespec __user *",
+                "value": "0x7fb909b7fe50"
+            },
+            {
+                "description": null,
+                "type": "struct __kernel_timespec __user *",
+                "value": "0x7fb909b7fe50"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:49",
+        "pid": 1288817,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Thre"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 17
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:49",
+        "pid": 1288817,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x7fb909b80fb0"
+            },
+            {
+                "description": null,
+                "type": "sigset_t __user *",
+                "value": "0x0"
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:49",
+        "pid": 1288817,
+        "syscall_number": 28,
+        "syscall_name": "madvise",
+        "args": [
+            {
+                "description": null,
+                "type": "unsigned long",
+                "value": 140432700342272
+            },
+            {
+                "description": null,
+                "type": "size_t",
+                "value": 8368128
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 4
+            },
+            {
+                "value": "0x8"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:49",
+        "pid": 1288817,
+        "syscall_number": 60,
+        "syscall_name": "exit",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "value": "0x800000"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x8"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:49",
+        "pid": 1288814,
+        "syscall_number": 61,
+        "syscall_name": "wait4",
+        "args": [
+            {
+                "description": null,
+                "type": "pid_t",
+                "value": 4294967295
+            },
+            {
+                "description": null,
+                "type": "int __user *",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": null,
+                "type": "struct rusage __user *",
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:50",
+        "pid": 1288816,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Chil"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 24
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:50",
+        "pid": 1288816,
+        "syscall_number": 231,
+        "syscall_name": "exit_group",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "value": "0xffffffffffffff88"
+            },
+            {
+                "value": "0x7fb909b81a48"
+            },
+            {
+                "value": "0x7fff7a5b73c0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:50",
+        "pid": 1288814,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "Pare"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 55
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-07-10 13:13:50",
+        "pid": 1288814,
+        "syscall_number": 231,
+        "syscall_name": "exit_group",
+        "args": [
+            {
+                "description": null,
+                "type": "int",
+                "value": 0
+            },
+            {
+                "value": "0xffffffffffffff88"
+            },
+            {
+                "value": "0x7fb909b81a48"
+            },
+            {
+                "value": "0x7fff7a5b73c0"
+            },
+            {
+                "value": "0x0"
+            },
+            {
+                "value": "0x0"
+            }
+        ]
+    }
+]

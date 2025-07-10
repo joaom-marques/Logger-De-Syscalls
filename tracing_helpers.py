@@ -2,7 +2,7 @@ import ctypes
 import errno
 import ctypes.util
 from ctypes import c_long
-from signal import NSIG, Signals
+import signal
 
 # Ponteiro para libc, para utilizar libc.ptrace
 libc = ctypes.CDLL(ctypes.util.find_library("c"), use_errno=True)
@@ -50,8 +50,8 @@ def read_c_string_list(pid: int, addr: int):
     ptrs = read_ptr_array(pid, addr)
     str_list = []
     for p in ptrs:
-        str = read_c_string(pid, p)
-        str_list.append(str)
+        s = read_c_string(pid, p)
+        str_list.append(s)
 
     return str_list
 
@@ -74,13 +74,18 @@ def format_fd_set(pid: int, addr: int):
     return bits
 
 
-def decode_sigset(bits):
-    """Decodifica sinais (sigset_t) em nomes de sinais."""
-    # IGHUP, SIGINT, SIGKILL, etc.
+def decode_sigset(raw_bits):
+    """Decodifica um sigset_t (bitmask) em nomes de sinais."""
     result = []
-    for sig in range(1, NSIG):
-        if bits & (1 << (sig - 1)):  # encontra o bit do sinal na pos i-1
-            result.append(Signals(sig).name)
+    for sig_num in signal.valid_signals():
+        try:
+            if raw_bits & (1 << (sig_num - 1)):
+                # Turn the int into a Signal enum, so we can get .name
+                sig_enum = signal.Signals(sig_num)
+                result.append(sig_enum.name)
+        except (ValueError, OSError):
+            # ValueError if sig_num invalid, OSError if ptrace peek failed
+            continue
     return result
 
 
@@ -133,8 +138,12 @@ def format_arg(pid: int, raw: int, type: str):
         return f"<sockaddr @ {hex(raw)}>"
 
     if "sigset_t" in type:
-        raw_bits = ptrace_peekdata(pid, raw)
-        return decode_sigset(raw_bits)
+        try:
+            raw_bits = ptrace_peekdata(pid, raw)
+            return decode_sigset(raw_bits)
+        except OSError:
+            # fallback to hex if we can’t peek the bitmask
+            return hex(raw)
 
     # tipos numericos
     num_ref = {

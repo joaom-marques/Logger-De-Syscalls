@@ -13,6 +13,9 @@ def start_syscall_capture():
     # Aqui chama o programa C que captura as syscalls
     try:
         args = split(program)
+        print(f"program: {args[0]}")
+        for x in args:
+            print(f"arg: {x}")
         global TRACEE
         TRACEE = args[0]
         trace_command(args[0], args)
