@@ -120,6 +120,7 @@ def trace_command(program: str, args: list):
         entries = []
         traced_pids = deque([pid])
         is_entry = {}
+        syscall_entries_in_progress = {}
 
         try:
             while traced_pids:
@@ -191,35 +192,36 @@ def trace_command(program: str, args: list):
 
                     # Syscall detectada
                     elif os.WIFSTOPPED(status) and os.WSTOPSIG(status) & 0x80:
-                        regs = user_regs_struct()
-                        try:
-                            ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
-                        except OSError as e:
-                            print(f"Erro ao obter registros (apos regs): {e}")
+                        # Lógica de entrada da syscall
+                        if is_entry.get(wpid, True):
+                            regs = user_regs_struct()
+                            try:
+                                ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
+                            except OSError as e:
+                                print(
+                                    f"Erro ao obter registros na entrada (PID: {wpid}): {e}"
+                                )
+                                # Continua para o próximo evento, pula o que deu erro
+                                ptrace(PTRACE_SYSCALL, wpid, 0)
+                                continue
 
-                        try:
-                            if is_entry.get(wpid, True):
-                                try:
-                                    syscall_num = regs.orig_rax
-                                    meta = syscall_table.get(str(syscall_num), {})
-                                    name = meta.get("name", f"sys_{syscall_num}")
-                                    args_meta = meta.get("args", [])
+                            try:
+                                syscall_num = regs.orig_rax
+                                syscall_info = syscall_table.get(str(syscall_num), {})
+                                name = syscall_info.get("name", f"sys_{syscall_num}")
+                                args_list_info = syscall_info.get("args", [])
 
-                                    entry = {
-                                        "timestamp": datetime.datetime.now().strftime(
-                                            "%Y-%m-%d %H:%M:%S"
-                                        ),
-                                        "pid": wpid,
-                                        "syscall_number": syscall_num,
-                                        "syscall_name": name,
-                                        "args": [],
-                                    }
-                                except Exception as e:
-                                    print(
-                                        f"Erro ao processar syscall: syscall_num={syscall_num}, name={name}, args_meta={args_meta}"
-                                    )
-                                    print(f"Erro ao processar syscall (nome): {e}")
-                                    exit(1)
+                                entry = {
+                                    "timestamp": datetime.datetime.now().strftime(
+                                        "%Y-%m-%d %H:%M:%S.%f"[:-3]
+                                    ),
+                                    "pid": wpid,
+                                    "syscall_number": syscall_num,
+                                    "syscall_name": name,
+                                    "args": [],
+                                    "return_value": None,  # Por enquanto, None
+                                }
+
                                 raw_args = [
                                     regs.rdi,
                                     regs.rsi,
@@ -229,8 +231,8 @@ def trace_command(program: str, args: list):
                                     regs.r9,
                                 ]
                                 for i, val in enumerate(raw_args):
-                                    if i < len(args_meta):
-                                        arg_info = args_meta[i]
+                                    if i < len(args_list_info):
+                                        arg_info = args_list_info[i]
                                         try:
                                             formatted = format_arg(
                                                 wpid, val, arg_info["type"]
@@ -246,13 +248,45 @@ def trace_command(program: str, args: list):
                                             )
                                         except Exception as e:
                                             print(f"Erro ao formatar argumento: {e}")
-                                    else:
-                                        entry["args"].append({"value": hex(val)})
 
-                                entries.append(entry)
-                        except OSError as e:
-                            print(f"Erro ao processar syscall (dados) : {e}")
+                                syscall_entries_in_progress[wpid] = entry
 
+                            except Exception as e:
+                                print(f"Erro ao processar entrada de syscall: {e}")
+
+                        # Lógica de saída da syscall
+                        else:
+                            regs = user_regs_struct()
+                            try:
+                                ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
+                            except OSError as e:
+                                print(
+                                    f"Erro ao obter registros na saída (PID: {wpid}): {e}"
+                                )
+                                # Remove a entrada falha
+                                syscall_entries_in_progress.pop(wpid, None)
+                                # Continua para o próximo, pula o atual
+                                ptrace(PTRACE_SYSCALL, wpid, 0)
+                                continue
+
+                            try:
+                                return_value = regs.rax
+                                # conversão para int caso hajam valores negativos
+                                signed_return_value = ctypes.c_long(return_value).value
+                                entry = syscall_entries_in_progress.pop(wpid, None)
+
+                                if entry:
+                                    entry["return_value"] = signed_return_value
+                                    entries.append(entry)
+                                else:
+                                    if DEBUG:
+                                        print(
+                                            f"[debug] Saída de syscall para PID {wpid} sem uma entrada correspondente."
+                                        )
+                            except Exception as e:
+                                print(f"Erro ao processar saída de syscall: {e}")
+
+                        # Troca o estado de entrada/saída
                         is_entry[wpid] = not is_entry.get(wpid, True)
                 except OSError as e:
                     print(f"Erro ao processar eventos: {e}")

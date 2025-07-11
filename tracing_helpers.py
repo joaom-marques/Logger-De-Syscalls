@@ -91,6 +91,16 @@ def decode_sigset(raw_bits):
 
 def format_arg(pid: int, raw: int, type: str):
     """chama funções as corretas para formatar raw conforme o tipo(type)"""
+    # !TODO: Fix output buffers reading trash.
+    # Identify known output buffers and prevent reading them on syscall entry
+    # output_buffers = {
+    #     "read": "buf",
+    #     "recvfrom": "buf",
+    #     "recvmsg": "msg",
+    #     "readv": "iov",
+    # }
+    # if syscall_name in output_buffers and arg_name == output_buffers[syscall_name]:
+    #     return f"<buffer @ {hex(raw)}>" # Just show the address, don't read'
     type = type.strip()
     # ponteiro para string
     if type.endswith("*") and "char" in type:

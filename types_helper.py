@@ -8,16 +8,17 @@ def read_raw_values(syscalls):
     for syscall in syscalls:
         number = syscall["syscall_number"]
         ref = syscall_table[f"{number}"]
-        
+
         # Converte o timestamp numérico para um objeto datetime
-        dt_object = datetime.datetime.fromtimestamp(syscall['timestamp'])
-        
+        dt_object = datetime.datetime.fromtimestamp(syscall["timestamp"])
+
         # Formata o objeto datetime para o padrão desejado
-        formatted_timestamp = dt_object.strftime("%Y-%m-%d %H:%M:%S")
+        formatted_timestamp = dt_object.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
         # --- prints ---
         print(f"Syscall: {ref['name']} ({number})")
         print(f"PID: {syscall['pid']}")
-        print(f"Timestamp: {formatted_timestamp}") # Usa a variável formatada
+        print(f"Timestamp: {formatted_timestamp}")  # Usa a variável formatada
         print(f"Arguments: {len(ref['args'])}")
-        print("-" * 20) # Separador para clareza
+        print("-" * 20)  # Separador para clareza
+
