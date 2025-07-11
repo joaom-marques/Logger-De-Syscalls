@@ -2,8 +2,6 @@ import os
 import subprocess
 from shlex import split
 from tracer import trace_command
-from types_helper import read_raw_values
-import json_helpers
 import json
 
 LOGS_DIR = "logs"
