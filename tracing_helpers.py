@@ -9,6 +9,37 @@ libc = ctypes.CDLL(ctypes.util.find_library("c"), use_errno=True)
 PTRACE_PEEKDATA = 2
 
 
+def format_return_value(raw_value: int, return_info: dict) -> str | int:
+    """
+    Formata o valor de retorno de uma syscall com base no tipo e valor.
+    - Erros: Mostra o nome do erro e o valor.
+    - Ponteiros: hexadecimal.
+    - Inteiros: mantém o valor.
+
+    Args:
+        raw_value: O inteiro retornado da syscall.
+        return_info: Dic com informações do tipo de retorno da syscall.
+
+    Retornos:
+        Uma string formatada para erros, ponteiros, ou valor inteiro.
+    """
+    # Syscallls retornam -1 a -4095 para indicar erro, e o absoluto é o
+    # valor do errno
+    if -4095 <= raw_value < 0:
+        err_num = -raw_value
+        err_name = errno.errorcode.get(err_num, f"UNKNOWN_ERROR_{err_num}")
+        return f"{raw_value} ({err_name})"
+
+    return_type = return_info.get("type", "").strip()
+
+    # Se for ponteiro, formata como hexadecimal
+    if "*" in return_type:
+        return hex(raw_value)
+
+    # Para numéricos como long é apenas o valor
+    return raw_value
+
+
 def ptrace_peekdata(pid: int, addr: int) -> int:
     """Retorna um long lido da memória do processo (pid) na posição (addr)."""
     # addr é formatado como ponteiro para void para C usar

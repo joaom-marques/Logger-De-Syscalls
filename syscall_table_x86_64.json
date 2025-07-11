@@ -15,7 +15,11 @@
             }
         ],
         "entry_point": "sys_read",
-        "name": "read"
+        "name": "read",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
     },
     "1": {
         "args": [
@@ -33,7 +37,11 @@
             }
         ],
         "entry_point": "sys_write",
-        "name": "write"
+        "name": "write",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "2": {
         "args": [
@@ -51,7 +59,11 @@
             }
         ],
         "entry_point": "sys_open",
-        "name": "open"
+        "name": "open",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "3": {
         "args": [
@@ -61,7 +73,11 @@
             }
         ],
         "entry_point": "sys_close",
-        "name": "close"
+        "name": "close",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "4": {
         "args": [
@@ -75,7 +91,11 @@
             }
         ],
         "entry_point": "sys_newstat",
-        "name": "stat"
+        "name": "stat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "5": {
         "args": [
@@ -89,7 +109,11 @@
             }
         ],
         "entry_point": "sys_newfstat",
-        "name": "fstat"
+        "name": "fstat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "6": {
         "args": [
@@ -103,7 +127,11 @@
             }
         ],
         "entry_point": "sys_newlstat",
-        "name": "lstat"
+        "name": "lstat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "7": {
         "args": [
@@ -121,7 +149,11 @@
             }
         ],
         "entry_point": "sys_poll",
-        "name": "poll"
+        "name": "poll",
+        "return": {
+            "type": "long",
+            "description": "# of fds with events, 0 on timeout, or -1 on error"
+        }
     },
     "8": {
         "args": [
@@ -139,7 +171,11 @@
             }
         ],
         "entry_point": "sys_lseek",
-        "name": "lseek"
+        "name": "lseek",
+        "return": {
+            "type": "long",
+            "description": "resulting offset, or -1 on error"
+        }
     },
     "9": {
         "args": [
@@ -169,49 +205,65 @@
             }
         ],
         "entry_point": "sys_mmap",
-        "name": "mmap"
+        "name": "mmap",
+        "return": {
+            "type": "pointer",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
     },
     "10": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "prot"
             }
         ],
         "entry_point": "sys_mprotect",
-        "name": "mprotect"
+        "name": "mprotect",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "11": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_munmap",
-        "name": "munmap"
+        "name": "munmap",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "12": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "brk"
             }
         ],
         "entry_point": "sys_brk",
-        "name": "brk"
+        "name": "brk",
+        "return": {
+            "type": "pointer",
+            "description": "new program break on success, or old break on error"
+        }
     },
     "13": {
         "args": [
@@ -237,29 +289,37 @@
             }
         ],
         "entry_point": "sys_rt_sigaction",
-        "name": "rt_sigaction"
+        "name": "rt_sigaction",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "14": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "how"
             },
             {
                 "type": "sigset_t __user *",
-                "description": null
+                "description": "nset"
             },
             {
                 "type": "sigset_t __user *",
-                "description": null
+                "description": "oset"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "sigsetsize"
             }
         ],
         "entry_point": "sys_rt_sigprocmask",
-        "name": "rt_sigprocmask"
+        "name": "rt_sigprocmask",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "15": {
         "args": [
@@ -269,7 +329,11 @@
             }
         ],
         "entry_point": "sys_rt_sigreturn",
-        "name": "rt_sigreturn"
+        "name": "rt_sigreturn",
+        "return": {
+            "type": "long",
+            "description": "never returns"
+        }
     },
     "16": {
         "args": [
@@ -287,7 +351,11 @@
             }
         ],
         "entry_point": "sys_ioctl",
-        "name": "ioctl"
+        "name": "ioctl",
+        "return": {
+            "type": "long",
+            "description": "non-negative on success, or -1 on error"
+        }
     },
     "17": {
         "args": [
@@ -313,7 +381,11 @@
             }
         ],
         "entry_point": "sys_pread64",
-        "name": "pread64"
+        "name": "pread64",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
     },
     "18": {
         "args": [
@@ -339,7 +411,11 @@
             }
         ],
         "entry_point": "sys_pwrite64",
-        "name": "pwrite64"
+        "name": "pwrite64",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "19": {
         "args": [
@@ -357,7 +433,11 @@
             }
         ],
         "entry_point": "sys_readv",
-        "name": "readv"
+        "name": "readv",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
     },
     "20": {
         "args": [
@@ -375,7 +455,11 @@
             }
         ],
         "entry_point": "sys_writev",
-        "name": "writev"
+        "name": "writev",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "21": {
         "args": [
@@ -389,7 +473,11 @@
             }
         ],
         "entry_point": "sys_access",
-        "name": "access"
+        "name": "access",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "22": {
         "args": [
@@ -399,7 +487,11 @@
             }
         ],
         "entry_point": "sys_pipe",
-        "name": "pipe"
+        "name": "pipe",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "23": {
         "args": [
@@ -425,146 +517,182 @@
             }
         ],
         "entry_point": "sys_select",
-        "name": "select"
+        "name": "select",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "24": {
         "args": [],
         "entry_point": "sys_sched_yield",
-        "name": "sched_yield"
+        "name": "sched_yield",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "25": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "old_len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "new_len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "new_addr"
             }
         ],
         "entry_point": "sys_mremap",
-        "name": "mremap"
+        "name": "mremap",
+        "return": {
+            "type": "pointer",
+            "description": "address of new mapping, or MAP_FAILED on error"
+        }
     },
     "26": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_msync",
-        "name": "msync"
+        "name": "msync",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "27": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned char __user *",
-                "description": null
+                "description": "vec"
             }
         ],
         "entry_point": "sys_mincore",
-        "name": "mincore"
+        "name": "mincore",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "28": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len_in"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "behavior"
             }
         ],
         "entry_point": "sys_madvise",
-        "name": "madvise"
+        "name": "madvise",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "29": {
         "args": [
             {
                 "type": "key_t",
-                "description": null
+                "description": "key"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "shmflg"
             }
         ],
         "entry_point": "sys_shmget",
-        "name": "shmget"
+        "name": "shmget",
+        "return": {
+            "type": "long",
+            "description": "shm identifier, or -1 on error"
+        }
     },
     "30": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "shmid"
             },
             {
                 "type": "char __user *",
-                "description": null
+                "description": "shmaddr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "shmflg"
             }
         ],
         "entry_point": "sys_shmat",
-        "name": "shmat"
+        "name": "shmat",
+        "return": {
+            "type": "pointer",
+            "description": "address of attached segment, or -1 on error"
+        }
     },
     "31": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "shmid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "struct shmid_ds __user *",
-                "description": null
+                "description": "buf"
             }
         ],
         "entry_point": "sys_shmctl",
-        "name": "shmctl"
+        "name": "shmctl",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "32": {
         "args": [
@@ -574,7 +702,11 @@
             }
         ],
         "entry_point": "sys_dup",
-        "name": "dup"
+        "name": "dup",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "33": {
         "args": [
@@ -588,73 +720,101 @@
             }
         ],
         "entry_point": "sys_dup2",
-        "name": "dup2"
+        "name": "dup2",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "34": {
         "args": [],
         "entry_point": "sys_pause",
-        "name": "pause"
+        "name": "pause",
+        "return": {
+            "type": "long",
+            "description": "only returns on signal, -1 with errno EINTR"
+        }
     },
     "35": {
         "args": [
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "rqtp"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "rmtp"
             }
         ],
         "entry_point": "sys_nanosleep",
-        "name": "nanosleep"
+        "name": "nanosleep",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error/interrupt"
+        }
     },
     "36": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "which"
             },
             {
                 "type": "struct __kernel_old_itimerval __user *",
-                "description": null
+                "description": "value"
             }
         ],
         "entry_point": "sys_getitimer",
-        "name": "getitimer"
+        "name": "getitimer",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "37": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "seconds"
             }
         ],
         "entry_point": "sys_alarm",
-        "name": "alarm"
+        "name": "alarm",
+        "return": {
+            "type": "long",
+            "description": "seconds remaining in previous alarm, or 0"
+        }
     },
     "38": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "which"
             },
             {
                 "type": "struct __kernel_old_itimerval __user *",
-                "description": null
+                "description": "value"
             },
             {
                 "type": "struct __kernel_old_itimerval __user *",
-                "description": null
+                "description": "ovalue"
             }
         ],
         "entry_point": "sys_setitimer",
-        "name": "setitimer"
+        "name": "setitimer",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "39": {
         "args": [],
         "entry_point": "sys_getpid",
-        "name": "getpid"
+        "name": "getpid",
+        "return": {
+            "type": "long",
+            "description": "calling process ID"
+        }
     },
     "40": {
         "args": [
@@ -676,349 +836,425 @@
             }
         ],
         "entry_point": "sys_sendfile64",
-        "name": "sendfile"
+        "name": "sendfile",
+        "return": {
+            "type": "long",
+            "description": "bytes transferred, or -1 on error"
+        }
     },
     "41": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "family"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "type"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "protocol"
             }
         ],
         "entry_point": "sys_socket",
-        "name": "socket"
+        "name": "socket",
+        "return": {
+            "type": "long",
+            "description": "file descriptor for new socket, or -1 on error"
+        }
     },
     "42": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "uservaddr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "addrlen"
             }
         ],
         "entry_point": "sys_connect",
-        "name": "connect"
+        "name": "connect",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "43": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "upeer_sockaddr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "upeer_addrlen"
             }
         ],
         "entry_point": "sys_accept",
-        "name": "accept"
+        "name": "accept",
+        "return": {
+            "type": "long",
+            "description": "fd for accepted socket, or -1 on error"
+        }
     },
     "44": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "void __user *",
-                "description": null
+                "description": "buff"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "addr_len"
             }
         ],
         "entry_point": "sys_sendto",
-        "name": "sendto"
+        "name": "sendto",
+        "return": {
+            "type": "long",
+            "description": "bytes sent, or -1 on error"
+        }
     },
     "45": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "void __user *",
-                "description": null
+                "description": "ubuf"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "addr_len"
             }
         ],
         "entry_point": "sys_recvfrom",
-        "name": "recvfrom"
+        "name": "recvfrom",
+        "return": {
+            "type": "long",
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
     },
     "46": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct user_msghdr __user *",
-                "description": null
+                "description": "msg"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_sendmsg",
-        "name": "sendmsg"
+        "name": "sendmsg",
+        "return": {
+            "type": "long",
+            "description": "bytes sent, or -1 on error"
+        }
     },
     "47": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct user_msghdr __user *",
-                "description": null
+                "description": "msg"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_recvmsg",
-        "name": "recvmsg"
+        "name": "recvmsg",
+        "return": {
+            "type": "long",
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
     },
     "48": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "how"
             }
         ],
         "entry_point": "sys_shutdown",
-        "name": "shutdown"
+        "name": "shutdown",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "49": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "umyaddr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "addrlen"
             }
         ],
         "entry_point": "sys_bind",
-        "name": "bind"
+        "name": "bind",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "50": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "backlog"
             }
         ],
         "entry_point": "sys_listen",
-        "name": "listen"
+        "name": "listen",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "51": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "usockaddr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "usockaddr_len"
             }
         ],
         "entry_point": "sys_getsockname",
-        "name": "getsockname"
+        "name": "getsockname",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "52": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "usockaddr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "usockaddr_len"
             }
         ],
         "entry_point": "sys_getpeername",
-        "name": "getpeername"
+        "name": "getpeername",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "53": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "family"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "type"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "protocol"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "usockvec"
             }
         ],
         "entry_point": "sys_socketpair",
-        "name": "socketpair"
+        "name": "socketpair",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "54": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "level"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "optname"
             },
             {
                 "type": "char __user *",
-                "description": null
+                "description": "optval"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "optlen"
             }
         ],
         "entry_point": "sys_setsockopt",
-        "name": "setsockopt"
+        "name": "setsockopt",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "55": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "level"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "optname"
             },
             {
                 "type": "char __user *",
-                "description": null
+                "description": "optval"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "optlen"
             }
         ],
         "entry_point": "sys_getsockopt",
-        "name": "getsockopt"
+        "name": "getsockopt",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "56": {
         "args": [
             {
                 "type": "unsigned",
-                "description": null
+                "description": "clone_flags"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "newsp"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "parent_tidptr"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "child_tidptr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "tls"
             }
         ],
         "entry_point": "sys_clone",
-        "name": "clone"
+        "name": "clone",
+        "return": {
+            "type": "long",
+            "description": "child's TID in parent, 0 in child, or -1 on error"
+        }
     },
     "57": {
         "args": [],
         "entry_point": "sys_fork",
-        "name": "fork"
+        "name": "fork",
+        "return": {
+            "type": "long",
+            "description": "child's PID in parent, 0 in child, or -1 on error"
+        }
     },
     "58": {
         "args": [],
         "entry_point": "sys_vfork",
-        "name": "vfork"
+        "name": "vfork",
+        "return": {
+            "type": "long",
+            "description": "child's PID in parent, 0 in child, or -1 on error"
+        }
     },
     "59": {
         "args": [
@@ -1036,211 +1272,263 @@
             }
         ],
         "entry_point": "sys_execve",
-        "name": "execve"
+        "name": "execve",
+        "return": {
+            "type": "long",
+            "description": "never returns on success, or -1 on error"
+        }
     },
     "60": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "error_code"
             }
         ],
         "entry_point": "sys_exit",
-        "name": "exit"
+        "name": "exit",
+        "return": {
+            "type": "long",
+            "description": "never returns"
+        }
     },
     "61": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "upid"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "stat_addr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "options"
             },
             {
                 "type": "struct rusage __user *",
-                "description": null
+                "description": "ru"
             }
         ],
         "entry_point": "sys_wait4",
-        "name": "wait4"
+        "name": "wait4",
+        "return": {
+            "type": "long",
+            "description": "pid of terminated child, 0 if no change, or -1 on error"
+        }
     },
     "62": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             }
         ],
         "entry_point": "sys_kill",
-        "name": "kill"
+        "name": "kill",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "63": {
         "args": [
             {
                 "type": "struct new_utsname __user *",
-                "description": null
+                "description": "name"
             }
         ],
         "entry_point": "sys_newuname",
-        "name": "uname"
+        "name": "uname",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "64": {
         "args": [
             {
                 "type": "key_t",
-                "description": null
+                "description": "key"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "nsems"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "semflg"
             }
         ],
         "entry_point": "sys_semget",
-        "name": "semget"
+        "name": "semget",
+        "return": {
+            "type": "long",
+            "description": "semaphore id, or -1 on error"
+        }
     },
     "65": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "semid"
             },
             {
                 "type": "struct sembuf __user *",
-                "description": null
+                "description": "tsops"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "nsops"
             }
         ],
         "entry_point": "sys_semop",
-        "name": "semop"
+        "name": "semop",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "66": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "semid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "semnum"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg"
             }
         ],
         "entry_point": "sys_semctl",
-        "name": "semctl"
+        "name": "semctl",
+        "return": {
+            "type": "long",
+            "description": "non-negative value on success, or -1 on error"
+        }
     },
     "67": {
         "args": [
             {
                 "type": "char __user *",
-                "description": null
+                "description": "shmaddr"
             }
         ],
         "entry_point": "sys_shmdt",
-        "name": "shmdt"
+        "name": "shmdt",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "68": {
         "args": [
             {
                 "type": "key_t",
-                "description": null
+                "description": "key"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "msgflg"
             }
         ],
         "entry_point": "sys_msgget",
-        "name": "msgget"
+        "name": "msgget",
+        "return": {
+            "type": "long",
+            "description": "message queue id, or -1 on error"
+        }
     },
     "69": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "msqid"
             },
             {
                 "type": "struct msgbuf __user *",
-                "description": null
+                "description": "msgp"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "msgsz"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "msgflg"
             }
         ],
         "entry_point": "sys_msgsnd",
-        "name": "msgsnd"
+        "name": "msgsnd",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "70": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "msqid"
             },
             {
                 "type": "struct msgbuf __user *",
-                "description": null
+                "description": "msgp"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "msgsz"
             },
             {
                 "type": "long",
-                "description": null
+                "description": "msgtyp"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "msgflg"
             }
         ],
         "entry_point": "sys_msgrcv",
-        "name": "msgrcv"
+        "name": "msgrcv",
+        "return": {
+            "type": "long",
+            "description": "bytes copied into msgp, or -1 on error"
+        }
     },
     "71": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "msqid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "struct msqid_ds __user *",
-                "description": null
+                "description": "buf"
             }
         ],
         "entry_point": "sys_msgctl",
-        "name": "msgctl"
+        "name": "msgctl",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "72": {
         "args": [
@@ -1258,7 +1546,11 @@
             }
         ],
         "entry_point": "sys_fcntl",
-        "name": "fcntl"
+        "name": "fcntl",
+        "return": {
+            "type": "long",
+            "description": "depends on cmd, or -1 on error"
+        }
     },
     "73": {
         "args": [
@@ -1272,7 +1564,11 @@
             }
         ],
         "entry_point": "sys_flock",
-        "name": "flock"
+        "name": "flock",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "74": {
         "args": [
@@ -1282,7 +1578,11 @@
             }
         ],
         "entry_point": "sys_fsync",
-        "name": "fsync"
+        "name": "fsync",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "75": {
         "args": [
@@ -1292,7 +1592,11 @@
             }
         ],
         "entry_point": "sys_fdatasync",
-        "name": "fdatasync"
+        "name": "fdatasync",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "76": {
         "args": [
@@ -1306,7 +1610,11 @@
             }
         ],
         "entry_point": "sys_truncate",
-        "name": "truncate"
+        "name": "truncate",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "77": {
         "args": [
@@ -1320,7 +1628,11 @@
             }
         ],
         "entry_point": "sys_ftruncate",
-        "name": "ftruncate"
+        "name": "ftruncate",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "78": {
         "args": [
@@ -1338,7 +1650,11 @@
             }
         ],
         "entry_point": "sys_getdents",
-        "name": "getdents"
+        "name": "getdents",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on end, or -1 on error"
+        }
     },
     "79": {
         "args": [
@@ -1352,7 +1668,11 @@
             }
         ],
         "entry_point": "sys_getcwd",
-        "name": "getcwd"
+        "name": "getcwd",
+        "return": {
+            "type": "pointer",
+            "description": "pointer to buf, or NULL on error"
+        }
     },
     "80": {
         "args": [
@@ -1362,7 +1682,11 @@
             }
         ],
         "entry_point": "sys_chdir",
-        "name": "chdir"
+        "name": "chdir",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "81": {
         "args": [
@@ -1372,7 +1696,11 @@
             }
         ],
         "entry_point": "sys_fchdir",
-        "name": "fchdir"
+        "name": "fchdir",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "82": {
         "args": [
@@ -1386,7 +1714,11 @@
             }
         ],
         "entry_point": "sys_rename",
-        "name": "rename"
+        "name": "rename",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "83": {
         "args": [
@@ -1400,7 +1732,11 @@
             }
         ],
         "entry_point": "sys_mkdir",
-        "name": "mkdir"
+        "name": "mkdir",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "84": {
         "args": [
@@ -1410,7 +1746,11 @@
             }
         ],
         "entry_point": "sys_rmdir",
-        "name": "rmdir"
+        "name": "rmdir",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "85": {
         "args": [
@@ -1424,7 +1764,11 @@
             }
         ],
         "entry_point": "sys_creat",
-        "name": "creat"
+        "name": "creat",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "86": {
         "args": [
@@ -1438,7 +1782,11 @@
             }
         ],
         "entry_point": "sys_link",
-        "name": "link"
+        "name": "link",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "87": {
         "args": [
@@ -1448,7 +1796,11 @@
             }
         ],
         "entry_point": "sys_unlink",
-        "name": "unlink"
+        "name": "unlink",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "88": {
         "args": [
@@ -1462,7 +1814,11 @@
             }
         ],
         "entry_point": "sys_symlink",
-        "name": "symlink"
+        "name": "symlink",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "89": {
         "args": [
@@ -1480,7 +1836,11 @@
             }
         ],
         "entry_point": "sys_readlink",
-        "name": "readlink"
+        "name": "readlink",
+        "return": {
+            "type": "long",
+            "description": "bytes placed in buf, or -1 on error"
+        }
     },
     "90": {
         "args": [
@@ -1494,7 +1854,11 @@
             }
         ],
         "entry_point": "sys_chmod",
-        "name": "chmod"
+        "name": "chmod",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "91": {
         "args": [
@@ -1508,7 +1872,11 @@
             }
         ],
         "entry_point": "sys_fchmod",
-        "name": "fchmod"
+        "name": "fchmod",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "92": {
         "args": [
@@ -1526,7 +1894,11 @@
             }
         ],
         "entry_point": "sys_chown",
-        "name": "chown"
+        "name": "chown",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "93": {
         "args": [
@@ -1544,7 +1916,11 @@
             }
         ],
         "entry_point": "sys_fchown",
-        "name": "fchown"
+        "name": "fchown",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "94": {
         "args": [
@@ -1562,466 +1938,618 @@
             }
         ],
         "entry_point": "sys_lchown",
-        "name": "lchown"
+        "name": "lchown",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "95": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "mask"
             }
         ],
         "entry_point": "sys_umask",
-        "name": "umask"
+        "name": "umask",
+        "return": {
+            "type": "long",
+            "description": "previous umask"
+        }
     },
     "96": {
         "args": [
             {
                 "type": "struct __kernel_old_timeval __user *",
-                "description": null
+                "description": "tv"
             },
             {
                 "type": "struct timezone __user *",
-                "description": null
+                "description": "tz"
             }
         ],
         "entry_point": "sys_gettimeofday",
-        "name": "gettimeofday"
+        "name": "gettimeofday",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "97": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "resource"
             },
             {
                 "type": "struct rlimit __user *",
-                "description": null
+                "description": "rlim"
             }
         ],
         "entry_point": "sys_getrlimit",
-        "name": "getrlimit"
+        "name": "getrlimit",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "98": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "who"
             },
             {
                 "type": "struct rusage __user *",
-                "description": null
+                "description": "ru"
             }
         ],
         "entry_point": "sys_getrusage",
-        "name": "getrusage"
+        "name": "getrusage",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "99": {
         "args": [
             {
                 "type": "struct sysinfo __user *",
-                "description": null
+                "description": "info"
             }
         ],
         "entry_point": "sys_sysinfo",
-        "name": "sysinfo"
+        "name": "sysinfo",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "100": {
         "args": [
             {
                 "type": "struct tms __user *",
-                "description": null
+                "description": "tbuf"
             }
         ],
         "entry_point": "sys_times",
-        "name": "times"
+        "name": "times",
+        "return": {
+            "type": "long",
+            "description": "elapsed jiffies on success, or -1 on error"
+        }
     },
     "101": {
         "args": [
             {
                 "type": "long",
-                "description": null
+                "description": "request"
             },
             {
                 "type": "long",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "data"
             }
         ],
         "entry_point": "sys_ptrace",
-        "name": "ptrace"
+        "name": "ptrace",
+        "return": {
+            "type": "long",
+            "description": "depends on request, or -1 on error"
+        }
     },
     "102": {
         "args": [],
         "entry_point": "sys_getuid",
-        "name": "getuid"
+        "name": "getuid",
+        "return": {
+            "type": "long",
+            "description": "real user ID"
+        }
     },
     "103": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "type"
             },
             {
                 "type": "char __user *",
-                "description": null
+                "description": "buf"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_syslog",
-        "name": "syslog"
+        "name": "syslog",
+        "return": {
+            "type": "long",
+            "description": "bytes read, or -1 on error"
+        }
     },
     "104": {
         "args": [],
         "entry_point": "sys_getgid",
-        "name": "getgid"
+        "name": "getgid",
+        "return": {
+            "type": "long",
+            "description": "real group ID"
+        }
     },
     "105": {
         "args": [
             {
                 "type": "uid_t",
-                "description": null
+                "description": "uid"
             }
         ],
         "entry_point": "sys_setuid",
-        "name": "setuid"
+        "name": "setuid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "106": {
         "args": [
             {
                 "type": "gid_t",
-                "description": null
+                "description": "gid"
             }
         ],
         "entry_point": "sys_setgid",
-        "name": "setgid"
+        "name": "setgid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "107": {
         "args": [],
         "entry_point": "sys_geteuid",
-        "name": "geteuid"
+        "name": "geteuid",
+        "return": {
+            "type": "long",
+            "description": "effective user ID"
+        }
     },
     "108": {
         "args": [],
         "entry_point": "sys_getegid",
-        "name": "getegid"
+        "name": "getegid",
+        "return": {
+            "type": "long",
+            "description": "effective group ID"
+        }
     },
     "109": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pgid"
             }
         ],
         "entry_point": "sys_setpgid",
-        "name": "setpgid"
+        "name": "setpgid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "110": {
         "args": [],
         "entry_point": "sys_getppid",
-        "name": "getppid"
+        "name": "getppid",
+        "return": {
+            "type": "long",
+            "description": "parent process ID"
+        }
     },
     "111": {
         "args": [],
         "entry_point": "sys_getpgrp",
-        "name": "getpgrp"
+        "name": "getpgrp",
+        "return": {
+            "type": "long",
+            "description": "process group ID"
+        }
     },
     "112": {
         "args": [],
         "entry_point": "sys_setsid",
-        "name": "setsid"
+        "name": "setsid",
+        "return": {
+            "type": "long",
+            "description": "session ID on success, or -1 on error"
+        }
     },
     "113": {
         "args": [
             {
                 "type": "uid_t",
-                "description": null
+                "description": "ruid"
             },
             {
                 "type": "uid_t",
-                "description": null
+                "description": "euid"
             }
         ],
         "entry_point": "sys_setreuid",
-        "name": "setreuid"
+        "name": "setreuid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "114": {
         "args": [
             {
                 "type": "gid_t",
-                "description": null
+                "description": "rgid"
             },
             {
                 "type": "gid_t",
-                "description": null
+                "description": "egid"
             }
         ],
         "entry_point": "sys_setregid",
-        "name": "setregid"
+        "name": "setregid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "115": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "gidsetsize"
             },
             {
                 "type": "gid_t __user *",
-                "description": null
+                "description": "grouplist"
             }
         ],
         "entry_point": "sys_getgroups",
-        "name": "getgroups"
+        "name": "getgroups",
+        "return": {
+            "type": "long",
+            "description": "# of groups on success, or -1 on error"
+        }
     },
     "116": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "gidsetsize"
             },
             {
                 "type": "gid_t __user *",
-                "description": null
+                "description": "grouplist"
             }
         ],
         "entry_point": "sys_setgroups",
-        "name": "setgroups"
+        "name": "setgroups",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "117": {
         "args": [
             {
                 "type": "uid_t",
-                "description": null
+                "description": "ruid"
             },
             {
                 "type": "uid_t",
-                "description": null
+                "description": "euid"
             },
             {
                 "type": "uid_t",
-                "description": null
+                "description": "suid"
             }
         ],
         "entry_point": "sys_setresuid",
-        "name": "setresuid"
+        "name": "setresuid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "118": {
         "args": [
             {
                 "type": "uid_t __user *",
-                "description": null
+                "description": "ruidp"
             },
             {
                 "type": "uid_t __user *",
-                "description": null
+                "description": "euidp"
             },
             {
                 "type": "uid_t __user *",
-                "description": null
+                "description": "suidp"
             }
         ],
         "entry_point": "sys_getresuid",
-        "name": "getresuid"
+        "name": "getresuid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "119": {
         "args": [
             {
                 "type": "gid_t",
-                "description": null
+                "description": "rgid"
             },
             {
                 "type": "gid_t",
-                "description": null
+                "description": "egid"
             },
             {
                 "type": "gid_t",
-                "description": null
+                "description": "sgid"
             }
         ],
         "entry_point": "sys_setresgid",
-        "name": "setresgid"
+        "name": "setresgid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "120": {
         "args": [
             {
                 "type": "gid_t __user *",
-                "description": null
+                "description": "rgidp"
             },
             {
                 "type": "gid_t __user *",
-                "description": null
+                "description": "egidp"
             },
             {
                 "type": "gid_t __user *",
-                "description": null
+                "description": "sgidp"
             }
         ],
         "entry_point": "sys_getresgid",
-        "name": "getresgid"
+        "name": "getresgid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "121": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             }
         ],
         "entry_point": "sys_getpgid",
-        "name": "getpgid"
+        "name": "getpgid",
+        "return": {
+            "type": "long",
+            "description": "process group ID on success, or -1 on error"
+        }
     },
     "122": {
         "args": [
             {
                 "type": "uid_t",
-                "description": null
+                "description": "uid"
             }
         ],
         "entry_point": "sys_setfsuid",
-        "name": "setfsuid"
+        "name": "setfsuid",
+        "return": {
+            "type": "long",
+            "description": "previous filesystem user ID"
+        }
     },
     "123": {
         "args": [
             {
                 "type": "gid_t",
-                "description": null
+                "description": "gid"
             }
         ],
         "entry_point": "sys_setfsgid",
-        "name": "setfsgid"
+        "name": "setfsgid",
+        "return": {
+            "type": "long",
+            "description": "previous filesystem group ID"
+        }
     },
     "124": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             }
         ],
         "entry_point": "sys_getsid",
-        "name": "getsid"
+        "name": "getsid",
+        "return": {
+            "type": "long",
+            "description": "session ID on success, or -1 on error"
+        }
     },
     "125": {
         "args": [
             {
                 "type": "cap_user_header_t",
-                "description": null
+                "description": "header"
             },
             {
                 "type": "cap_user_data_t",
-                "description": null
+                "description": "dataptr"
             }
         ],
         "entry_point": "sys_capget",
-        "name": "capget"
+        "name": "capget",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "126": {
         "args": [
             {
                 "type": "cap_user_header_t",
-                "description": null
+                "description": "header"
             },
             {
                 "type": "const cap_user_data_t",
-                "description": null
+                "description": "data"
             }
         ],
         "entry_point": "sys_capset",
-        "name": "capset"
+        "name": "capset",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "127": {
         "args": [
             {
                 "type": "sigset_t __user *",
-                "description": null
+                "description": "uset"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "sigsetsize"
             }
         ],
         "entry_point": "sys_rt_sigpending",
-        "name": "rt_sigpending"
+        "name": "rt_sigpending",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "128": {
         "args": [
             {
                 "type": "const sigset_t __user *",
-                "description": null
+                "description": "uthese"
             },
             {
                 "type": "siginfo_t __user *",
-                "description": null
+                "description": "uinfo"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "uts"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "sigsetsize"
             }
         ],
         "entry_point": "sys_rt_sigtimedwait",
-        "name": "rt_sigtimedwait"
+        "name": "rt_sigtimedwait",
+        "return": {
+            "type": "long",
+            "description": "signal number on success, or -1 on error/timeout"
+        }
     },
     "129": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             },
             {
                 "type": "siginfo_t __user *",
-                "description": null
+                "description": "uinfo"
             }
         ],
         "entry_point": "sys_rt_sigqueueinfo",
-        "name": "rt_sigqueueinfo"
+        "name": "rt_sigqueueinfo",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "130": {
         "args": [
             {
                 "type": "sigset_t __user *",
-                "description": null
+                "description": "unewset"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "sigsetsize"
             }
         ],
         "entry_point": "sys_rt_sigsuspend",
-        "name": "rt_sigsuspend"
+        "name": "rt_sigsuspend",
+        "return": {
+            "type": "long",
+            "description": "only returns on signal, -1 with errno EINTR"
+        }
     },
     "131": {
         "args": [
             {
                 "type": "const struct sigaltstack __user *",
-                "description": null
+                "description": "uss"
             },
             {
                 "type": "struct sigaltstack __user *",
-                "description": null
+                "description": "uoss"
             }
         ],
         "entry_point": "sys_sigaltstack",
-        "name": "sigaltstack"
+        "name": "sigaltstack",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "132": {
         "args": [
@@ -2035,7 +2563,11 @@
             }
         ],
         "entry_point": "sys_utime",
-        "name": "utime"
+        "name": "utime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "133": {
         "args": [
@@ -2053,17 +2585,25 @@
             }
         ],
         "entry_point": "sys_mknod",
-        "name": "mknod"
+        "name": "mknod",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "135": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "personality"
             }
         ],
         "entry_point": "sys_personality",
-        "name": "personality"
+        "name": "personality",
+        "return": {
+            "type": "long",
+            "description": "previous personality on success, or -1 on error"
+        }
     },
     "136": {
         "args": [
@@ -2077,7 +2617,11 @@
             }
         ],
         "entry_point": "sys_ustat",
-        "name": "ustat"
+        "name": "ustat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "137": {
         "args": [
@@ -2091,7 +2635,11 @@
             }
         ],
         "entry_point": "sys_statfs",
-        "name": "statfs"
+        "name": "statfs",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "138": {
         "args": [
@@ -2105,7 +2653,11 @@
             }
         ],
         "entry_point": "sys_fstatfs",
-        "name": "fstatfs"
+        "name": "fstatfs",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "139": {
         "args": [
@@ -2123,177 +2675,237 @@
             }
         ],
         "entry_point": "sys_sysfs",
-        "name": "sysfs"
+        "name": "sysfs",
+        "return": {
+            "type": "long",
+            "description": "depends on option, or -1 on error"
+        }
     },
     "140": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "which"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "who"
             }
         ],
         "entry_point": "sys_getpriority",
-        "name": "getpriority"
+        "name": "getpriority",
+        "return": {
+            "type": "long",
+            "description": "priority on success, or -1 on error"
+        }
     },
     "141": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "which"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "who"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "niceval"
             }
         ],
         "entry_point": "sys_setpriority",
-        "name": "setpriority"
+        "name": "setpriority",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "142": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct sched_param __user *",
-                "description": null
+                "description": "param"
             }
         ],
         "entry_point": "sys_sched_setparam",
-        "name": "sched_setparam"
+        "name": "sched_setparam",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "143": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct sched_param __user *",
-                "description": null
+                "description": "param"
             }
         ],
         "entry_point": "sys_sched_getparam",
-        "name": "sched_getparam"
+        "name": "sched_getparam",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "144": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "policy"
             },
             {
                 "type": "struct sched_param __user *",
-                "description": null
+                "description": "param"
             }
         ],
         "entry_point": "sys_sched_setscheduler",
-        "name": "sched_setscheduler"
+        "name": "sched_setscheduler",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "145": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             }
         ],
         "entry_point": "sys_sched_getscheduler",
-        "name": "sched_getscheduler"
+        "name": "sched_getscheduler",
+        "return": {
+            "type": "long",
+            "description": "policy on success, or -1 on error"
+        }
     },
     "146": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "policy"
             }
         ],
         "entry_point": "sys_sched_get_priority_max",
-        "name": "sched_get_priority_max"
+        "name": "sched_get_priority_max",
+        "return": {
+            "type": "long",
+            "description": "max priority on success, or -1 on error"
+        }
     },
     "147": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "policy"
             }
         ],
         "entry_point": "sys_sched_get_priority_min",
-        "name": "sched_get_priority_min"
+        "name": "sched_get_priority_min",
+        "return": {
+            "type": "long",
+            "description": "min priority on success, or -1 on error"
+        }
     },
     "148": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "interval"
             }
         ],
         "entry_point": "sys_sched_rr_get_interval",
-        "name": "sched_rr_get_interval"
+        "name": "sched_rr_get_interval",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "149": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_mlock",
-        "name": "mlock"
+        "name": "mlock",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "150": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_munlock",
-        "name": "munlock"
+        "name": "munlock",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "151": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_mlockall",
-        "name": "mlockall"
+        "name": "mlockall",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "152": {
         "args": [],
         "entry_point": "sys_munlockall",
-        "name": "munlockall"
+        "name": "munlockall",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "153": {
         "args": [],
         "entry_point": "sys_vhangup",
-        "name": "vhangup"
+        "name": "vhangup",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "154": {
         "args": [
@@ -2311,7 +2923,11 @@
             }
         ],
         "entry_point": "sys_modify_ldt",
-        "name": "modify_ldt"
+        "name": "modify_ldt",
+        "return": {
+            "type": "long",
+            "description": "depends on func, or -1 on error"
+        }
     },
     "155": {
         "args": [
@@ -2325,38 +2941,50 @@
             }
         ],
         "entry_point": "sys_pivot_root",
-        "name": "pivot_root"
+        "name": "pivot_root",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "156": {
         "args": [],
         "entry_point": "sys_ni_syscall",
-        "name": "_sysctl"
+        "name": "_sysctl",
+        "return": {
+            "type": "long",
+            "description": "always -1 (ENOSYS)"
+        }
     },
     "157": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "option"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg2"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg3"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg4"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg5"
             }
         ],
         "entry_point": "sys_prctl",
-        "name": "prctl"
+        "name": "prctl",
+        "return": {
+            "type": "long",
+            "description": "depends on option, or -1 on error"
+        }
     },
     "158": {
         "args": [
@@ -2370,31 +2998,43 @@
             }
         ],
         "entry_point": "sys_arch_prctl",
-        "name": "arch_prctl"
+        "name": "arch_prctl",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "159": {
         "args": [
             {
                 "type": "struct __kernel_timex __user *",
-                "description": null
+                "description": "txc_p"
             }
         ],
         "entry_point": "sys_adjtimex",
-        "name": "adjtimex"
+        "name": "adjtimex",
+        "return": {
+            "type": "long",
+            "description": "clock state, or -1 on error"
+        }
     },
     "160": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "resource"
             },
             {
                 "type": "struct rlimit __user *",
-                "description": null
+                "description": "rlim"
             }
         ],
         "entry_point": "sys_setrlimit",
-        "name": "setrlimit"
+        "name": "setrlimit",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "161": {
         "args": [
@@ -2404,36 +3044,52 @@
             }
         ],
         "entry_point": "sys_chroot",
-        "name": "chroot"
+        "name": "chroot",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "162": {
         "args": [],
         "entry_point": "sys_sync",
-        "name": "sync"
+        "name": "sync",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "163": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "name"
             }
         ],
         "entry_point": "sys_acct",
-        "name": "acct"
+        "name": "acct",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "164": {
         "args": [
             {
                 "type": "struct __kernel_old_timeval __user *",
-                "description": null
+                "description": "tv"
             },
             {
                 "type": "struct timezone __user *",
-                "description": null
+                "description": "tz"
             }
         ],
         "entry_point": "sys_settimeofday",
-        "name": "settimeofday"
+        "name": "settimeofday",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "165": {
         "args": [
@@ -2459,95 +3115,123 @@
             }
         ],
         "entry_point": "sys_mount",
-        "name": "mount"
+        "name": "mount",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "166": {
         "args": [
             {
                 "type": "char __user *",
-                "description": null
+                "description": "name"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_umount",
-        "name": "umount2"
+        "name": "umount2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "167": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "specialfile"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "swap_flags"
             }
         ],
         "entry_point": "sys_swapon",
-        "name": "swapon"
+        "name": "swapon",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "168": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "specialfile"
             }
         ],
         "entry_point": "sys_swapoff",
-        "name": "swapoff"
+        "name": "swapoff",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "169": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "magic1"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "magic2"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "void __user *",
-                "description": null
+                "description": "arg"
             }
         ],
         "entry_point": "sys_reboot",
-        "name": "reboot"
+        "name": "reboot",
+        "return": {
+            "type": "long",
+            "description": "never returns on success, or -1 on error"
+        }
     },
     "170": {
         "args": [
             {
                 "type": "char __user *",
-                "description": null
+                "description": "name"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_sethostname",
-        "name": "sethostname"
+        "name": "sethostname",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "171": {
         "args": [
             {
                 "type": "char __user *",
-                "description": null
+                "description": "name"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_setdomainname",
-        "name": "setdomainname"
+        "name": "setdomainname",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "172": {
         "args": [
@@ -2557,7 +3241,11 @@
             }
         ],
         "entry_point": "sys_iopl",
-        "name": "iopl"
+        "name": "iopl",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "173": {
         "args": [
@@ -2575,39 +3263,51 @@
             }
         ],
         "entry_point": "sys_ioperm",
-        "name": "ioperm"
+        "name": "ioperm",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "175": {
         "args": [
             {
                 "type": "void __user *",
-                "description": null
+                "description": "umod"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "uargs"
             }
         ],
         "entry_point": "sys_init_module",
-        "name": "init_module"
+        "name": "init_module",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "176": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "name_user"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_delete_module",
-        "name": "delete_module"
+        "name": "delete_module",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "179": {
         "args": [
@@ -2629,12 +3329,20 @@
             }
         ],
         "entry_point": "sys_quotactl",
-        "name": "quotactl"
+        "name": "quotactl",
+        "return": {
+            "type": "long",
+            "description": "depends on cmd, or -1 on error"
+        }
     },
     "186": {
         "args": [],
         "entry_point": "sys_gettid",
-        "name": "gettid"
+        "name": "gettid",
+        "return": {
+            "type": "long",
+            "description": "thread ID of calling process"
+        }
     },
     "187": {
         "args": [
@@ -2656,7 +3364,11 @@
             }
         ],
         "entry_point": "sys_readahead",
-        "name": "readahead"
+        "name": "readahead",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "188": {
         "args": [
@@ -2682,7 +3394,11 @@
             }
         ],
         "entry_point": "sys_setxattr",
-        "name": "setxattr"
+        "name": "setxattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "189": {
         "args": [
@@ -2708,7 +3424,11 @@
             }
         ],
         "entry_point": "sys_lsetxattr",
-        "name": "lsetxattr"
+        "name": "lsetxattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "190": {
         "args": [
@@ -2734,7 +3454,11 @@
             }
         ],
         "entry_point": "sys_fsetxattr",
-        "name": "fsetxattr"
+        "name": "fsetxattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "191": {
         "args": [
@@ -2756,7 +3480,11 @@
             }
         ],
         "entry_point": "sys_getxattr",
-        "name": "getxattr"
+        "name": "getxattr",
+        "return": {
+            "type": "long",
+            "description": "size of value on success, or -1 on error"
+        }
     },
     "192": {
         "args": [
@@ -2778,7 +3506,11 @@
             }
         ],
         "entry_point": "sys_lgetxattr",
-        "name": "lgetxattr"
+        "name": "lgetxattr",
+        "return": {
+            "type": "long",
+            "description": "size of value on success, or -1 on error"
+        }
     },
     "193": {
         "args": [
@@ -2800,7 +3532,11 @@
             }
         ],
         "entry_point": "sys_fgetxattr",
-        "name": "fgetxattr"
+        "name": "fgetxattr",
+        "return": {
+            "type": "long",
+            "description": "size of value on success, or -1 on error"
+        }
     },
     "194": {
         "args": [
@@ -2818,7 +3554,11 @@
             }
         ],
         "entry_point": "sys_listxattr",
-        "name": "listxattr"
+        "name": "listxattr",
+        "return": {
+            "type": "long",
+            "description": "size of list on success, or -1 on error"
+        }
     },
     "195": {
         "args": [
@@ -2836,7 +3576,11 @@
             }
         ],
         "entry_point": "sys_llistxattr",
-        "name": "llistxattr"
+        "name": "llistxattr",
+        "return": {
+            "type": "long",
+            "description": "size of list on success, or -1 on error"
+        }
     },
     "196": {
         "args": [
@@ -2854,7 +3598,11 @@
             }
         ],
         "entry_point": "sys_flistxattr",
-        "name": "flistxattr"
+        "name": "flistxattr",
+        "return": {
+            "type": "long",
+            "description": "size of list on success, or -1 on error"
+        }
     },
     "197": {
         "args": [
@@ -2868,7 +3616,11 @@
             }
         ],
         "entry_point": "sys_removexattr",
-        "name": "removexattr"
+        "name": "removexattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "198": {
         "args": [
@@ -2882,7 +3634,11 @@
             }
         ],
         "entry_point": "sys_lremovexattr",
-        "name": "lremovexattr"
+        "name": "lremovexattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "199": {
         "args": [
@@ -2896,97 +3652,121 @@
             }
         ],
         "entry_point": "sys_fremovexattr",
-        "name": "fremovexattr"
+        "name": "fremovexattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "200": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             }
         ],
         "entry_point": "sys_tkill",
-        "name": "tkill"
+        "name": "tkill",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "201": {
         "args": [
             {
                 "type": "__kernel_old_time_t __user *",
-                "description": null
+                "description": "tloc"
             }
         ],
         "entry_point": "sys_time",
-        "name": "time"
+        "name": "time",
+        "return": {
+            "type": "long",
+            "description": "seconds since Epoch, or -1 on error"
+        }
     },
     "202": {
         "args": [
             {
                 "type": "u32 __user *",
-                "description": null
+                "description": "uaddr"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "op"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "val"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "utime"
             },
             {
                 "type": "u32 __user *",
-                "description": null
+                "description": "uaddr2"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "val3"
             }
         ],
         "entry_point": "sys_futex",
-        "name": "futex"
+        "name": "futex",
+        "return": {
+            "type": "long",
+            "description": "depends on op, or -1 on error"
+        }
     },
     "203": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long __user *",
-                "description": null
+                "description": "user_mask_ptr"
             }
         ],
         "entry_point": "sys_sched_setaffinity",
-        "name": "sched_setaffinity"
+        "name": "sched_setaffinity",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "204": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long __user *",
-                "description": null
+                "description": "user_mask_ptr"
             }
         ],
         "entry_point": "sys_sched_getaffinity",
-        "name": "sched_getaffinity"
+        "name": "sched_getaffinity",
+        "return": {
+            "type": "long",
+            "description": "size of mask in bytes, or -1 on error"
+        }
     },
     "206": {
         "args": [
@@ -3000,7 +3780,11 @@
             }
         ],
         "entry_point": "sys_io_setup",
-        "name": "io_setup"
+        "name": "io_setup",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "207": {
         "args": [
@@ -3010,7 +3794,11 @@
             }
         ],
         "entry_point": "sys_io_destroy",
-        "name": "io_destroy"
+        "name": "io_destroy",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "208": {
         "args": [
@@ -3036,7 +3824,11 @@
             }
         ],
         "entry_point": "sys_io_getevents",
-        "name": "io_getevents"
+        "name": "io_getevents",
+        "return": {
+            "type": "long",
+            "description": "# of events read, or -1 on error"
+        }
     },
     "209": {
         "args": [
@@ -3054,7 +3846,11 @@
             }
         ],
         "entry_point": "sys_io_submit",
-        "name": "io_submit"
+        "name": "io_submit",
+        "return": {
+            "type": "long",
+            "description": "# of iocbs submitted, or -1 on error"
+        }
     },
     "210": {
         "args": [
@@ -3072,7 +3868,11 @@
             }
         ],
         "entry_point": "sys_io_cancel",
-        "name": "io_cancel"
+        "name": "io_cancel",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "213": {
         "args": [
@@ -3082,33 +3882,41 @@
             }
         ],
         "entry_point": "sys_epoll_create",
-        "name": "epoll_create"
+        "name": "epoll_create",
+        "return": {
+            "type": "long",
+            "description": "epoll file descriptor, or -1 on error"
+        }
     },
     "216": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "prot"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "pgoff"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_remap_file_pages",
-        "name": "remap_file_pages"
+        "name": "remap_file_pages",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "217": {
         "args": [
@@ -3126,44 +3934,60 @@
             }
         ],
         "entry_point": "sys_getdents64",
-        "name": "getdents64"
+        "name": "getdents64",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on end, or -1 on error"
+        }
     },
     "218": {
         "args": [
             {
                 "type": "int __user *",
-                "description": null
+                "description": "tidptr"
             }
         ],
         "entry_point": "sys_set_tid_address",
-        "name": "set_tid_address"
+        "name": "set_tid_address",
+        "return": {
+            "type": "long",
+            "description": "caller's thread ID"
+        }
     },
     "219": {
         "args": [],
         "entry_point": "sys_restart_syscall",
-        "name": "restart_syscall"
+        "name": "restart_syscall",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "220": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "semid"
             },
             {
                 "type": "struct sembuf __user *",
-                "description": null
+                "description": "tsops"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "nsops"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "timeout"
             }
         ],
         "entry_point": "sys_semtimedop",
-        "name": "semtimedop"
+        "name": "semtimedop",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "221": {
         "args": [
@@ -3189,155 +4013,199 @@
             }
         ],
         "entry_point": "sys_fadvise64",
-        "name": "fadvise64"
+        "name": "fadvise64",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "222": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "struct sigevent __user *",
-                "description": null
+                "description": "timer_event_spec"
             },
             {
                 "type": "timer_t __user *",
-                "description": null
+                "description": "created_timer_id"
             }
         ],
         "entry_point": "sys_timer_create",
-        "name": "timer_create"
+        "name": "timer_create",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "223": {
         "args": [
             {
                 "type": "timer_t",
-                "description": null
+                "description": "timer_id"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "const struct __kernel_itimerspec __user *",
-                "description": null
+                "description": "new_setting"
             },
             {
                 "type": "struct __kernel_itimerspec __user *",
-                "description": null
+                "description": "old_setting"
             }
         ],
         "entry_point": "sys_timer_settime",
-        "name": "timer_settime"
+        "name": "timer_settime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "224": {
         "args": [
             {
                 "type": "timer_t",
-                "description": null
+                "description": "timer_id"
             },
             {
                 "type": "struct __kernel_itimerspec __user *",
-                "description": null
+                "description": "setting"
             }
         ],
         "entry_point": "sys_timer_gettime",
-        "name": "timer_gettime"
+        "name": "timer_gettime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "225": {
         "args": [
             {
                 "type": "timer_t",
-                "description": null
+                "description": "timer_id"
             }
         ],
         "entry_point": "sys_timer_getoverrun",
-        "name": "timer_getoverrun"
+        "name": "timer_getoverrun",
+        "return": {
+            "type": "long",
+            "description": "overrun count on success, or -1 on error"
+        }
     },
     "226": {
         "args": [
             {
                 "type": "timer_t",
-                "description": null
+                "description": "timer_id"
             }
         ],
         "entry_point": "sys_timer_delete",
-        "name": "timer_delete"
+        "name": "timer_delete",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "227": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "tp"
             }
         ],
         "entry_point": "sys_clock_settime",
-        "name": "clock_settime"
+        "name": "clock_settime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "228": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "tp"
             }
         ],
         "entry_point": "sys_clock_gettime",
-        "name": "clock_gettime"
+        "name": "clock_gettime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "229": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "tp"
             }
         ],
         "entry_point": "sys_clock_getres",
-        "name": "clock_getres"
+        "name": "clock_getres",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "230": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "rqtp"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "rmtp"
             }
         ],
         "entry_point": "sys_clock_nanosleep",
-        "name": "clock_nanosleep"
+        "name": "clock_nanosleep",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or error number on failure"
+        }
     },
     "231": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "error_code"
             }
         ],
         "entry_point": "sys_exit_group",
-        "name": "exit_group"
+        "name": "exit_group",
+        "return": {
+            "type": "long",
+            "description": "never returns"
+        }
     },
     "232": {
         "args": [
@@ -3359,7 +4227,11 @@
             }
         ],
         "entry_point": "sys_epoll_wait",
-        "name": "epoll_wait"
+        "name": "epoll_wait",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "233": {
         "args": [
@@ -3381,25 +4253,33 @@
             }
         ],
         "entry_point": "sys_epoll_ctl",
-        "name": "epoll_ctl"
+        "name": "epoll_ctl",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "234": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "tgid"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             }
         ],
         "entry_point": "sys_tgkill",
-        "name": "tgkill"
+        "name": "tgkill",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "235": {
         "args": [
@@ -3413,319 +4293,379 @@
             }
         ],
         "entry_point": "sys_utimes",
-        "name": "utimes"
+        "name": "utimes",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "237": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "mode"
             },
             {
                 "type": "const unsigned long __user *",
-                "description": null
+                "description": "nmask"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "maxnode"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_mbind",
-        "name": "mbind"
+        "name": "mbind",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "238": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "mode"
             },
             {
                 "type": "const unsigned long __user *",
-                "description": null
+                "description": "nmask"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "maxnode"
             }
         ],
         "entry_point": "sys_set_mempolicy",
-        "name": "set_mempolicy"
+        "name": "set_mempolicy",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "239": {
         "args": [
             {
                 "type": "int __user *",
-                "description": null
+                "description": "policy"
             },
             {
                 "type": "unsigned long __user *",
-                "description": null
+                "description": "nmask"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "maxnode"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "addr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_get_mempolicy",
-        "name": "get_mempolicy"
+        "name": "get_mempolicy",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "240": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "u_name"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "oflag"
             },
             {
                 "type": "umode_t",
-                "description": null
+                "description": "mode"
             },
             {
                 "type": "struct mq_attr __user *",
-                "description": null
+                "description": "u_attr"
             }
         ],
         "entry_point": "sys_mq_open",
-        "name": "mq_open"
+        "name": "mq_open",
+        "return": {
+            "type": "long",
+            "description": "message queue descriptor, or -1 on error"
+        }
     },
     "241": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "u_name"
             }
         ],
         "entry_point": "sys_mq_unlink",
-        "name": "mq_unlink"
+        "name": "mq_unlink",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "242": {
         "args": [
             {
                 "type": "mqd_t",
-                "description": null
+                "description": "mqdes"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "u_msg_ptr"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "msg_len"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "msg_prio"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "u_abs_timeout"
             }
         ],
         "entry_point": "sys_mq_timedsend",
-        "name": "mq_timedsend"
+        "name": "mq_timedsend",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "243": {
         "args": [
             {
                 "type": "mqd_t",
-                "description": null
+                "description": "mqdes"
             },
             {
                 "type": "char __user *",
-                "description": null
+                "description": "u_msg_ptr"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "msg_len"
             },
             {
                 "type": "unsigned int __user *",
-                "description": null
+                "description": "u_msg_prio"
             },
             {
                 "type": "const struct __kernel_timespec __user *",
-                "description": null
+                "description": "u_abs_timeout"
             }
         ],
         "entry_point": "sys_mq_timedreceive",
-        "name": "mq_timedreceive"
+        "name": "mq_timedreceive",
+        "return": {
+            "type": "long",
+            "description": "bytes in received message, or -1 on error"
+        }
     },
     "244": {
         "args": [
             {
                 "type": "mqd_t",
-                "description": null
+                "description": "mqdes"
             },
             {
                 "type": "const struct sigevent __user *",
-                "description": null
+                "description": "u_notification"
             }
         ],
         "entry_point": "sys_mq_notify",
-        "name": "mq_notify"
+        "name": "mq_notify",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "245": {
         "args": [
             {
                 "type": "mqd_t",
-                "description": null
+                "description": "mqdes"
             },
             {
                 "type": "const struct mq_attr __user *",
-                "description": null
+                "description": "u_mqstat"
             },
             {
                 "type": "struct mq_attr __user *",
-                "description": null
+                "description": "u_omqstat"
             }
         ],
         "entry_point": "sys_mq_getsetattr",
-        "name": "mq_getsetattr"
+        "name": "mq_getsetattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "246": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "entry"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "nr_segments"
             },
             {
                 "type": "struct kexec_segment __user *",
-                "description": null
+                "description": "segments"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_kexec_load",
-        "name": "kexec_load"
+        "name": "kexec_load",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "247": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "which"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "upid"
             },
             {
                 "type": "struct siginfo __user *",
-                "description": null
+                "description": "infop"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "options"
             },
             {
                 "type": "struct rusage __user *",
-                "description": null
+                "description": "ru"
             }
         ],
         "entry_point": "sys_waitid",
-        "name": "waitid"
+        "name": "waitid",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "248": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "_type"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "_description"
             },
             {
                 "type": "const void __user *",
-                "description": null
+                "description": "_payload"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "plen"
             },
             {
                 "type": "key_serial_t",
-                "description": null
+                "description": "ringid"
             }
         ],
         "entry_point": "sys_add_key",
-        "name": "add_key"
+        "name": "add_key",
+        "return": {
+            "type": "long",
+            "description": "key ID on success, or -1 on error"
+        }
     },
     "249": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "_type"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "_description"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "_callout_info"
             },
             {
                 "type": "key_serial_t",
-                "description": null
+                "description": "destringid"
             }
         ],
         "entry_point": "sys_request_key",
-        "name": "request_key"
+        "name": "request_key",
+        "return": {
+            "type": "long",
+            "description": "key ID on success, or -1 on error"
+        }
     },
     "250": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "option"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg2"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg3"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg4"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "arg5"
             }
         ],
         "entry_point": "sys_keyctl",
-        "name": "keyctl"
+        "name": "keyctl",
+        "return": {
+            "type": "long",
+            "description": "depends on option, or -1 on error"
+        }
     },
     "251": {
         "args": [
@@ -3743,7 +4683,11 @@
             }
         ],
         "entry_point": "sys_ioprio_set",
-        "name": "ioprio_set"
+        "name": "ioprio_set",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "252": {
         "args": [
@@ -3757,12 +4701,20 @@
             }
         ],
         "entry_point": "sys_ioprio_get",
-        "name": "ioprio_get"
+        "name": "ioprio_get",
+        "return": {
+            "type": "long",
+            "description": "I/O priority on success, or -1 on error"
+        }
     },
     "253": {
         "args": [],
         "entry_point": "sys_inotify_init",
-        "name": "inotify_init"
+        "name": "inotify_init",
+        "return": {
+            "type": "long",
+            "description": "inotify fd on success, or -1 on error"
+        }
     },
     "254": {
         "args": [
@@ -3780,7 +4732,11 @@
             }
         ],
         "entry_point": "sys_inotify_add_watch",
-        "name": "inotify_add_watch"
+        "name": "inotify_add_watch",
+        "return": {
+            "type": "long",
+            "description": "watch descriptor on success, or -1 on error"
+        }
     },
     "255": {
         "args": [
@@ -3794,29 +4750,37 @@
             }
         ],
         "entry_point": "sys_inotify_rm_watch",
-        "name": "inotify_rm_watch"
+        "name": "inotify_rm_watch",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "256": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "maxnode"
             },
             {
                 "type": "const unsigned long __user *",
-                "description": null
+                "description": "old_nodes"
             },
             {
                 "type": "const unsigned long __user *",
-                "description": null
+                "description": "new_nodes"
             }
         ],
         "entry_point": "sys_migrate_pages",
-        "name": "migrate_pages"
+        "name": "migrate_pages",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "257": {
         "args": [
@@ -3838,7 +4802,11 @@
             }
         ],
         "entry_point": "sys_openat",
-        "name": "openat"
+        "name": "openat",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "258": {
         "args": [
@@ -3856,7 +4824,11 @@
             }
         ],
         "entry_point": "sys_mkdirat",
-        "name": "mkdirat"
+        "name": "mkdirat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "259": {
         "args": [
@@ -3878,7 +4850,11 @@
             }
         ],
         "entry_point": "sys_mknodat",
-        "name": "mknodat"
+        "name": "mknodat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "260": {
         "args": [
@@ -3904,7 +4880,11 @@
             }
         ],
         "entry_point": "sys_fchownat",
-        "name": "fchownat"
+        "name": "fchownat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "261": {
         "args": [
@@ -3922,7 +4902,11 @@
             }
         ],
         "entry_point": "sys_futimesat",
-        "name": "futimesat"
+        "name": "futimesat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "262": {
         "args": [
@@ -3944,7 +4928,11 @@
             }
         ],
         "entry_point": "sys_newfstatat",
-        "name": "newfstatat"
+        "name": "newfstatat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "263": {
         "args": [
@@ -3962,7 +4950,11 @@
             }
         ],
         "entry_point": "sys_unlinkat",
-        "name": "unlinkat"
+        "name": "unlinkat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "264": {
         "args": [
@@ -3984,7 +4976,11 @@
             }
         ],
         "entry_point": "sys_renameat",
-        "name": "renameat"
+        "name": "renameat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "265": {
         "args": [
@@ -4010,7 +5006,11 @@
             }
         ],
         "entry_point": "sys_linkat",
-        "name": "linkat"
+        "name": "linkat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "266": {
         "args": [
@@ -4028,7 +5028,11 @@
             }
         ],
         "entry_point": "sys_symlinkat",
-        "name": "symlinkat"
+        "name": "symlinkat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "267": {
         "args": [
@@ -4050,7 +5054,11 @@
             }
         ],
         "entry_point": "sys_readlinkat",
-        "name": "readlinkat"
+        "name": "readlinkat",
+        "return": {
+            "type": "long",
+            "description": "bytes placed in buf, or -1 on error"
+        }
     },
     "268": {
         "args": [
@@ -4068,7 +5076,11 @@
             }
         ],
         "entry_point": "sys_fchmodat",
-        "name": "fchmodat"
+        "name": "fchmodat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "269": {
         "args": [
@@ -4086,7 +5098,11 @@
             }
         ],
         "entry_point": "sys_faccessat",
-        "name": "faccessat"
+        "name": "faccessat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "270": {
         "args": [
@@ -4116,7 +5132,11 @@
             }
         ],
         "entry_point": "sys_pselect6",
-        "name": "pselect6"
+        "name": "pselect6",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "271": {
         "args": [
@@ -4142,49 +5162,65 @@
             }
         ],
         "entry_point": "sys_ppoll",
-        "name": "ppoll"
+        "name": "ppoll",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "272": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "unshare_flags"
             }
         ],
         "entry_point": "sys_unshare",
-        "name": "unshare"
+        "name": "unshare",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "273": {
         "args": [
             {
                 "type": "struct robust_list_head __user *",
-                "description": null
+                "description": "head"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             }
         ],
         "entry_point": "sys_set_robust_list",
-        "name": "set_robust_list"
+        "name": "set_robust_list",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "274": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct robust_list_head __user * __user *",
-                "description": null
+                "description": "head_ptr"
             },
             {
                 "type": "size_t __user *",
-                "description": null
+                "description": "len_ptr"
             }
         ],
         "entry_point": "sys_get_robust_list",
-        "name": "get_robust_list"
+        "name": "get_robust_list",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "275": {
         "args": [
@@ -4214,7 +5250,11 @@
             }
         ],
         "entry_point": "sys_splice",
-        "name": "splice"
+        "name": "splice",
+        "return": {
+            "type": "long",
+            "description": "bytes spliced, or -1 on error"
+        }
     },
     "276": {
         "args": [
@@ -4236,7 +5276,11 @@
             }
         ],
         "entry_point": "sys_tee",
-        "name": "tee"
+        "name": "tee",
+        "return": {
+            "type": "long",
+            "description": "bytes teed, or -1 on error"
+        }
     },
     "277": {
         "args": [
@@ -4266,7 +5310,11 @@
             }
         ],
         "entry_point": "sys_sync_file_range",
-        "name": "sync_file_range"
+        "name": "sync_file_range",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "278": {
         "args": [
@@ -4288,37 +5336,45 @@
             }
         ],
         "entry_point": "sys_vmsplice",
-        "name": "vmsplice"
+        "name": "vmsplice",
+        "return": {
+            "type": "long",
+            "description": "bytes spliced, or -1 on error"
+        }
     },
     "279": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "nr_pages"
             },
             {
                 "type": "const void __user * __user *",
-                "description": null
+                "description": "pages"
             },
             {
                 "type": "const int __user *",
-                "description": null
+                "description": "nodes"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "status"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_move_pages",
-        "name": "move_pages"
+        "name": "move_pages",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "280": {
         "args": [
@@ -4340,7 +5396,11 @@
             }
         ],
         "entry_point": "sys_utimensat",
-        "name": "utimensat"
+        "name": "utimensat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "281": {
         "args": [
@@ -4370,7 +5430,11 @@
             }
         ],
         "entry_point": "sys_epoll_pwait",
-        "name": "epoll_pwait"
+        "name": "epoll_pwait",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "282": {
         "args": [
@@ -4388,7 +5452,11 @@
             }
         ],
         "entry_point": "sys_signalfd",
-        "name": "signalfd"
+        "name": "signalfd",
+        "return": {
+            "type": "long",
+            "description": "signalfd on success, or -1 on error"
+        }
     },
     "283": {
         "args": [
@@ -4402,7 +5470,11 @@
             }
         ],
         "entry_point": "sys_timerfd_create",
-        "name": "timerfd_create"
+        "name": "timerfd_create",
+        "return": {
+            "type": "long",
+            "description": "timerfd on success, or -1 on error"
+        }
     },
     "284": {
         "args": [
@@ -4412,7 +5484,11 @@
             }
         ],
         "entry_point": "sys_eventfd",
-        "name": "eventfd"
+        "name": "eventfd",
+        "return": {
+            "type": "long",
+            "description": "eventfd on success, or -1 on error"
+        }
     },
     "285": {
         "args": [
@@ -4442,7 +5518,11 @@
             }
         ],
         "entry_point": "sys_fallocate",
-        "name": "fallocate"
+        "name": "fallocate",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "286": {
         "args": [
@@ -4464,7 +5544,11 @@
             }
         ],
         "entry_point": "sys_timerfd_settime",
-        "name": "timerfd_settime"
+        "name": "timerfd_settime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "287": {
         "args": [
@@ -4478,29 +5562,37 @@
             }
         ],
         "entry_point": "sys_timerfd_gettime",
-        "name": "timerfd_gettime"
+        "name": "timerfd_gettime",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "288": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct sockaddr __user *",
-                "description": null
+                "description": "upeer_sockaddr"
             },
             {
                 "type": "int __user *",
-                "description": null
+                "description": "upeer_addrlen"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_accept4",
-        "name": "accept4"
+        "name": "accept4",
+        "return": {
+            "type": "long",
+            "description": "fd for accepted socket, or -1 on error"
+        }
     },
     "289": {
         "args": [
@@ -4522,7 +5614,11 @@
             }
         ],
         "entry_point": "sys_signalfd4",
-        "name": "signalfd4"
+        "name": "signalfd4",
+        "return": {
+            "type": "long",
+            "description": "signalfd on success, or -1 on error"
+        }
     },
     "290": {
         "args": [
@@ -4536,7 +5632,11 @@
             }
         ],
         "entry_point": "sys_eventfd2",
-        "name": "eventfd2"
+        "name": "eventfd2",
+        "return": {
+            "type": "long",
+            "description": "eventfd on success, or -1 on error"
+        }
     },
     "291": {
         "args": [
@@ -4546,7 +5646,11 @@
             }
         ],
         "entry_point": "sys_epoll_create1",
-        "name": "epoll_create1"
+        "name": "epoll_create1",
+        "return": {
+            "type": "long",
+            "description": "epoll file descriptor, or -1 on error"
+        }
     },
     "292": {
         "args": [
@@ -4564,7 +5668,11 @@
             }
         ],
         "entry_point": "sys_dup3",
-        "name": "dup3"
+        "name": "dup3",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "293": {
         "args": [
@@ -4578,7 +5686,11 @@
             }
         ],
         "entry_point": "sys_pipe2",
-        "name": "pipe2"
+        "name": "pipe2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "294": {
         "args": [
@@ -4588,7 +5700,11 @@
             }
         ],
         "entry_point": "sys_inotify_init1",
-        "name": "inotify_init1"
+        "name": "inotify_init1",
+        "return": {
+            "type": "long",
+            "description": "inotify fd on success, or -1 on error"
+        }
     },
     "295": {
         "args": [
@@ -4614,7 +5730,11 @@
             }
         ],
         "entry_point": "sys_preadv",
-        "name": "preadv"
+        "name": "preadv",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
     },
     "296": {
         "args": [
@@ -4640,81 +5760,97 @@
             }
         ],
         "entry_point": "sys_pwritev",
-        "name": "pwritev"
+        "name": "pwritev",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "297": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "tgid"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             },
             {
                 "type": "siginfo_t __user *",
-                "description": null
+                "description": "uinfo"
             }
         ],
         "entry_point": "sys_rt_tgsigqueueinfo",
-        "name": "rt_tgsigqueueinfo"
+        "name": "rt_tgsigqueueinfo",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "298": {
         "args": [
             {
                 "type": "struct perf_event_attr __user *",
-                "description": null
+                "description": "attr_uptr"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "cpu"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "group_fd"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_perf_event_open",
-        "name": "perf_event_open"
+        "name": "perf_event_open",
+        "return": {
+            "type": "long",
+            "description": "file descriptor for perf event, or -1 on error"
+        }
     },
     "299": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct mmsghdr __user *",
-                "description": null
+                "description": "mmsg"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "vlen"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "timeout"
             }
         ],
         "entry_point": "sys_recvmmsg",
-        "name": "recvmmsg"
+        "name": "recvmmsg",
+        "return": {
+            "type": "long",
+            "description": "# of messages received, or -1 on error"
+        }
     },
     "300": {
         "args": [
@@ -4728,7 +5864,11 @@
             }
         ],
         "entry_point": "sys_fanotify_init",
-        "name": "fanotify_init"
+        "name": "fanotify_init",
+        "return": {
+            "type": "long",
+            "description": "fanotify fd on success, or -1 on error"
+        }
     },
     "301": {
         "args": [
@@ -4754,29 +5894,37 @@
             }
         ],
         "entry_point": "sys_fanotify_mark",
-        "name": "fanotify_mark"
+        "name": "fanotify_mark",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "302": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "resource"
             },
             {
                 "type": "const struct rlimit64 __user *",
-                "description": null
+                "description": "new_rlim"
             },
             {
                 "type": "struct rlimit64 __user *",
-                "description": null
+                "description": "old_rlim"
             }
         ],
         "entry_point": "sys_prlimit64",
-        "name": "prlimit64"
+        "name": "prlimit64",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "303": {
         "args": [
@@ -4802,7 +5950,11 @@
             }
         ],
         "entry_point": "sys_name_to_handle_at",
-        "name": "name_to_handle_at"
+        "name": "name_to_handle_at",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "304": {
         "args": [
@@ -4820,21 +5972,29 @@
             }
         ],
         "entry_point": "sys_open_by_handle_at",
-        "name": "open_by_handle_at"
+        "name": "open_by_handle_at",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     },
     "305": {
         "args": [
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "which_clock"
             },
             {
                 "type": "struct __kernel_timex __user *",
-                "description": null
+                "description": "utx"
             }
         ],
         "entry_point": "sys_clock_adjtime",
-        "name": "clock_adjtime"
+        "name": "clock_adjtime",
+        "return": {
+            "type": "long",
+            "description": "clock state, or -1 on error"
+        }
     },
     "306": {
         "args": [
@@ -4844,205 +6004,245 @@
             }
         ],
         "entry_point": "sys_syncfs",
-        "name": "syncfs"
+        "name": "syncfs",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "307": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct mmsghdr __user *",
-                "description": null
+                "description": "mmsg"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "vlen"
             },
             {
                 "type": "unsigned",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_sendmmsg",
-        "name": "sendmmsg"
+        "name": "sendmmsg",
+        "return": {
+            "type": "long",
+            "description": "# of messages sent, or -1 on error"
+        }
     },
     "308": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_setns",
-        "name": "setns"
+        "name": "setns",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "309": {
         "args": [
             {
                 "type": "unsigned __user *",
-                "description": null
+                "description": "cpup"
             },
             {
                 "type": "unsigned __user *",
-                "description": null
+                "description": "nodep"
             },
             {
                 "type": "struct getcpu_cache __user *",
-                "description": null
+                "description": "unused"
             }
         ],
         "entry_point": "sys_getcpu",
-        "name": "getcpu"
+        "name": "getcpu",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "310": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "const struct iovec __user *",
-                "description": null
+                "description": "lvec"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "liovcnt"
             },
             {
                 "type": "const struct iovec __user *",
-                "description": null
+                "description": "rvec"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "riovcnt"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_process_vm_readv",
-        "name": "process_vm_readv"
+        "name": "process_vm_readv",
+        "return": {
+            "type": "long",
+            "description": "bytes read, or -1 on error"
+        }
     },
     "311": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "const struct iovec __user *",
-                "description": null
+                "description": "lvec"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "liovcnt"
             },
             {
                 "type": "const struct iovec __user *",
-                "description": null
+                "description": "rvec"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "riovcnt"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_process_vm_writev",
-        "name": "process_vm_writev"
+        "name": "process_vm_writev",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "312": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid1"
             },
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid2"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "type"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "idx1"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "idx2"
             }
         ],
         "entry_point": "sys_kcmp",
-        "name": "kcmp"
+        "name": "kcmp",
+        "return": {
+            "type": "long",
+            "description": "comparison result (0, 1, 2, 3), or -1 on error"
+        }
     },
     "313": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "uargs"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_finit_module",
-        "name": "finit_module"
+        "name": "finit_module",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "314": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct sched_attr __user *",
-                "description": null
+                "description": "uattr"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_sched_setattr",
-        "name": "sched_setattr"
+        "name": "sched_setattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "315": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "struct sched_attr __user *",
-                "description": null
+                "description": "uattr"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "usize"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_sched_getattr",
-        "name": "sched_getattr"
+        "name": "sched_getattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "316": {
         "args": [
@@ -5068,25 +6268,33 @@
             }
         ],
         "entry_point": "sys_renameat2",
-        "name": "renameat2"
+        "name": "renameat2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "317": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "op"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "void __user *",
-                "description": null
+                "description": "uargs"
             }
         ],
         "entry_point": "sys_seccomp",
-        "name": "seccomp"
+        "name": "seccomp",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "318": {
         "args": [
@@ -5104,65 +6312,81 @@
             }
         ],
         "entry_point": "sys_getrandom",
-        "name": "getrandom"
+        "name": "getrandom",
+        "return": {
+            "type": "long",
+            "description": "bytes copied to buf, or -1 on error"
+        }
     },
     "319": {
         "args": [
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "uname"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_memfd_create",
-        "name": "memfd_create"
+        "name": "memfd_create",
+        "return": {
+            "type": "long",
+            "description": "memfd on success, or -1 on error"
+        }
     },
     "320": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "kernel_fd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "initrd_fd"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "cmdline_len"
             },
             {
                 "type": "const char __user *",
-                "description": null
+                "description": "cmdline_ptr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_kexec_file_load",
-        "name": "kexec_file_load"
+        "name": "kexec_file_load",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "321": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "union bpf_attr __user *",
-                "description": null
+                "description": "uattr"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "size"
             }
         ],
         "entry_point": "sys_bpf",
-        "name": "bpf"
+        "name": "bpf",
+        "return": {
+            "type": "long",
+            "description": "depends on cmd, or -1 on error"
+        }
     },
     "322": {
         "args": [
@@ -5188,7 +6412,11 @@
             }
         ],
         "entry_point": "sys_execveat",
-        "name": "execveat"
+        "name": "execveat",
+        "return": {
+            "type": "long",
+            "description": "never returns on success, or -1 on error"
+        }
     },
     "323": {
         "args": [
@@ -5198,43 +6426,55 @@
             }
         ],
         "entry_point": "sys_userfaultfd",
-        "name": "userfaultfd"
+        "name": "userfaultfd",
+        "return": {
+            "type": "long",
+            "description": "userfaultfd on success, or -1 on error"
+        }
     },
     "324": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "cmd"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "cpu_id"
             }
         ],
         "entry_point": "sys_membarrier",
-        "name": "membarrier"
+        "name": "membarrier",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "325": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_mlock2",
-        "name": "mlock2"
+        "name": "mlock2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "326": {
         "args": [
@@ -5264,7 +6504,11 @@
             }
         ],
         "entry_point": "sys_copy_file_range",
-        "name": "copy_file_range"
+        "name": "copy_file_range",
+        "return": {
+            "type": "long",
+            "description": "bytes copied, or -1 on error"
+        }
     },
     "327": {
         "args": [
@@ -5294,7 +6538,11 @@
             }
         ],
         "entry_point": "sys_preadv2",
-        "name": "preadv2"
+        "name": "preadv2",
+        "return": {
+            "type": "long",
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
     },
     "328": {
         "args": [
@@ -5324,53 +6572,69 @@
             }
         ],
         "entry_point": "sys_pwritev2",
-        "name": "pwritev2"
+        "name": "pwritev2",
+        "return": {
+            "type": "long",
+            "description": "bytes written, or -1 on error"
+        }
     },
     "329": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "prot"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "pkey"
             }
         ],
         "entry_point": "sys_pkey_mprotect",
-        "name": "pkey_mprotect"
+        "name": "pkey_mprotect",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "330": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "init_val"
             }
         ],
         "entry_point": "sys_pkey_alloc",
-        "name": "pkey_alloc"
+        "name": "pkey_alloc",
+        "return": {
+            "type": "long",
+            "description": "protection key on success, or -1 on error"
+        }
     },
     "331": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pkey"
             }
         ],
         "entry_point": "sys_pkey_free",
-        "name": "pkey_free"
+        "name": "pkey_free",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "332": {
         "args": [
@@ -5396,7 +6660,11 @@
             }
         ],
         "entry_point": "sys_statx",
-        "name": "statx"
+        "name": "statx",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "333": {
         "args": [
@@ -5426,122 +6694,150 @@
             }
         ],
         "entry_point": "sys_io_pgetevents",
-        "name": "io_pgetevents"
+        "name": "io_pgetevents",
+        "return": {
+            "type": "long",
+            "description": "# of events read, or -1 on error"
+        }
     },
     "334": {
         "args": [
             {
                 "type": "struct rseq __user *",
-                "description": null
+                "description": "rseq"
             },
             {
                 "type": "uint32_t",
-                "description": null
+                "description": "rseq_len"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "uint32_t",
-                "description": null
+                "description": "sig"
             }
         ],
         "entry_point": "sys_rseq",
-        "name": "rseq"
+        "name": "rseq",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "335": {
         "args": [],
         "entry_point": "sys_uretprobe",
-        "name": "uretprobe"
+        "name": "uretprobe",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "424": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pidfd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "sig"
             },
             {
                 "type": "siginfo_t __user *",
-                "description": null
+                "description": "info"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_pidfd_send_signal",
-        "name": "pidfd_send_signal"
+        "name": "pidfd_send_signal",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "425": {
         "args": [
             {
                 "type": "u32",
-                "description": null
+                "description": "entries"
             },
             {
                 "type": "struct io_uring_params __user *",
-                "description": null
+                "description": "params"
             }
         ],
         "entry_point": "sys_io_uring_setup",
-        "name": "io_uring_setup"
+        "name": "io_uring_setup",
+        "return": {
+            "type": "long",
+            "description": "io_uring fd on success, or -1 on error"
+        }
     },
     "426": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "to_submit"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "min_complete"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "const void __user *",
-                "description": null
+                "description": "argp"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "argsz"
             }
         ],
         "entry_point": "sys_io_uring_enter",
-        "name": "io_uring_enter"
+        "name": "io_uring_enter",
+        "return": {
+            "type": "long",
+            "description": "# of submitted SQEs, or -1 on error"
+        }
     },
     "427": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "opcode"
             },
             {
                 "type": "void __user *",
-                "description": null
+                "description": "arg"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "nr_args"
             }
         ],
         "entry_point": "sys_io_uring_register",
-        "name": "io_uring_register"
+        "name": "io_uring_register",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "428": {
         "args": [
@@ -5559,7 +6855,11 @@
             }
         ],
         "entry_point": "sys_open_tree",
-        "name": "open_tree"
+        "name": "open_tree",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     },
     "429": {
         "args": [
@@ -5585,7 +6885,11 @@
             }
         ],
         "entry_point": "sys_move_mount",
-        "name": "move_mount"
+        "name": "move_mount",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "430": {
         "args": [
@@ -5599,7 +6903,11 @@
             }
         ],
         "entry_point": "sys_fsopen",
-        "name": "fsopen"
+        "name": "fsopen",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     },
     "431": {
         "args": [
@@ -5625,7 +6933,11 @@
             }
         ],
         "entry_point": "sys_fsconfig",
-        "name": "fsconfig"
+        "name": "fsconfig",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "432": {
         "args": [
@@ -5643,7 +6955,11 @@
             }
         ],
         "entry_point": "sys_fsmount",
-        "name": "fsmount"
+        "name": "fsmount",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     },
     "433": {
         "args": [
@@ -5661,35 +6977,47 @@
             }
         ],
         "entry_point": "sys_fspick",
-        "name": "fspick"
+        "name": "fspick",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     },
     "434": {
         "args": [
             {
                 "type": "pid_t",
-                "description": null
+                "description": "pid"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_pidfd_open",
-        "name": "pidfd_open"
+        "name": "pidfd_open",
+        "return": {
+            "type": "long",
+            "description": "pidfd on success, or -1 on error"
+        }
     },
     "435": {
         "args": [
             {
                 "type": "struct clone_args __user *",
-                "description": null
+                "description": "uargs"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "size"
             }
         ],
         "entry_point": "sys_clone3",
-        "name": "clone3"
+        "name": "clone3",
+        "return": {
+            "type": "long",
+            "description": "child's PID in parent, 0 in child, or -1 on error"
+        }
     },
     "436": {
         "args": [
@@ -5707,7 +7035,11 @@
             }
         ],
         "entry_point": "sys_close_range",
-        "name": "close_range"
+        "name": "close_range",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "437": {
         "args": [
@@ -5729,25 +7061,33 @@
             }
         ],
         "entry_point": "sys_openat2",
-        "name": "openat2"
+        "name": "openat2",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "438": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pidfd"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_pidfd_getfd",
-        "name": "pidfd_getfd"
+        "name": "pidfd_getfd",
+        "return": {
+            "type": "long",
+            "description": "new file descriptor, or -1 on error"
+        }
     },
     "439": {
         "args": [
@@ -5769,33 +7109,41 @@
             }
         ],
         "entry_point": "sys_faccessat2",
-        "name": "faccessat2"
+        "name": "faccessat2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "440": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pidfd"
             },
             {
                 "type": "const struct iovec __user *",
-                "description": null
+                "description": "vec"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "vlen"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "behavior"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_process_madvise",
-        "name": "process_madvise"
+        "name": "process_madvise",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "441": {
         "args": [
@@ -5825,7 +7173,11 @@
             }
         ],
         "entry_point": "sys_epoll_pwait2",
-        "name": "epoll_pwait2"
+        "name": "epoll_pwait2",
+        "return": {
+            "type": "long",
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
     },
     "442": {
         "args": [
@@ -5851,7 +7203,11 @@
             }
         ],
         "entry_point": "sys_mount_setattr",
-        "name": "mount_setattr"
+        "name": "mount_setattr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "443": {
         "args": [
@@ -5873,155 +7229,191 @@
             }
         ],
         "entry_point": "sys_quotactl_fd",
-        "name": "quotactl_fd"
+        "name": "quotactl_fd",
+        "return": {
+            "type": "long",
+            "description": "depends on cmd, or -1 on error"
+        }
     },
     "444": {
         "args": [
             {
                 "type": "const struct landlock_ruleset_attr __user *",
-                "description": null
+                "description": "attr"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "__u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_landlock_create_ruleset",
-        "name": "landlock_create_ruleset"
+        "name": "landlock_create_ruleset",
+        "return": {
+            "type": "long",
+            "description": "ruleset fd on success, or -1 on error"
+        }
     },
     "445": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "ruleset_fd"
             },
             {
                 "type": "enum landlock_rule_type",
-                "description": null
+                "description": "rule_type"
             },
             {
                 "type": "const void __user *",
-                "description": null
+                "description": "rule_attr"
             },
             {
                 "type": "__u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_landlock_add_rule",
-        "name": "landlock_add_rule"
+        "name": "landlock_add_rule",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "446": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "ruleset_fd"
             },
             {
                 "type": "__u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_landlock_restrict_self",
-        "name": "landlock_restrict_self"
+        "name": "landlock_restrict_self",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "447": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_memfd_secret",
-        "name": "memfd_secret"
+        "name": "memfd_secret",
+        "return": {
+            "type": "long",
+            "description": "memfd on success, or -1 on error"
+        }
     },
     "448": {
         "args": [
             {
                 "type": "int",
-                "description": null
+                "description": "pidfd"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_process_mrelease",
-        "name": "process_mrelease"
+        "name": "process_mrelease",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "449": {
         "args": [
             {
                 "type": "struct futex_waitv __user *",
-                "description": null
+                "description": "waiters"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "nr_futexes"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "timeout"
             },
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "clockid"
             }
         ],
         "entry_point": "sys_futex_waitv",
-        "name": "futex_waitv"
+        "name": "futex_waitv",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "450": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "home_node"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_set_mempolicy_home_node",
-        "name": "set_mempolicy_home_node"
+        "name": "set_mempolicy_home_node",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "451": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "fd"
             },
             {
                 "type": "struct cachestat_range __user *",
-                "description": null
+                "description": "cstat_range"
             },
             {
                 "type": "struct cachestat __user *",
-                "description": null
+                "description": "cstat"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_cachestat",
-        "name": "cachestat"
+        "name": "cachestat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "452": {
         "args": [
@@ -6043,7 +7435,11 @@
             }
         ],
         "entry_point": "sys_fchmodat2",
-        "name": "fchmodat2"
+        "name": "fchmodat2",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "453": {
         "args": [
@@ -6061,81 +7457,97 @@
             }
         ],
         "entry_point": "sys_map_shadow_stack",
-        "name": "map_shadow_stack"
+        "name": "map_shadow_stack",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "454": {
         "args": [
             {
                 "type": "void __user *",
-                "description": null
+                "description": "uaddr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "mask"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "nr"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_futex_wake",
-        "name": "futex_wake"
+        "name": "futex_wake",
+        "return": {
+            "type": "long",
+            "description": "# of waiters woken, or -1 on error"
+        }
     },
     "455": {
         "args": [
             {
                 "type": "void __user *",
-                "description": null
+                "description": "uaddr"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "val"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "mask"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "struct __kernel_timespec __user *",
-                "description": null
+                "description": "timeout"
             },
             {
                 "type": "clockid_t",
-                "description": null
+                "description": "clockid"
             }
         ],
         "entry_point": "sys_futex_wait",
-        "name": "futex_wait"
+        "name": "futex_wait",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "456": {
         "args": [
             {
                 "type": "struct futex_waitv __user *",
-                "description": null
+                "description": "waiters"
             },
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "flags"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "nr_wake"
             },
             {
                 "type": "int",
-                "description": null
+                "description": "nr_requeue"
             }
         ],
         "entry_point": "sys_futex_requeue",
-        "name": "futex_requeue"
+        "name": "futex_requeue",
+        "return": {
+            "type": "long",
+            "description": "# of waiters woken, or -1 on error"
+        }
     },
     "457": {
         "args": [
@@ -6157,7 +7569,11 @@
             }
         ],
         "entry_point": "sys_statmount",
-        "name": "statmount"
+        "name": "statmount",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "458": {
         "args": [
@@ -6179,87 +7595,107 @@
             }
         ],
         "entry_point": "sys_listmount",
-        "name": "listmount"
+        "name": "listmount",
+        "return": {
+            "type": "long",
+            "description": "# of mount IDs on success, or -1 on error"
+        }
     },
     "459": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "attr"
             },
             {
                 "type": "struct lsm_ctx __user *",
-                "description": null
+                "description": "ctx"
             },
             {
                 "type": "u32 __user *",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_lsm_get_self_attr",
-        "name": "lsm_get_self_attr"
+        "name": "lsm_get_self_attr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "460": {
         "args": [
             {
                 "type": "unsigned int",
-                "description": null
+                "description": "attr"
             },
             {
                 "type": "struct lsm_ctx __user *",
-                "description": null
+                "description": "ctx"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_lsm_set_self_attr",
-        "name": "lsm_set_self_attr"
+        "name": "lsm_set_self_attr",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "461": {
         "args": [
             {
                 "type": "u64 __user *",
-                "description": null
+                "description": "ids"
             },
             {
                 "type": "u32 __user *",
-                "description": null
+                "description": "size"
             },
             {
                 "type": "u32",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_lsm_list_modules",
-        "name": "lsm_list_modules"
+        "name": "lsm_list_modules",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "462": {
         "args": [
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "start"
             },
             {
                 "type": "size_t",
-                "description": null
+                "description": "len"
             },
             {
                 "type": "unsigned long",
-                "description": null
+                "description": "flags"
             }
         ],
         "entry_point": "sys_mseal",
-        "name": "mseal"
+        "name": "mseal",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "463": {
         "args": [
@@ -6289,7 +7725,11 @@
             }
         ],
         "entry_point": "sys_setxattrat",
-        "name": "setxattrat"
+        "name": "setxattrat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "464": {
         "args": [
@@ -6319,7 +7759,11 @@
             }
         ],
         "entry_point": "sys_getxattrat",
-        "name": "getxattrat"
+        "name": "getxattrat",
+        "return": {
+            "type": "long",
+            "description": "size of value on success, or -1 on error"
+        }
     },
     "465": {
         "args": [
@@ -6345,7 +7789,11 @@
             }
         ],
         "entry_point": "sys_listxattrat",
-        "name": "listxattrat"
+        "name": "listxattrat",
+        "return": {
+            "type": "long",
+            "description": "size of list on success, or -1 on error"
+        }
     },
     "466": {
         "args": [
@@ -6367,7 +7815,11 @@
             }
         ],
         "entry_point": "sys_removexattrat",
-        "name": "removexattrat"
+        "name": "removexattrat",
+        "return": {
+            "type": "long",
+            "description": "0 on success, or -1 on error"
+        }
     },
     "467": {
         "args": [
@@ -6393,7 +7845,10 @@
             }
         ],
         "entry_point": "sys_open_tree_attr",
-        "name": "open_tree_attr"
+        "name": "open_tree_attr",
+        "return": {
+            "type": "long",
+            "description": "file descriptor on success, or -1 on error"
+        }
     }
 }
-

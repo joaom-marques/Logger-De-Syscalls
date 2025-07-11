@@ -5,7 +5,7 @@ import datetime
 import json
 import ctypes.util
 from collections import deque
-from tracing_helpers import format_arg
+from tracing_helpers import format_arg, format_return_value
 from json_helpers import save_in_json_file
 
 DEBUG = False
@@ -276,7 +276,22 @@ def trace_command(program: str, args: list):
                                 entry = syscall_entries_in_progress.pop(wpid, None)
 
                                 if entry:
-                                    entry["return_value"] = signed_return_value
+                                    syscall_num = entry["syscall_number"]
+                                    syscall_info = syscall_table.get(
+                                        str(syscall_num), {}
+                                    )
+                                    return_info = syscall_info.get("return", {})
+
+                                    formatted_value = format_return_value(
+                                        signed_return_value, return_info
+                                    )
+
+                                    entry["return_value"] = {
+                                        "value": formatted_value,
+                                        "description": return_info.get(
+                                            "description", "No description available."
+                                        ),
+                                    }
                                     entries.append(entry)
                                 else:
                                     if DEBUG:
