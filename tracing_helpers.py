@@ -33,7 +33,7 @@ def format_return_value(raw_value: int, return_info: dict) -> str | int:
     return_type = return_info.get("type", "").strip()
 
     # Se for ponteiro, formata como hexadecimal
-    if "*" in return_type:
+    if "pointer" in return_type:
         return hex(raw_value)
 
     # Para numéricos como long é apenas o valor
@@ -111,11 +111,12 @@ def decode_sigset(raw_bits):
     for sig_num in signal.valid_signals():
         try:
             if raw_bits & (1 << (sig_num - 1)):
-                # Turn the int into a Signal enum, so we can get .name
+                # Transforma o int em enum de Signal para obter o nome
                 sig_enum = signal.Signals(sig_num)
                 result.append(sig_enum.name)
         except (ValueError, OSError):
-            # ValueError if sig_num invalid, OSError if ptrace peek failed
+            # ValueError caso sig_num seja invalido,
+            # OSError se ptrace peek falhou
             continue
     return result
 
@@ -183,7 +184,7 @@ def format_arg(pid: int, raw: int, type: str):
             raw_bits = ptrace_peekdata(pid, raw)
             return decode_sigset(raw_bits)
         except OSError:
-            # fallback to hex if we can’t peek the bitmask
+            # fallback para hex se peek falhar
             return hex(raw)
 
     # tipos numericos

@@ -63,12 +63,7 @@ class user_regs_struct(ctypes.Structure):
     ]
 
 
-# Load libc
-# libc_path = ctypes.util.find_library("c")
-# if not libc_path:
-#     sys.stderr.write("Não foi possível encontrar libc\n")
-#     sys.exit(1)
-# libc = ctypes.CDLL(libc_path, use_errno=True)
+# Carrega a libc
 libc = ctypes.CDLL("libc.so.6", use_errno=True)
 libc.waitpid.argtypes = (ctypes.c_int, ctypes.POINTER(ctypes.c_int), ctypes.c_int)
 libc.waitpid.restype = ctypes.c_int
@@ -94,12 +89,108 @@ def ptrace(request, pid, addr, data=0):
     return res
 
 
+def handle_ptrace_event(pid, event, traced_pids):
+    """Lida com um evento ptrace (fork, clone, exec)."""
+    if event in (PTRACE_EVENT_FORK, PTRACE_EVENT_VFORK, PTRACE_EVENT_CLONE):
+        print(f"adicionando novo processo: {pid} com evento {event}")
+        new_pid = ctypes.c_ulong()
+        ptrace(PTRACE_GETEVENTMSG, pid, 0, ctypes.addressof(new_pid))
+        traced_pids.append(new_pid.value)
+        ptrace(
+            PTRACE_SETOPTIONS,
+            new_pid.value,
+            0,
+            PTRACE_O_TRACESYSGOOD
+            | PTRACE_O_TRACEFORK
+            | PTRACE_O_TRACEVFORK
+            | PTRACE_O_TRACECLONE
+            | PTRACE_O_TRACEEXEC,
+        )
+        ptrace(PTRACE_SYSCALL, new_pid.value, 0)
+        ptrace(PTRACE_SYSCALL, pid, 0)
+
+    elif event == PTRACE_EVENT_EXEC:
+        ptrace(
+            PTRACE_SETOPTIONS,
+            pid,
+            0,
+            PTRACE_O_TRACESYSGOOD
+            | PTRACE_O_TRACEFORK
+            | PTRACE_O_TRACEVFORK
+            | PTRACE_O_TRACECLONE
+            | PTRACE_O_TRACEEXEC,
+        )
+        ptrace(PTRACE_SYSCALL, pid, 0)
+
+
+def handle_syscall_entry(pid, regs):
+    """Processa um evento de entrada de syscall e retorna um dic de entrada."""
+    try:
+        syscall_num = regs.orig_rax
+        syscall_info = syscall_table.get(str(syscall_num), {})
+        name = syscall_info.get("name", f"sys_{syscall_num}")
+        args_list_info = syscall_info.get("args", [])
+
+        entry = {
+            "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"[:-3]),
+            "pid": pid,
+            "syscall_number": syscall_num,
+            "syscall_name": name,
+            "args": [],
+            "return_value": None,
+        }
+
+        raw_args = [regs.rdi, regs.rsi, regs.rdx, regs.r10, regs.r8, regs.r9]
+        for i, val in enumerate(raw_args):
+            if i < len(args_list_info):
+                arg_info = args_list_info[i]
+                try:
+                    formatted = format_arg(pid, val, arg_info["type"])
+                    entry["args"].append(
+                        {
+                            "description": arg_info["description"],
+                            "type": arg_info["type"],
+                            "value": formatted,
+                        }
+                    )
+                except Exception as e:
+                    print(f"Erro ao formatar argumento: {e}")
+        return entry
+    except Exception as e:
+        print(f"Erro ao processar entrada de syscall: {e}")
+        return None
+
+
+def handle_syscall_exit(pid, regs, entry):
+    """Processa um evento de saída de syscall e atualiza a entrada com o valor de retorno."""
+    try:
+        return_value = regs.rax
+        signed_return_value = ctypes.c_long(return_value).value
+
+        syscall_num = entry["syscall_number"]
+        syscall_info = syscall_table.get(str(syscall_num), {})
+        return_info = syscall_info.get("return", {})
+
+        formatted_value = format_return_value(signed_return_value, return_info)
+
+        entry["return_value"] = {
+            "value": formatted_value,
+            "description": return_info.get("description", "No description available."),
+        }
+        return entry
+    except Exception as e:
+        print(f"Erro ao processar saída de syscall: {e}")
+        return None
+
+
 def trace_command(program: str, args: list):
     pid = os.fork()
     if pid == 0:
+        # Processo filho: Solicita ser rastreado e executa o comando
         ptrace(PTRACE_TRACEME, 0, 0)
         os.execvp(program, args)
     else:
+        # Processo pai: O tracer
         try:
             os.waitpid(pid, 0)
             ptrace(
@@ -116,6 +207,7 @@ def trace_command(program: str, args: list):
         except OSError as e:
             print(f"Erro ao iniciar o ptrace: {e}")
             print(f"Detalhes: {e.errno} {e.strerror}")
+            return
 
         entries = []
         traced_pids = deque([pid])
@@ -125,196 +217,66 @@ def trace_command(program: str, args: list):
         try:
             while traced_pids:
                 try:
-                    # waitpid da libc para guardar o status
-                    status_int = ctypes.c_int()  # allocate a C int
+                    # waitpid permite esperar por eventos do processo filho
+                    status_int = ctypes.c_int()
                     wpid = libc.waitpid(-1, ctypes.byref(status_int), __WALL)
                     status = status_int.value
-                    if DEBUG_VERBOSE:
-                        print(f"[debug] traced={list(traced_pids)}")
-                        print(
-                            f"[debug] wpid={wpid}, raw status=0x{status:04x}, stopsig={os.WSTOPSIG(status)}, event={(status >> 16) & 0xFFFF}"
-                        )
-
                     if wpid < 0:
-                        err = ctypes.get_errno()
-                        raise OSError(err, os.strerror(err))
+                        raise OSError(
+                            ctypes.get_errno(), os.strerror(ctypes.get_errno())
+                        )
                 except OSError as e:
                     print(f"Erro ao chamar waitpid: {e}")
-                    exit(1)
-                try:
-                    # Processo terminou
-                    if os.WIFEXITED(status) or os.WIFSIGNALED(status):
-                        if wpid in traced_pids:
-                            traced_pids.remove(wpid)
-                        continue
-                except OSError as e:
-                    print(f"Erro ao verificar status do processo: {e}")
-                try:
-                    # Verifica evento de criação de processo/thread
-                    event = (status >> 16) & 0xFFFF
-                    if event in (
-                        PTRACE_EVENT_FORK,
-                        PTRACE_EVENT_VFORK,
-                        PTRACE_EVENT_CLONE,
-                    ):
-                        print(f"adicionando novo processo: {wpid} com evento {event}")
-                        new_pid = ctypes.c_ulong()
-                        ptrace(PTRACE_GETEVENTMSG, wpid, 0, ctypes.addressof(new_pid))
-                        traced_pids.append(new_pid.value)
-                        ptrace(
-                            PTRACE_SETOPTIONS,
-                            new_pid.value,
-                            0,
-                            PTRACE_O_TRACESYSGOOD
-                            | PTRACE_O_TRACEFORK
-                            | PTRACE_O_TRACEVFORK
-                            | PTRACE_O_TRACECLONE
-                            | PTRACE_O_TRACEEXEC,
-                        )
-                        ptrace(PTRACE_SYSCALL, new_pid.value, 0)
+                    break  # Sai do loop caso dê erro no waitpid
+
+                if os.WIFEXITED(status) or os.WIFSIGNALED(status):
+                    if wpid in traced_pids:
+                        traced_pids.remove(wpid)
+                    continue
+
+                event = (status >> 16) & 0xFFFF
+                if event:
+                    handle_ptrace_event(wpid, event, traced_pids)
+                    continue
+
+                if os.WIFSTOPPED(status) and os.WSTOPSIG(status) & 0x80:
+                    # Caso o processo esteja parado em um evento ptrace...
+                    regs = user_regs_struct()
+                    try:
+                        ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
+                    except OSError as e:
+                        print(f"Erro ao obter registros (PID: {wpid}): {e}")
                         ptrace(PTRACE_SYSCALL, wpid, 0)
                         continue
 
-                    elif event == PTRACE_EVENT_EXEC:
-                        # Não é PID novo, apenas reconfigura o ptrace
-                        ptrace(
-                            PTRACE_SETOPTIONS,
-                            wpid,
-                            0,
-                            PTRACE_O_TRACESYSGOOD
-                            | PTRACE_O_TRACEFORK
-                            | PTRACE_O_TRACEVFORK
-                            | PTRACE_O_TRACECLONE
-                            | PTRACE_O_TRACEEXEC,
-                        )
-                        ptrace(PTRACE_SYSCALL, wpid, 0)
-                        continue
+                    if is_entry.get(wpid, True):
+                        # Entrada de syscall
+                        entry = handle_syscall_entry(wpid, regs)
+                        if entry:
+                            syscall_entries_in_progress[wpid] = entry
+                    else:
+                        # Saída de syscall
+                        in_progress_entry = syscall_entries_in_progress.pop(wpid, None)
+                        if in_progress_entry:
+                            completed_entry = handle_syscall_exit(
+                                wpid, regs, in_progress_entry
+                            )
+                            if completed_entry:
+                                entries.append(completed_entry)
+                        elif DEBUG:
+                            print(
+                                f"[debug] Saída de syscall para PID {wpid} sem uma entrada correspondente."
+                            )
 
-                    # Syscall detectada
-                    elif os.WIFSTOPPED(status) and os.WSTOPSIG(status) & 0x80:
-                        # Lógica de entrada da syscall
-                        if is_entry.get(wpid, True):
-                            regs = user_regs_struct()
-                            try:
-                                ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
-                            except OSError as e:
-                                print(
-                                    f"Erro ao obter registros na entrada (PID: {wpid}): {e}"
-                                )
-                                # Continua para o próximo evento, pula o que deu erro
-                                ptrace(PTRACE_SYSCALL, wpid, 0)
-                                continue
+                    is_entry[wpid] = not is_entry.get(wpid, True)
 
-                            try:
-                                syscall_num = regs.orig_rax
-                                syscall_info = syscall_table.get(str(syscall_num), {})
-                                name = syscall_info.get("name", f"sys_{syscall_num}")
-                                args_list_info = syscall_info.get("args", [])
-
-                                entry = {
-                                    "timestamp": datetime.datetime.now().strftime(
-                                        "%Y-%m-%d %H:%M:%S.%f"[:-3]
-                                    ),
-                                    "pid": wpid,
-                                    "syscall_number": syscall_num,
-                                    "syscall_name": name,
-                                    "args": [],
-                                    "return_value": None,  # Por enquanto, None
-                                }
-
-                                raw_args = [
-                                    regs.rdi,
-                                    regs.rsi,
-                                    regs.rdx,
-                                    regs.r10,
-                                    regs.r8,
-                                    regs.r9,
-                                ]
-                                for i, val in enumerate(raw_args):
-                                    if i < len(args_list_info):
-                                        arg_info = args_list_info[i]
-                                        try:
-                                            formatted = format_arg(
-                                                wpid, val, arg_info["type"]
-                                            )
-                                            entry["args"].append(
-                                                {
-                                                    "description": arg_info[
-                                                        "description"
-                                                    ],
-                                                    "type": arg_info["type"],
-                                                    "value": formatted,
-                                                }
-                                            )
-                                        except Exception as e:
-                                            print(f"Erro ao formatar argumento: {e}")
-
-                                syscall_entries_in_progress[wpid] = entry
-
-                            except Exception as e:
-                                print(f"Erro ao processar entrada de syscall: {e}")
-
-                        # Lógica de saída da syscall
-                        else:
-                            regs = user_regs_struct()
-                            try:
-                                ptrace(PTRACE_GETREGS, wpid, 0, ctypes.addressof(regs))
-                            except OSError as e:
-                                print(
-                                    f"Erro ao obter registros na saída (PID: {wpid}): {e}"
-                                )
-                                # Remove a entrada falha
-                                syscall_entries_in_progress.pop(wpid, None)
-                                # Continua para o próximo, pula o atual
-                                ptrace(PTRACE_SYSCALL, wpid, 0)
-                                continue
-
-                            try:
-                                return_value = regs.rax
-                                # conversão para int caso hajam valores negativos
-                                signed_return_value = ctypes.c_long(return_value).value
-                                entry = syscall_entries_in_progress.pop(wpid, None)
-
-                                if entry:
-                                    syscall_num = entry["syscall_number"]
-                                    syscall_info = syscall_table.get(
-                                        str(syscall_num), {}
-                                    )
-                                    return_info = syscall_info.get("return", {})
-
-                                    formatted_value = format_return_value(
-                                        signed_return_value, return_info
-                                    )
-
-                                    entry["return_value"] = {
-                                        "value": formatted_value,
-                                        "description": return_info.get(
-                                            "description", "No description available."
-                                        ),
-                                    }
-                                    entries.append(entry)
-                                else:
-                                    if DEBUG:
-                                        print(
-                                            f"[debug] Saída de syscall para PID {wpid} sem uma entrada correspondente."
-                                        )
-                            except Exception as e:
-                                print(f"Erro ao processar saída de syscall: {e}")
-
-                        # Troca o estado de entrada/saída
-                        is_entry[wpid] = not is_entry.get(wpid, True)
-                except OSError as e:
-                    print(f"Erro ao processar eventos: {e}")
-                    exit(1)
-
-                # Continua a execução
                 ptrace(PTRACE_SYSCALL, wpid, 0)
 
         except KeyboardInterrupt:
             sys.stderr.write("Interrompido pelo usuário\n")
         except OSError as e:
-            sys.stderr.write(f"Erro linha 221 tracer.py: {e.errno} {e.strerror}\n")
+            sys.stderr.write(f"Erro no loop principal: {e.errno} {e.strerror}\n")
         except Exception as e:
-            sys.stderr.write(f"Erro na trace_command: {e}\n")
+            sys.stderr.write(f"Erro inesperado na trace_command: {e}\n")
 
         save_in_json_file(entries, program)
