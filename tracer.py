@@ -124,7 +124,7 @@ def handle_ptrace_event(pid, event, traced_pids):
 
 
 def handle_syscall_entry(pid, regs):
-    """Processa um evento de entrada de syscall e retorna um dic de entrada."""
+    """Processa um evento de entrada de syscall e retorna um dict de entrada."""
     try:
         syscall_num = regs.orig_rax
         syscall_info = syscall_table.get(str(syscall_num), {})
@@ -137,7 +137,7 @@ def handle_syscall_entry(pid, regs):
             "syscall_number": syscall_num,
             "syscall_name": name,
             "args": [],
-            "return_value": None,
+            "return": None,
         }
 
         raw_args = [regs.rdi, regs.rsi, regs.rdx, regs.r10, regs.r8, regs.r9]
@@ -145,7 +145,7 @@ def handle_syscall_entry(pid, regs):
             if i < len(args_list_info):
                 arg_info = args_list_info[i]
                 try:
-                    formatted = format_arg(pid, val, arg_info["type"])
+                    formatted = format_arg(pid, val, arg_info["type"], name)
                     entry["args"].append(
                         {
                             "description": arg_info["description"],
@@ -173,7 +173,7 @@ def handle_syscall_exit(pid, regs, entry):
 
         formatted_value = format_return_value(signed_return_value, return_info)
 
-        entry["return_value"] = {
+        entry["return"] = {
             "value": formatted_value,
             "description": return_info.get("description", "No description available."),
         }

@@ -1,0 +1,4353 @@
+[
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": "brk",
+                "type": "unsigned long",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x555ca1477000",
+            "description": "new program break on success, or old break on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27399c0000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 21,
+        "syscall_name": "access",
+        "args": [
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "mode",
+                "type": "int",
+                "value": 4
+            }
+        ],
+        "return": {
+            "value": "-2 (ENOENT)",
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o0, st_size=0, st_uid=0, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 107411
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27399a5000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o45106, st_size=0, st_uid=1, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 875920
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27398cf000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 966131712
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 221184
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 593920
+            }
+        ],
+        "return": {
+            "value": "0x7f2739960000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 966352896
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 61440
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 811008
+            }
+        ],
+        "return": {
+            "value": "0x7f2739996000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "\ufffd"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o44401, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 4909904
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2739400000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 963899392
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 1110016
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 3403776
+            }
+        ],
+        "return": {
+            "value": "0x7f273973f000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 965009408
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 385024
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 4509696
+            }
+        ],
+        "return": {
+            "value": "0x7f273984e000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 965394432
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 11088
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27398ac000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "\ufffd\u0005\ufffd9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o240, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 311712
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27393b3000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 960356352
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 122880
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 176128
+            }
+        ],
+        "return": {
+            "value": "0x7f27393de000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 960479232
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 16384
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 294912
+            }
+        ],
+        "return": {
+            "value": "0x7f27393fc000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o2720, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 970768
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27392c5000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 959713280
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 458752
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 507904
+            }
+        ],
+        "return": {
+            "value": "0x7f2739341000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 960172032
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 962560
+            }
+        ],
+        "return": {
+            "value": "0x7f27393b1000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "0\u0010\ufffd9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": "\u0010\ufffd\u000e"
+            },
+            {
+                "description": "count",
+                "type": "compat_size_t",
+                "value": 784
+            },
+            {
+                "description": "poshi",
+                "type": "u32",
+                "value": 64
+            },
+            {
+                "description": "poslo",
+                "type": "u32",
+                "value": 2666656663
+            }
+        ],
+        "return": {
+            "value": 784,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o0, st_size=16, st_uid=0, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "compat_size_t",
+                "value": 784
+            },
+            {
+                "description": "poshi",
+                "type": "u32",
+                "value": 64
+            },
+            {
+                "description": "poslo",
+                "type": "u32",
+                "value": 49407
+            }
+        ],
+        "return": {
+            "value": 784,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 2038872
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27390d3000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 958668800
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 479232
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 1503232
+            }
+        ],
+        "return": {
+            "value": "0x7f2739242000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 959148032
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 24576
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 1978368
+            }
+        ],
+        "return": {
+            "value": "0x7f27392b7000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 959172608
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 31832
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27392bd000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "`\u0015\ufffd9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o4, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 139392
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27390b0000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 957116416
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 40960
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 94208
+            }
+        ],
+        "return": {
+            "value": "0x7f27390c7000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 957157376
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 131072
+            }
+        ],
+        "return": {
+            "value": "0x7f27390d1000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27398cd000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "\ufffd\u001a\ufffd9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o12540, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 127880
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2739090000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956973056
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 40960
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 81920
+            }
+        ],
+        "return": {
+            "value": "0x7f27390a4000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 957014016
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 122880
+            }
+        ],
+        "return": {
+            "value": "0x7f27390ae000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o150100, st_size=0, st_uid=6, st_gid=3}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 606816
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2738ffb000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956604416
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 237568
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 323584
+            }
+        ],
+        "return": {
+            "value": "0x7f273904a000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956841984
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 36864
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 557056
+            }
+        ],
+        "return": {
+            "value": "0x7f2739084000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956878848
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8800
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f273908d000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "P\u058c9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o0, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 135672
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fd9000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956211200
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 57344
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 69632
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fea000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956268544
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 12288
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 126976
+            }
+        ],
+        "return": {
+            "value": "0x7f2738ff8000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "\ufffd\u06cc9"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o153120, st_size=0, st_uid=37, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 176584
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fad000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956104704
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 28672
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 143360
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fd0000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956133376
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 172032
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fd7000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 956137472
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 456
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f2738fd8000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27398cb000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "unsigned",
+                "value": 12288
+            },
+            {
+                "description": "prot",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f27398c8000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 158,
+        "syscall_name": "arch_prctl",
+        "args": [
+            {
+                "description": "option",
+                "type": "int",
+                "value": 4098
+            },
+            {
+                "description": "arg2",
+                "type": "unsigned",
+                "value": 965511680
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 218,
+        "syscall_name": "set_tid_address",
+        "args": [
+            {
+                "description": "tidptr",
+                "type": "int __user *",
+                "value": 965512400
+            }
+        ],
+        "return": {
+            "value": 1729967,
+            "description": "caller's thread ID"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 273,
+        "syscall_name": "set_robust_list",
+        "args": [
+            {
+                "description": "head",
+                "type": "struct robust_list_head __user *",
+                "value": "0x7f27398c8ce0"
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 24
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 334,
+        "syscall_name": "rseq",
+        "args": [
+            {
+                "description": "rseq",
+                "type": "struct rseq __user *",
+                "value": "0x7f27398c8680"
+            },
+            {
+                "description": "rseq_len",
+                "type": "uint32_t",
+                "value": 32
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "sig",
+                "type": "uint32_t",
+                "value": 1392848979
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806439600128
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 16384
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806436585472
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806436720640
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806437294080
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 16384
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806437466112
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806437609472
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806440624128
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806440931328
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 12288
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806445461504
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 372736
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806446804992
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 45056
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 93855573708800
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139806447230976
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 302,
+        "syscall_name": "prlimit64",
+        "args": [
+            {
+                "description": "pid",
+                "type": "pid_t",
+                "value": 0
+            },
+            {
+                "description": "resource",
+                "type": "unsigned int",
+                "value": 3
+            },
+            {
+                "description": "new_rlim",
+                "type": "const struct rlimit64 __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "old_rlim",
+                "type": "struct rlimit64 __user *",
+                "value": "0x7fff9ef1fe10"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 11,
+        "syscall_name": "munmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 139806446866432
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 107411
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 318,
+        "syscall_name": "getrandom",
+        "args": [
+            {
+                "description": "ubuf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 8,
+            "description": "bytes copied to buf, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": "brk",
+                "type": "unsigned long",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x555ca1477000",
+            "description": "new program break on success, or old break on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": "brk",
+                "type": "unsigned long",
+                "value": 93856331300864
+            }
+        ],
+        "return": {
+            "value": "0x555ca1498000",
+            "description": "new program break on success, or old break on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 262,
+        "syscall_name": "newfstatat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "statbuf",
+                "type": "struct stat __user *",
+                "value": "{st_mode=0o0, st_size=0, st_uid=0, st_gid=0}"
+            },
+            {
+                "description": "flag",
+                "type": "int",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __old_kernel_stat __user *",
+                "value": "{st_mode=0o62457, st_size=0, st_uid=1664052334, st_gid=1936941420}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 4096
+            }
+        ],
+        "return": {
+            "value": 1130,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "####"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 4096
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "bytes read, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 41,
+        "syscall_name": "socket",
+        "args": [
+            {
+                "description": "family",
+                "type": "int",
+                "value": 16
+            },
+            {
+                "description": "type",
+                "type": "int",
+                "value": 524291
+            },
+            {
+                "description": "protocol",
+                "type": "int",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "file descriptor for new socket, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 49,
+        "syscall_name": "bind",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "umyaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c638}"
+            },
+            {
+                "description": "addrlen",
+                "type": "int",
+                "value": 12
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 51,
+        "syscall_name": "getsockname",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "usockaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c638}"
+            },
+            {
+                "description": "usockaddr_len",
+                "type": "int __user *",
+                "value": 2666645044
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 44,
+        "syscall_name": "sendto",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "buff",
+                "type": "void __user *",
+                "value": "0x7fff9ef1c6a0"
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 20
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "addr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c644}"
+            },
+            {
+                "description": "addr_len",
+                "type": "int",
+                "value": 12
+            }
+        ],
+        "return": {
+            "value": 20,
+            "description": "bytes sent, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 47,
+        "syscall_name": "recvmsg",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "msg",
+                "type": "struct user_msghdr __user *",
+                "value": "0x7fff9ef1c660"
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 380,
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 47,
+        "syscall_name": "recvmsg",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "msg",
+                "type": "struct user_msghdr __user *",
+                "value": "0x7fff9ef1c660"
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 20,
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 41,
+        "syscall_name": "socket",
+        "args": [
+            {
+                "description": "family",
+                "type": "int",
+                "value": 16
+            },
+            {
+                "description": "type",
+                "type": "int",
+                "value": 524291
+            },
+            {
+                "description": "protocol",
+                "type": "int",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "file descriptor for new socket, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 49,
+        "syscall_name": "bind",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "umyaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c638}"
+            },
+            {
+                "description": "addrlen",
+                "type": "int",
+                "value": 12
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 51,
+        "syscall_name": "getsockname",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "usockaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c638}"
+            },
+            {
+                "description": "usockaddr_len",
+                "type": "int __user *",
+                "value": 2666645044
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 44,
+        "syscall_name": "sendto",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "buff",
+                "type": "void __user *",
+                "value": "0x7fff9ef1c6a0"
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 20
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "addr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=16, Address=@0x7fff9ef1c644}"
+            },
+            {
+                "description": "addr_len",
+                "type": "int",
+                "value": 12
+            }
+        ],
+        "return": {
+            "value": 20,
+            "description": "bytes sent, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 47,
+        "syscall_name": "recvmsg",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "msg",
+                "type": "struct user_msghdr __user *",
+                "value": "0x7fff9ef1c660"
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 380,
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 47,
+        "syscall_name": "recvmsg",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "msg",
+                "type": "struct user_msghdr __user *",
+                "value": "0x7fff9ef1c660"
+            },
+            {
+                "description": "flags",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 20,
+            "description": "bytes received, 0 on EOF, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 13,
+        "syscall_name": "rt_sigaction",
+        "args": [
+            {
+                "description": "sig",
+                "type": "int",
+                "value": 17
+            },
+            {
+                "description": "act",
+                "type": "const struct sigaction __user *",
+                "value": "0x7fff9ef1cde0"
+            },
+            {
+                "description": "oact",
+                "type": "struct sigaction __user *",
+                "value": "0x7fff9ef1ce80"
+            },
+            {
+                "description": "sigsetsize",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "restorer",
+                "type": "void __user *",
+                "value": "0x7fff9ef1cfd0"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 13,
+        "syscall_name": "rt_sigaction",
+        "args": [
+            {
+                "description": "sig",
+                "type": "int",
+                "value": 13
+            },
+            {
+                "description": "act",
+                "type": "const struct sigaction __user *",
+                "value": "0x7fff9ef1cde0"
+            },
+            {
+                "description": "oact",
+                "type": "struct sigaction __user *",
+                "value": "0x7fff9ef1ce80"
+            },
+            {
+                "description": "sigsetsize",
+                "type": "size_t",
+                "value": 8
+            },
+            {
+                "description": "restorer",
+                "type": "void __user *",
+                "value": "0x7fff9ef1cfd0"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 72,
+        "syscall_name": "fcntl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 0
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "arg",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on cmd, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 41,
+        "syscall_name": "socket",
+        "args": [
+            {
+                "description": "family",
+                "type": "int",
+                "value": 10
+            },
+            {
+                "description": "type",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "protocol",
+                "type": "int",
+                "value": 6
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "file descriptor for new socket, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 54,
+        "syscall_name": "setsockopt",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "level",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "optname",
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": "optval",
+                "type": "char __user *",
+                "value": "\u0001"
+            },
+            {
+                "description": "optlen",
+                "type": "int",
+                "value": 4
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 54,
+        "syscall_name": "setsockopt",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "level",
+                "type": "int",
+                "value": 41
+            },
+            {
+                "description": "optname",
+                "type": "int",
+                "value": 26
+            },
+            {
+                "description": "optval",
+                "type": "char __user *",
+                "value": "\u0001"
+            },
+            {
+                "description": "optlen",
+                "type": "int",
+                "value": 4
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 49,
+        "syscall_name": "bind",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "umyaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=AF_INET6, Port=8080, IPV6 address=\"::\"}"
+            },
+            {
+                "description": "addrlen",
+                "type": "int",
+                "value": 28
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 50,
+        "syscall_name": "listen",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "backlog",
+                "type": "int",
+                "value": 10
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 72,
+        "syscall_name": "fcntl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "arg",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 2,
+            "description": "depends on cmd, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 72,
+        "syscall_name": "fcntl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 4
+            },
+            {
+                "description": "arg",
+                "type": "unsigned",
+                "value": 2050
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on cmd, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 41,
+        "syscall_name": "socket",
+        "args": [
+            {
+                "description": "family",
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": "type",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "protocol",
+                "type": "int",
+                "value": 6
+            }
+        ],
+        "return": {
+            "value": 4,
+            "description": "file descriptor for new socket, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 54,
+        "syscall_name": "setsockopt",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4
+            },
+            {
+                "description": "level",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "optname",
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": "optval",
+                "type": "char __user *",
+                "value": "\u0001"
+            },
+            {
+                "description": "optlen",
+                "type": "int",
+                "value": 4
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 49,
+        "syscall_name": "bind",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4
+            },
+            {
+                "description": "umyaddr",
+                "type": "struct sockaddr __user *",
+                "value": "{Family=AF_INET, Port=8080, IPV4 address=\"0.0.0.0\"}"
+            },
+            {
+                "description": "addrlen",
+                "type": "int",
+                "value": 16
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 50,
+        "syscall_name": "listen",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4
+            },
+            {
+                "description": "backlog",
+                "type": "int",
+                "value": 10
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 72,
+        "syscall_name": "fcntl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 3
+            },
+            {
+                "description": "arg",
+                "type": "unsigned",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 2,
+            "description": "depends on cmd, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-12 11:54:15",
+        "pid": 1729967,
+        "syscall_number": 72,
+        "syscall_name": "fcntl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 4
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 4
+            },
+            {
+                "description": "arg",
+                "type": "unsigned",
+                "value": 2050
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on cmd, or -1 on error"
+        }
+    }
+]

@@ -61,7 +61,7 @@ def get_available_logs():
 def format_syscall_entry(entry, index):
     """Formata uma única entrada de syscall para exibição."""
     syscall_name = entry.get("syscall_name", "?")
-    ret = entry.get("return_value", "?")
+    ret = entry.get("return", "?")
     args = entry.get("args", [])
     timestamp = entry.get("timestamp", "")
 
@@ -80,9 +80,7 @@ def format_syscall_entry(entry, index):
         arg_strs.append(f"{desc}: {val_str}")
 
     arg_line = ", ".join(arg_strs)
-    return (
-        f"{index:3d}. {timestamp} | {syscall_name}({arg_line})\n      return: {ret}\n"
-    )
+    return f"{index:3d}. {timestamp} | {syscall_name}({arg_line})\n      return: {ret['value']} [{ret['description']}]\n"
 
 
 def display_log_content(log_file_path):
