@@ -114,30 +114,50 @@ def decode_mode_t(value: int) -> str:
     return oct(value)
 
 
-def format_return_value(raw_value: int, return_info: dict) -> str | int:
+def format_return_value(
+    pid: int, syscall_name: str, raw_value: int, return_info: dict
+) -> str | int:
     """
     Formata o valor de retorno de uma syscall com base no tipo e valor.
     - Erros: Mostra o nome do erro e o valor.
-    - Ponteiros: hexadecimal.
+    - Ponteiros: hexadecimal, e para syscalls específicas, tenta dereferenciar.
     - Inteiros: mantém o valor.
 
     Args:
+        pid: ID do processo sendo rastreado.
+        syscall_name: Nome da syscall.
         raw_value: O inteiro retornado da syscall.
         return_info: Dict com informações do tipo de retorno da syscall.
 
     Retornos:
         Uma string formatada para erros, ponteiros, ou valor inteiro.
     """
-    # Syscallls retornam -1 a -4095 para indicar erro, e o absoluto é o
+    # Syscalls retornam -1 a -4095 para indicar erro, e o absoluto é o
     # valor do errno
     if -4095 <= raw_value < 0:
         err_num = -raw_value
         err_name = errno.errorcode.get(err_num, f"UNKNOWN_ERROR_{err_num}")
         return f"{raw_value} ({err_name})"
 
+    # Se o valor de retorno for 0 (NULL)
+    if raw_value == 0:
+        return 0
+
+    # Tratamento para ponteiros com referência útil
+    if syscall_name == "getcwd":
+        try:
+            path = read_c_string(pid, raw_value)
+            return f'"{path}" @ {hex(raw_value)}'
+        except OSError:
+            return f"<caminho inválido> @ {hex(raw_value)}"
+
+    if syscall_name == "brk":
+        # Para brk apenas o endereço é relevante
+        return hex(raw_value)
+
     return_type = return_info.get("type", "").strip()
 
-    # Se for ponteiro, formata como hexadecimal
+    # Se for ponteiro não tratado, formata como hexadecimal
     if "pointer" in return_type:
         return hex(raw_value)
 
@@ -310,7 +330,7 @@ def format_sockaddr(pid: int, addr: int) -> str:
         return f"<sockaddr @ {hex(addr)}>"
 
 
-def format_arg(pid: int, raw: int, arg_type: str, syscall_name: str):
+def format_arg(pid: int, raw: int, arg_type: str, arg_desc: str, syscall_name: str):
     """Chama as funções corretas para formatar o valor raw conforme a especificação do argumento."""
     arg_type = arg_type.strip()
 
@@ -351,30 +371,21 @@ def format_arg(pid: int, raw: int, arg_type: str, syscall_name: str):
     output_buffers = {
         # Sistema de arquivos
         "read": "buf",
-        "stat": "statbuf",
-        "fstat": "statbuf",
-        "lstat": "statbuf",
         "readlink": "buf",
-        "getdents64": "dirp",
-        "pipe2": "pipefd",
+        "getdents64": "dirent",
         # Redes
-        "recv": "buf",
-        "recvfrom": "buf",
+        "recvmmsg": "mmsg",
+        "recvfrom": "addr",
         "recvmsg": "msg",
-        "getsockname": "addr",
-        "getpeername": "addr",
         "getsockopt": "optval",
         # Sistema e processos
         "uname": "buf",
-        "gettimeofday": "tv",
-        "clock_gettime": "tp",
-        "getrusage": "usage",
+        "getrusage": "rusage",
         "sysinfo": "info",
         # I/O
         "ioctl": "argp",
-        "readv": "iov",
     }
-    if syscall_name in output_buffers and arg_type == output_buffers[syscall_name]:
+    if syscall_name in output_buffers and arg_desc == output_buffers[syscall_name]:
         return f"<buffer @ {hex(raw)}>"
 
     # ponteiro para string

@@ -1,0 +1,240 @@
+[
+    {
+        "timestamp": "2025-07-13 13:12:06.853",
+        "pid": 25156,
+        "syscall_number": 270,
+        "syscall_name": "pselect6",
+        "args": [
+            {
+                "description": "n",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "inp",
+                "type": "fd_set __user *",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "description": "outp",
+                "type": "fd_set __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "exp",
+                "type": "fd_set __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "tsp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=0, tv_nsec=583500779}"
+            },
+            {
+                "description": "sig",
+                "type": "void __user *",
+                "value": "0x7ffdfc8b9dc0"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:07.444",
+        "pid": 25156,
+        "syscall_number": 16,
+        "syscall_name": "ioctl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 21523
+            },
+            {
+                "description": "argp",
+                "type": "unsigned",
+                "value": "<buffer @ 0x7ffdfc8b9d68>"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "non-negative on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:07.444",
+        "pid": 25156,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\u001b[?2"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 104
+            }
+        ],
+        "return": {
+            "value": 104,
+            "description": "bytes written, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:07.445",
+        "pid": 25156,
+        "syscall_number": 270,
+        "syscall_name": "pselect6",
+        "args": [
+            {
+                "description": "n",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "inp",
+                "type": "fd_set __user *",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "description": "outp",
+                "type": "fd_set __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "exp",
+                "type": "fd_set __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "tsp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=0, tv_nsec=991000000}"
+            },
+            {
+                "description": "sig",
+                "type": "void __user *",
+                "value": "0x7ffdfc8b9dc0"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "# of ready fds, 0 on timeout, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:08.444",
+        "pid": 25156,
+        "syscall_number": 16,
+        "syscall_name": "ioctl",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "cmd",
+                "type": "unsigned",
+                "value": 21523
+            },
+            {
+                "description": "argp",
+                "type": "unsigned",
+                "value": "<buffer @ 0x7ffdfc8b9d68>"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "non-negative on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:08.444",
+        "pid": 25156,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "unsigned",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\u001b[?2"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 104
+            }
+        ],
+        "return": {
+            "value": 104,
+            "description": "bytes written, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 13:12:08.445",
+        "pid": 25156,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 5706092
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 2147483647
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=-2137726336, tv_nsec=113}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 3850152640
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 3852937984
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "depends on op, or -1 on error"
+        }
+    }
+]

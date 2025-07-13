@@ -1,8 +1,8 @@
 import os
 import subprocess
 from shlex import split
-from tracer import trace_command
-import json
+from tracer import trace_command, attach_and_trace
+from json_helpers import display_log_content
 
 LOGS_DIR = "logs"
 
@@ -12,10 +12,6 @@ def start_syscall_capture():
     program = input("Qual programa você gostaria de rastrear? (Ex: ls -l): ")
     print("Iniciando a captura de syscalls...")
     # Aqui chama o programa C que captura as syscalls
-    # Cria o diretório 'logs' se não existir
-    logs_dir = "logs"
-    if not os.path.exists(logs_dir):
-        os.makedirs(logs_dir)
     try:
         args = split(program)
         print(f"Program: {args[0]}")
@@ -24,16 +20,35 @@ def start_syscall_capture():
         print("\n")
         global TRACEE
         TRACEE = args[0]
-        # Altera diretório temporariamente para logs
-        cwd_original = os.getcwd()
-        os.chdir(logs_dir)
         trace_command(args[0], args)
-        os.chdir(cwd_original)
         print("Captura de syscalls finalizada. Logs salvos em ./logs/")
     except subprocess.CalledProcessError as e:
         print(f"Ocorreu um erro ao executar o programa: {e}")
     except Exception as e:
         print(f"Erro inesperado: {e}")
+
+
+def attach_to_process():
+    """Pede um PID e inicia o rastreamento de um processo existente."""
+    try:
+        pid_str = input("Digite o ID do Processo (PID) para anexar: ")
+        target_pid = int(pid_str)
+        if target_pid <= 0:
+            print("PID inválido. Deve ser um número positivo.")
+            return
+
+        print(f"Tentando anexar ao PID {target_pid}...")
+
+        log_name = f"pid_{target_pid}"
+        attach_and_trace(target_pid, log_name)
+        print(
+            f"Rastreamento finalizado. Logs para o PID {target_pid} salvos em ./{LOGS_DIR}/"
+        )
+
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um PID numérico.")
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
 
 
 def get_available_logs():
@@ -56,49 +71,6 @@ def get_available_logs():
         print(f"{idx}. {fname}")
 
     return log_files
-
-
-def format_syscall_entry(entry, index):
-    """Formata uma única entrada de syscall para exibição."""
-    syscall_name = entry.get("syscall_name", "?")
-    ret = entry.get("return", "?")
-    args = entry.get("args", [])
-    timestamp = entry.get("timestamp", "")
-
-    arg_strs = []
-    for a in args:
-        desc = a.get("description", "arg")
-        val = a.get("value")
-
-        # Simplifica a exibição de valores complexos
-        if isinstance(val, dict):
-            val_str = "{...}"
-        elif isinstance(val, list):
-            val_str = f"[{len(val)} items]"
-        else:
-            val_str = str(val)
-        arg_strs.append(f"{desc}: {val_str}")
-
-    arg_line = ", ".join(arg_strs)
-    return f"{index:3d}. {timestamp} | {syscall_name}({arg_line})\n      return: {ret['value']} [{ret['description']}]\n"
-
-
-def display_log_content(log_file_path):
-    """Carrega e exibe o conteúdo de um arquivo de log JSON."""
-    try:
-        with open(log_file_path, "r") as f:
-            syscalls = json.load(f)
-
-        log_filename = os.path.basename(log_file_path)
-        print(f"\n--- Syscalls de {log_filename} ---\n")
-
-        for idx, entry in enumerate(syscalls, 1):
-            print(format_syscall_entry(entry, idx))
-
-    except json.JSONDecodeError:
-        print(f"Erro: O arquivo '{log_filename}' não é um JSON válido.")
-    except Exception as e:
-        print(f"Erro ao ler ou processar o arquivo de log: {e}")
 
 
 def select_and_display_logs():
@@ -125,17 +97,20 @@ def select_and_display_logs():
 
 def main():
     while True:
-        print("\n=== Menu de Opções ===")
-        print("1. Iniciar captura de syscalls")
-        print("2. Exibir dados capturados")
-        print("3. Sair")
-        choice = input("Escolha uma opção (1-3): ")
+        print("\n=== Menu do Rastreador de Syscalls ===")
+        print("1. Iniciar e rastrear um novo programa")
+        print("2. Anexar a um processo em execução")
+        print("3. Exibir dados capturados")
+        print("4. Sair")
+        choice = input("Escolha uma opção (1-4): ")
 
         if choice == "1":
             start_syscall_capture()
         elif choice == "2":
-            select_and_display_logs()
+            attach_to_process()
         elif choice == "3":
+            select_and_display_logs()
+        elif choice == "4":
             print("Saindo do programa. Até logo!")
             break
         else:

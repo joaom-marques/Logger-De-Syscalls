@@ -347,7 +347,7 @@
             },
             {
                 "type": "unsigned",
-                "description": "arg"
+                "description": "argp"
             }
         ],
         "entry_point": "sys_ioctl",
@@ -2002,7 +2002,7 @@
             },
             {
                 "type": "struct rusage __user *",
-                "description": "ru"
+                "description": "rusage"
             }
         ],
         "entry_point": "sys_getrusage",

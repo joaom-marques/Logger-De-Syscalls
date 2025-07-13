@@ -1,7 +1,7 @@
 [
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.463",
+        "pid": 19606,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
@@ -12,13 +12,13 @@
             }
         ],
         "return": {
-            "value": "0x564705ba3000",
+            "value": "0x561c81b3c000",
             "description": "new program break on success, or old break on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.464",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -54,13 +54,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23d2b000",
+            "value": "0x7feecb9d5000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.464",
+        "pid": 19606,
         "syscall_number": 21,
         "syscall_name": "access",
         "args": [
@@ -81,8 +81,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.465",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -113,8 +113,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.465",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -135,8 +135,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.465",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -172,13 +172,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23d10000",
+            "value": "0x7feecb9ba000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.465",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -194,8 +194,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.466",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -226,8 +226,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.466",
+        "pid": 19606,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -239,7 +239,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": ""
+                "value": "<buffer @ 0x7fff8cf679a8>"
             },
             {
                 "description": "count",
@@ -253,8 +253,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.466",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -275,8 +275,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.466",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -312,20 +312,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cdf000",
+            "value": "0x7feecb989000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.467",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600829952
+                "value": 3415904256
             },
             {
                 "description": "len",
@@ -354,20 +354,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cff000",
+            "value": "0x7feecb9a9000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.467",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600883200
+                "value": 3415957504
             },
             {
                 "description": "len",
@@ -396,20 +396,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23d0c000",
+            "value": "0x7feecb9b6000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.467",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600891392
+                "value": 3415965696
             },
             {
                 "description": "len",
@@ -438,13 +438,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23d0e000",
+            "value": "0x7feecb9b8000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.467",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -460,8 +460,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.467",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -492,8 +492,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.468",
+        "pid": 19606,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -505,7 +505,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": "\ufffd\ufffd\ufffd#"
+                "value": "<buffer @ 0x7fff8cf67988>"
             },
             {
                 "description": "count",
@@ -519,8 +519,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.468",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -532,7 +532,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "{st_mode=0o174401, st_size=0, st_uid=37, st_gid=0}"
+                "value": "{st_mode=0o114401, st_size=0, st_uid=37, st_gid=0}"
             }
         ],
         "return": {
@@ -541,8 +541,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.468",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -578,20 +578,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cd3000",
+            "value": "0x7feecb97d000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.468",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600674304
+                "value": 3415748608
             },
             {
                 "description": "len",
@@ -620,20 +620,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cd9000",
+            "value": "0x7feecb983000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.469",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600690688
+                "value": 3415764992
             },
             {
                 "description": "len",
@@ -662,13 +662,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cdd000",
+            "value": "0x7feecb987000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.469",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -684,8 +684,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.469",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -716,8 +716,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.469",
+        "pid": 19606,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -729,7 +729,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": "\u0435\ufffd#"
+                "value": "<buffer @ 0x7fff8cf67968>"
             },
             {
                 "description": "count",
@@ -743,8 +743,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.470",
+        "pid": 19606,
         "syscall_number": 17,
         "syscall_name": "pread64",
         "args": [
@@ -771,7 +771,7 @@
             {
                 "description": "poslo",
                 "type": "u32",
-                "value": 3381427719
+                "value": 2364963143
             }
         ],
         "return": {
@@ -780,8 +780,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.470",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -802,8 +802,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.470",
+        "pid": 19606,
         "syscall_number": 17,
         "syscall_name": "pread64",
         "args": [
@@ -839,8 +839,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.470",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -876,20 +876,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23ae1000",
+            "value": "0x7feecb78b000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.470",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600113152
+                "value": 3415187456
             },
             {
                 "description": "len",
@@ -918,20 +918,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23c50000",
+            "value": "0x7feecb8fa000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.471",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600592384
+                "value": 3415666688
             },
             {
                 "description": "len",
@@ -960,20 +960,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23cc5000",
+            "value": "0x7feecb96f000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.471",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 600616960
+                "value": 3415691264
             },
             {
                 "description": "len",
@@ -1002,13 +1002,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23ccb000",
+            "value": "0x7feecb975000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.471",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -1024,8 +1024,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.471",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -1056,8 +1056,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.472",
+        "pid": 19606,
         "syscall_number": 0,
         "syscall_name": "read",
         "args": [
@@ -1069,7 +1069,7 @@
             {
                 "description": "buf",
                 "type": "char __user *",
-                "value": ""
+                "value": "<buffer @ 0x7fff8cf67948>"
             },
             {
                 "description": "count",
@@ -1083,8 +1083,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.472",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -1105,8 +1105,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.472",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -1142,20 +1142,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23a36000",
+            "value": "0x7feecb6e0000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.472",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 598421504
+                "value": 3413495808
             },
             {
                 "description": "len",
@@ -1184,20 +1184,20 @@
             }
         ],
         "return": {
-            "value": "0x7efe23ab3000",
+            "value": "0x7feecb75d000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.472",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned",
-                "value": 598601728
+                "value": 3413676032
             },
             {
                 "description": "len",
@@ -1226,13 +1226,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23adf000",
+            "value": "0x7feecb789000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.473",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -1248,8 +1248,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.473",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -1285,13 +1285,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe23a34000",
+            "value": "0x7feecb6de000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.473",
+        "pid": 19606,
         "syscall_number": 158,
         "syscall_name": "arch_prctl",
         "args": [
@@ -1303,7 +1303,7 @@
             {
                 "description": "arg2",
                 "type": "unsigned",
-                "value": 597904896
+                "value": 3412979200
             }
         ],
         "return": {
@@ -1312,32 +1312,32 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.473",
+        "pid": 19606,
         "syscall_number": 218,
         "syscall_name": "set_tid_address",
         "args": [
             {
                 "description": "tidptr",
                 "type": "int __user *",
-                "value": 597905616
+                "value": 3412979920
             }
         ],
         "return": {
-            "value": 1666181,
+            "value": 19606,
             "description": "caller's thread ID"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.473",
+        "pid": 19606,
         "syscall_number": 273,
         "syscall_name": "set_robust_list",
         "args": [
             {
                 "description": "head",
                 "type": "struct robust_list_head __user *",
-                "value": "0x7efe23a350e0"
+                "value": "0x7feecb6df0e0"
             },
             {
                 "description": "len",
@@ -1351,15 +1351,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.474",
+        "pid": 19606,
         "syscall_number": 334,
         "syscall_name": "rseq",
         "args": [
             {
                 "description": "rseq",
                 "type": "struct rseq __user *",
-                "value": "0x7efe23a34c60"
+                "value": "0x7feecb6dec60"
             },
             {
                 "description": "rseq_len",
@@ -1383,15 +1383,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.474",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 139629987385344
+                "value": 140663594610688
             },
             {
                 "description": "len",
@@ -1410,15 +1410,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.474",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 139629985394688
+                "value": 140663592620032
             },
             {
                 "description": "len",
@@ -1437,15 +1437,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.475",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 139629987483648
+                "value": 140663594708992
             },
             {
                 "description": "len",
@@ -1464,15 +1464,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.475",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 139629987676160
+                "value": 140663594901504
             },
             {
                 "description": "len",
@@ -1491,15 +1491,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.475",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 94862684180480
+                "value": 94679545942016
             },
             {
                 "description": "len",
@@ -1518,15 +1518,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.476",
+        "pid": 19606,
         "syscall_number": 10,
         "syscall_name": "mprotect",
         "args": [
             {
                 "description": "start",
                 "type": "unsigned long",
-                "value": 139629988057088
+                "value": 140663595282432
             },
             {
                 "description": "len",
@@ -1545,8 +1545,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.476",
+        "pid": 19606,
         "syscall_number": 302,
         "syscall_name": "prlimit64",
         "args": [
@@ -1568,7 +1568,7 @@
             {
                 "description": "old_rlim",
                 "type": "struct rlimit64 __user *",
-                "value": "0x7fffc98c8840"
+                "value": "0x7fff8cf68380"
             }
         ],
         "return": {
@@ -1577,15 +1577,15 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.476",
+        "pid": 19606,
         "syscall_number": 11,
         "syscall_name": "munmap",
         "args": [
             {
                 "description": "addr",
                 "type": "unsigned long",
-                "value": 139629987692544
+                "value": 140663594917888
             },
             {
                 "description": "len",
@@ -1599,8 +1599,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.477",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1622,7 +1622,7 @@
             {
                 "description": "arg4",
                 "type": "unsigned long",
-                "value": 139629987486600
+                "value": 140663594711944
             },
             {
                 "description": "arg5",
@@ -1636,8 +1636,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.477",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1659,7 +1659,7 @@
             {
                 "description": "arg4",
                 "type": "unsigned long",
-                "value": 139629986403422
+                "value": 140663593628766
             },
             {
                 "description": "arg5",
@@ -1673,8 +1673,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.477",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1710,8 +1710,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.477",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1733,7 +1733,7 @@
             {
                 "description": "arg4",
                 "type": "unsigned long",
-                "value": 139629986403422
+                "value": 140663593628766
             },
             {
                 "description": "arg5",
@@ -1747,8 +1747,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.478",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1784,8 +1784,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.478",
+        "pid": 19606,
         "syscall_number": 157,
         "syscall_name": "prctl",
         "args": [
@@ -1821,8 +1821,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.478",
+        "pid": 19606,
         "syscall_number": 137,
         "syscall_name": "statfs",
         "args": [
@@ -1834,7 +1834,7 @@
             {
                 "description": "buf",
                 "type": "struct statfs __user *",
-                "value": "{st_mode=0o161766, st_size=25, st_uid=16777216, st_gid=0}"
+                "value": "{st_mode=0o101766, st_size=25, st_uid=16777216, st_gid=0}"
             }
         ],
         "return": {
@@ -1843,8 +1843,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.478",
+        "pid": 19606,
         "syscall_number": 137,
         "syscall_name": "statfs",
         "args": [
@@ -1865,8 +1865,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.478",
+        "pid": 19606,
         "syscall_number": 318,
         "syscall_name": "getrandom",
         "args": [
@@ -1892,8 +1892,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.479",
+        "pid": 19606,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
@@ -1904,30 +1904,30 @@
             }
         ],
         "return": {
-            "value": "0x564705ba3000",
+            "value": "0x561c81b3c000",
             "description": "new program break on success, or old break on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.479",
+        "pid": 19606,
         "syscall_number": 12,
         "syscall_name": "brk",
         "args": [
             {
                 "description": "brk",
                 "type": "unsigned long",
-                "value": 94863038889984
+                "value": 94680435249152
             }
         ],
         "return": {
-            "value": "0x564705bc4000",
+            "value": "0x561c81b5d000",
             "description": "new program break on success, or old break on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.479",
+        "pid": 19606,
         "syscall_number": 21,
         "syscall_name": "access",
         "args": [
@@ -1948,8 +1948,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.479",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -1980,8 +1980,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.479",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2002,8 +2002,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.480",
+        "pid": 19606,
         "syscall_number": 9,
         "syscall_name": "mmap",
         "args": [
@@ -2039,13 +2039,13 @@
             }
         ],
         "return": {
-            "value": "0x7efe15a00000",
+            "value": "0x7feebd800000",
             "description": "address of mapping, or MAP_FAILED on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.480",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2061,8 +2061,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.480",
+        "pid": 19606,
         "syscall_number": 16,
         "syscall_name": "ioctl",
         "args": [
@@ -2077,9 +2077,9 @@
                 "value": 21505
             },
             {
-                "description": "arg",
+                "description": "argp",
                 "type": "unsigned",
-                "value": 3381430592
+                "value": "<buffer @ 0x7fff8cf68480>"
             }
         ],
         "return": {
@@ -2088,8 +2088,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.480",
+        "pid": 19606,
         "syscall_number": 16,
         "syscall_name": "ioctl",
         "args": [
@@ -2104,9 +2104,9 @@
                 "value": 21523
             },
             {
-                "description": "arg",
+                "description": "argp",
                 "type": "unsigned",
-                "value": 3381430864
+                "value": "<buffer @ 0x7fff8cf68590>"
             }
         ],
         "return": {
@@ -2115,8 +2115,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 257,
         "syscall_name": "openat",
         "args": [
@@ -2147,8 +2147,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2160,7 +2160,7 @@
             {
                 "description": "statbuf",
                 "type": "struct __old_kernel_stat __user *",
-                "value": "{st_mode=0o14, st_size=-913537424, st_uid=3381429872, st_gid=32767}"
+                "value": "{st_mode=0o14, st_size=-1930002000, st_uid=2364965296, st_gid=32767}"
             }
         ],
         "return": {
@@ -2169,8 +2169,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 217,
         "syscall_name": "getdents64",
         "args": [
@@ -2182,7 +2182,7 @@
             {
                 "description": "dirent",
                 "type": "struct linux_dirent64 __user *",
-                "value": "0x564705ba9710"
+                "value": "<buffer @ 0x561c81b42710>"
             },
             {
                 "description": "count",
@@ -2191,13 +2191,13 @@
             }
         ],
         "return": {
-            "value": 88,
+            "value": 520,
             "description": "bytes read, 0 on end, or -1 on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 217,
         "syscall_name": "getdents64",
         "args": [
@@ -2209,7 +2209,7 @@
             {
                 "description": "dirent",
                 "type": "struct linux_dirent64 __user *",
-                "value": "0x564705ba9710"
+                "value": "<buffer @ 0x561c81b42710>"
             },
             {
                 "description": "count",
@@ -2223,8 +2223,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2240,8 +2240,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.481",
+        "pid": 19606,
         "syscall_number": 5,
         "syscall_name": "fstat",
         "args": [
@@ -2262,8 +2262,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.482",
+        "pid": 19606,
         "syscall_number": 1,
         "syscall_name": "write",
         "args": [
@@ -2275,22 +2275,22 @@
             {
                 "description": "buf",
                 "type": "const char __user *",
-                "value": "log_"
+                "value": "cons"
             },
             {
                 "description": "count",
                 "type": "size_t",
-                "value": 21
+                "value": 156
             }
         ],
         "return": {
-            "value": 21,
+            "value": 156,
             "description": "bytes written, or -1 on error"
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.482",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [
@@ -2306,8 +2306,8 @@
         }
     },
     {
-        "timestamp": "2025-07-12 11:38:48",
-        "pid": 1666181,
+        "timestamp": "2025-07-13 12:32:35.482",
+        "pid": 19606,
         "syscall_number": 3,
         "syscall_name": "close",
         "args": [

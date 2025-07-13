@@ -1,0 +1,1987 @@
+[
+    {
+        "timestamp": "2025-07-13 12:36:50.212",
+        "pid": 4628,
+        "syscall_number": 219,
+        "syscall_name": "restart_syscall",
+        "args": [],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "0 on success, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:50.385",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10082236
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:50.386",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8623, tv_nsec=493471682}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:51.387",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10082530
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:51.388",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8624, tv_nsec=494823351}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:52.388",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10082862
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:52.389",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8625, tv_nsec=496083649}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:53.390",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10083462
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:53.390",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8626, tv_nsec=497276665}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:54.391",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10083776
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:54.391",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8627, tv_nsec=498277185}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:55.392",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10084354
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:55.392",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8628, tv_nsec=216676012}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:56.110",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10084462
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:56.111",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8628, tv_nsec=499204457}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:56.393",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10084644
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:56.393",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8629, tv_nsec=500461772}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:57.394",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10084854
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:57.395",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8630, tv_nsec=501938051}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:58.395",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10085722
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:58.396",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8631, tv_nsec=503279525}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:59.396",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10087016
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:36:59.397",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8632, tv_nsec=504292429}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:00.397",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10088308
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:00.398",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8633, tv_nsec=505187038}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:01.398",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10089320
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:01.399",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8634, tv_nsec=505948817}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:02.399",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10090410
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:02.399",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8635, tv_nsec=506602355}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:03.400",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10091246
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:03.400",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8636, tv_nsec=507571090}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:04.401",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10091848
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:04.401",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8637, tv_nsec=508598034}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:05.402",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10092684
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:05.402",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8638, tv_nsec=509493734}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:06.403",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10093340
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:06.404",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8639, tv_nsec=510676628}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:07.404",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10093742
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:07.404",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8640, tv_nsec=511524902}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:08.405",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10094906
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:08.406",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8641, tv_nsec=512672252}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:09.406",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10095566
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:09.407",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8642, tv_nsec=513872585}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:10.407",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10096098
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:10.408",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8643, tv_nsec=515100030}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:11.409",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10096466
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:11.409",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646432
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 137
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 0
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=8644, tv_nsec=516343302}"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 0
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 4294967295
+            }
+        ],
+        "return": {
+            "value": "-110 (ETIMEDOUT)",
+            "description": "depends on op, or -1 on error"
+        }
+    },
+    {
+        "timestamp": "2025-07-13 12:37:12.410",
+        "pid": 4628,
+        "syscall_number": 202,
+        "syscall_name": "futex",
+        "args": [
+            {
+                "description": "uaddr",
+                "type": "u32 __user *",
+                "value": 2493646360
+            },
+            {
+                "description": "op",
+                "type": "int",
+                "value": 129
+            },
+            {
+                "description": "val",
+                "type": "u32",
+                "value": 1
+            },
+            {
+                "description": "utime",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "<timespec @ 0x0>"
+            },
+            {
+                "description": "uaddr2",
+                "type": "u32 __user *",
+                "value": 1
+            },
+            {
+                "description": "val3",
+                "type": "u32",
+                "value": 10096696
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "depends on op, or -1 on error"
+        }
+    }
+]
