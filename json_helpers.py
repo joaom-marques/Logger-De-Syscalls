@@ -64,10 +64,23 @@ def save_in_json_file(syscalls, tracee):
     # Altera diretório temporariamente para logs
     cwd_original = os.getcwd()
     os.chdir(LOGS_DIR)
-    with open(f"log_syscalls_{tracee}.json", "w") as f:
-        json.dump(syscalls, f, indent=4)
+
+    # Não sobrescreve logs existentes
+    base_filename = f"log_syscalls_{tracee}"
+    output_filename = f"{base_filename}.json"
+    counter = 1
+    while os.path.exists(output_filename):
+        output_filename = f"{base_filename}_{counter}.json"
+        counter += 1
+
+    # Salva o arquivo com o nome final
+    try:
+        with open(output_filename, "w") as f:
+            json.dump(syscalls, f, indent=4)
+        print(f"Log das syscalls salvo em '{output_filename}'.")
+    except Exception as e:
+        print(f"Ocorreu um erro ao salvar o arquivo de log: {e}")
     os.chdir(cwd_original)
-    print(f"Log das syscalls salvo em 'log_syscalls_{tracee}.json'.")
 
 
 def get_syscall_table():
