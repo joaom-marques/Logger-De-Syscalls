@@ -142,7 +142,7 @@ def handle_syscall_entry(pid, regs):
         name = syscall_info.get("name", f"sys_{syscall_num}")
         args_list_info = syscall_info.get("args", [])
 
-        curr_time = f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}"
+        curr_time = f"{datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]}"
         entry = {
             "timestamp": curr_time,
             "pid": pid,

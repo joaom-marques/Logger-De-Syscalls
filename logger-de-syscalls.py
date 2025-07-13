@@ -9,9 +9,13 @@ LOGS_DIR = "logs"
 
 # Função para iniciar a captura de syscalls
 def start_syscall_capture():
-    program = input("Qual programa você gostaria de rastrear? (Ex: ls -l): ")
+    program = input(
+        "Qual programa você gostaria de rastrear? (Ex: ls -l) (0 para cancelar): "
+    )
     print("Iniciando a captura de syscalls...")
     # Aqui chama o programa C que captura as syscalls
+    if program == "0":
+        return
     try:
         args = split(program)
         print(f"Program: {args[0]}")
@@ -31,9 +35,11 @@ def start_syscall_capture():
 def attach_to_process():
     """Pede um PID e inicia o rastreamento de um processo existente."""
     try:
-        pid_str = input("Digite o ID do Processo (PID) para anexar: ")
+        pid_str = input("Digite o ID do Processo (PID) para anexar (0 para cancelar): ")
         target_pid = int(pid_str)
-        if target_pid <= 0:
+        if target_pid == 0:
+            return
+        if target_pid < 0:
             print("PID inválido. Deve ser um número positivo.")
             return
 
@@ -82,7 +88,7 @@ def select_and_display_logs():
     try:
         sel = int(input("Escolha o número do log para exibir (0 para cancelar): "))
     except ValueError:
-        print("Opção inválida. Por favor, insira um número.")
+        print("Opção inválida. Insira um número.")
         return
 
     if sel == 0:
@@ -100,7 +106,7 @@ def main():
         print("\n=== Menu do Rastreador de Syscalls ===")
         print("1. Iniciar e rastrear um novo programa")
         print("2. Anexar a um processo em execução")
-        print("3. Exibir dados capturados")
+        print("3. Exibir logs")
         print("4. Sair")
         choice = input("Escolha uma opção (1-4): ")
 
@@ -111,10 +117,10 @@ def main():
         elif choice == "3":
             select_and_display_logs()
         elif choice == "4":
-            print("Saindo do programa. Até logo!")
+            print("Saindo do programa")
             break
         else:
-            print("Opção inválida. Por favor, escolha uma opção válida.")
+            print("Opção inválida. Escolha uma opção válida:")
 
 
 if __name__ == "__main__":

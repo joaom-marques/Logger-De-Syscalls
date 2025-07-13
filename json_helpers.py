@@ -27,7 +27,7 @@ def format_syscall_entry(entry, index):
         arg_strs.append(f"{desc}: {val_str}")
 
     arg_line = ", ".join(arg_strs)
-    return f"{index:4d}. [{timestamp}] | PID: {pid} | \n      {syscall_name}({arg_line})\n      return: {ret['value']} [{ret['description']}]\n"
+    return f"{index:4d}. {syscall_name:12s} | PID: {pid ^ 8} | {arg_line}\n      {timestamp} | return: {ret['value']} <- {ret['description']}\n"
 
 
 def display_log_content(log_file_path):
@@ -37,7 +37,7 @@ def display_log_content(log_file_path):
             syscalls = json.load(f)
 
         log_filename = os.path.basename(log_file_path)
-        print(f"\n--- Syscalls de {log_filename} ---\n")
+        print(f"\n--- {log_filename} ---\n")
 
         for idx, entry in enumerate(syscalls, 1):
             print(format_syscall_entry(entry, idx))
