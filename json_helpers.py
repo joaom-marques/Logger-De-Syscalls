@@ -1,5 +1,7 @@
 import json
 import os
+from subprocess import run
+from tempfile import NamedTemporaryFile
 
 LOGS_DIR = "logs"
 
@@ -31,21 +33,47 @@ def format_syscall_entry(entry, index):
 
 
 def display_log_content(log_file_path):
-    """Carrega e exibe o conteúdo de um arquivo de log JSON."""
+    """
+    Carrega, formata e exibe o conteúdo de um log JSON usando um paginador.
+    Esta abordagem evita a sobreposição do menu ao usar um processo bloqueante.
+    """
     try:
         with open(log_file_path, "r") as f:
             syscalls = json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        print(f"Erro ao carregar o arquivo de log '{log_file_path}': {e}")
+        return
 
+    # Cria um arquivo temporário para armazenar o output formatado
+    with NamedTemporaryFile(
+        mode="w+", delete=False, suffix=".log", encoding="utf-8"
+    ) as temp_f:
+        temp_filename = temp_f.name
         log_filename = os.path.basename(log_file_path)
-        print(f"\n--- {log_filename} ---\n")
+        temp_f.write(f"--- {log_filename} ---\n\n")
 
         for idx, entry in enumerate(syscalls, 1):
-            print(format_syscall_entry(entry, idx))
+            temp_f.write(format_syscall_entry(entry, idx))
 
-    except json.JSONDecodeError:
-        print(f"Erro: O arquivo '{log_filename}' não é um JSON válido.")
+    # Usa less para exibir os logs e subprocess.run para evitar concorrencia
+    command = ["less", "-R", temp_filename]
+    try:
+        print(f"\nExibindo '{log_filename}'. Pressione 'q' para sair e voltar ao menu.")
+        run(command, check=True)
+    except FileNotFoundError:
+        print("\nAVISO: Comando 'less' não encontrado. Imprimindo diretamente.\n")
+        try:
+            with open(temp_filename, "r", encoding="utf-8") as f:
+                print(f.read())
+        except Exception as e:
+            print(f"Erro ao ler o arquivo temporário: {e}")
     except Exception as e:
-        print(f"Erro ao ler ou processar o arquivo de log: {e}")
+        print(f"Ocorreu um erro ao imprimir os logs: {e}")
+    finally:
+        # Remove o arquivo temporário
+        os.remove(temp_filename)
+
+    print("\n[+] Visualização do log finalizada. Retornando ao menu.")
 
 
 # Função para ler o arquivo JSON

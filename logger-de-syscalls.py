@@ -19,7 +19,7 @@ def start_syscall_capture():
     try:
         args = split(program)
         print(f"Program: {args[0]}")
-        for x in args:
+        for x in args[1:]:
             print(f"Arg: {x} ", "")
         print("\n")
         global TRACEE

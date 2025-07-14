@@ -9,6 +9,7 @@ from ipaddress import IPv4Address, IPv6Address
 
 # Ponteiro para libc, para utilizar libc.ptrace
 libc = ctypes.CDLL(ctypes.util.find_library("c"), use_errno=True)
+libc.ptrace.restype = ctypes.c_long
 PTRACE_PEEKDATA = 2
 
 # Dicionários de Flags e Constantes
@@ -179,14 +180,17 @@ def read_c_string(pid: int, addr: int) -> str:
     """Lê o registrador do do processo (pid) até \\0."""
     bytes_ = []
     offset = 0
+    count = 0
     while True:
         word = ptrace_peekdata(pid, addr + offset)
         # divide word em 8 bytes (tamanho do registro)
         for i in range(8):
             byte = (word >> (i * 8)) & 0xFF  # valor de cada byte
-            if byte == 0:  # encerra e decodifica os bytes como string utf-8
+            if byte == 0 or count > 30:
+                # encerra e decodifica os bytes como string utf-8
                 return bytes(bytes_).decode("utf-8", errors="replace")
             bytes_.append(byte)
+            count += 1
         offset += 8  # pula os 8 bytes
 
 
@@ -205,7 +209,9 @@ def read_c_string_list(pid: int, addr: int):
     """Lê argv/envp: array de char* terminado em NULL."""
     ptrs = read_ptr_array(pid, addr)
     str_list = []
+    count = 0
     for p in ptrs:
+        count += 1
         s = read_c_string(pid, p)
         str_list.append(s)
 
@@ -436,43 +442,54 @@ def format_arg(pid: int, raw: int, arg_type: str, arg_desc: str, syscall_name: s
         except OSError:
             return hex(raw)
 
+    # ponteiro generico
+    if arg_type.endswith("*") or "addr" in arg_desc or "brk" in arg_desc:
+        return hex(raw)
+
     # tipos numericos
+    type_widths = {
+        # signed 32b
+        "int": 32,
+        "pid_t": 32,
+        "uid_t": 32,
+        "gid_t": 32,
+        "key_t": 32,
+        # unsigned 32b
+        "unsigned": 32,
+        "unsigned int": 32,
+        "u32": 32,
+        "u16": 16,
+        # signed 64b
+        "long": 64,
+        "off_t": 64,
+        "loff_t": 64,
+        # unsigned 64-bit
+        "unsigned long": 64,
+        "size_t": 64,
+    }
     signed_types = {
         "int",
+        "pid_t",
+        "uid_t",
+        "gid_t",
+        "key_t",
         "long",
         "off_t",
         "loff_t",
-        "pid_t",
-        "key_t",
-        "uid_t",
-        "gid_t",
     }
-    unsigned_types = {
-        "unsigned",
-        "unsigned int",
-        "unsigned long",
-        "size_t",
-        "u32",
-        "u16",
-        "sigset_t",
-    }
-    base_type = arg_type.replace(" __user *", "").replace(" *", "")
 
-    if base_type in signed_types:
-        # Para signed, já está correto
-        return raw
-
-    if base_type in unsigned_types:
-        bits = 32
-        if "long" in base_type or "size_t" in base_type:
-            bits = 64
-        if "u16" in base_type:
-            bits = 16
-        return raw & ((1 << bits) - 1)
-
-    # ponteiro generico
-    if arg_type.endswith("*"):
-        return hex(raw)
+    base = arg_type.replace(" __user *", "").replace(" *", "")
+    if base in type_widths:
+        bits = type_widths[base]
+        mask = (1 << bits) - 1
+        # Reudz o valor para o tamanho do tipo
+        val = raw & mask
+        # Se for signed, ajusta com complemento de dois
+        if base in signed_types:
+            sign_bit = 1 << (bits - 1)
+            if val & sign_bit:
+                val = val - (1 << bits)
+        return val
 
     # fallback
     return raw
