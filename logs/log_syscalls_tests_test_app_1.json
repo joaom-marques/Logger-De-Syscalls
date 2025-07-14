@@ -1,0 +1,850 @@
+[
+    {
+        "timestamp": "11:56:42.635",
+        "pid": 192833,
+        "syscall_number": 12,
+        "syscall_name": "brk",
+        "args": [
+            {
+                "description": "brk",
+                "type": "unsigned long",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x3f67f000",
+            "description": "new program break on success, or old break on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.635",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f3155587000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.636",
+        "pid": 192833,
+        "syscall_number": 21,
+        "syscall_name": "access",
+        "args": [
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "mode",
+                "type": "int",
+                "value": 4
+            }
+        ],
+        "return": {
+            "value": "-2 (ENOENT)",
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.636",
+        "pid": 192833,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/etc"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.636",
+        "pid": 192833,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __kernel_stat __user *",
+                "value": "{st_mode=0o0, st_size=0, st_uid=0, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.636",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 107411
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 2
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f315556c000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.637",
+        "pid": 192833,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.637",
+        "pid": 192833,
+        "syscall_number": 257,
+        "syscall_name": "openat",
+        "args": [
+            {
+                "description": "dfd",
+                "type": "int",
+                "value": 4294967196
+            },
+            {
+                "description": "filename",
+                "type": "const char __user *",
+                "value": "/lib"
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 524288
+            },
+            {
+                "description": "mode",
+                "type": "umode_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": 3,
+            "description": "new file descriptor, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.637",
+        "pid": 192833,
+        "syscall_number": 0,
+        "syscall_name": "read",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": "<buffer @ 0x7ffefb9ecd68>"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 832
+            }
+        ],
+        "return": {
+            "value": 832,
+            "description": "bytes read, 0 on EOF, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.637",
+        "pid": 192833,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 784
+            },
+            {
+                "description": "pos",
+                "type": "loff_t",
+                "value": 64
+            }
+        ],
+        "return": {
+            "value": 784,
+            "description": "bytes read, 0 on EOF, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.638",
+        "pid": 192833,
+        "syscall_number": 5,
+        "syscall_name": "fstat",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "statbuf",
+                "type": "struct __kernel_stat __user *",
+                "value": "{st_mode=0o0, st_size=16, st_uid=0, st_gid=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.638",
+        "pid": 192833,
+        "syscall_number": 17,
+        "syscall_name": "pread64",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "buf",
+                "type": "char __user *",
+                "value": ""
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 784
+            },
+            {
+                "description": "pos",
+                "type": "loff_t",
+                "value": 64
+            }
+        ],
+        "return": {
+            "value": 784,
+            "description": "bytes read, 0 on EOF, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.638",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 2038872
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 5
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 2050
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f315537a000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.638",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 139849861337088
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 479232
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 1503232
+            }
+        ],
+        "return": {
+            "value": "0x7f31554e9000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 139849861816320
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 24576
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 2066
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 1978368
+            }
+        ],
+        "return": {
+            "value": "0x7f315555e000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 139849861840896
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 31832
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 50
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f3155564000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 3,
+        "syscall_name": "close",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 3
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 9,
+        "syscall_name": "mmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 0
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 12288
+            },
+            {
+                "description": "prot",
+                "type": "int",
+                "value": 3
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 34
+            },
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 4294967295
+            },
+            {
+                "description": "off",
+                "type": "off_t",
+                "value": 0
+            }
+        ],
+        "return": {
+            "value": "0x7f3155377000",
+            "description": "address of mapping, or MAP_FAILED on error"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 158,
+        "syscall_name": "arch_prctl",
+        "args": [
+            {
+                "description": "option",
+                "type": "int",
+                "value": 4098
+            },
+            {
+                "description": "arg2",
+                "type": "unsigned long",
+                "value": 139849859823424
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 218,
+        "syscall_name": "set_tid_address",
+        "args": [
+            {
+                "description": "tidptr",
+                "type": "int __user *",
+                "value": 139849859824144
+            }
+        ],
+        "return": {
+            "value": 192833,
+            "description": "caller's thread ID"
+        }
+    },
+    {
+        "timestamp": "11:56:42.639",
+        "pid": 192833,
+        "syscall_number": 273,
+        "syscall_name": "set_robust_list",
+        "args": [
+            {
+                "description": "head",
+                "type": "struct robust_list_head __user *",
+                "value": "0x7f3155377a20"
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 24
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 334,
+        "syscall_name": "rseq",
+        "args": [
+            {
+                "description": "rseq",
+                "type": "struct rseq __user *",
+                "value": "0x7f3155377680"
+            },
+            {
+                "description": "rseq_len",
+                "type": "uint32_t",
+                "value": 32
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "sig",
+                "type": "uint32_t",
+                "value": 1392848979
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139849861816320
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 16384
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 4202496
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 4096
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 10,
+        "syscall_name": "mprotect",
+        "args": [
+            {
+                "description": "start",
+                "type": "unsigned long",
+                "value": 139849862238208
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 8192
+            },
+            {
+                "description": "prot",
+                "type": "unsigned long",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 302,
+        "syscall_name": "prlimit64",
+        "args": [
+            {
+                "description": "pid",
+                "type": "pid_t",
+                "value": 0
+            },
+            {
+                "description": "resource",
+                "type": "unsigned int",
+                "value": 3
+            },
+            {
+                "description": "new_rlim",
+                "type": "const struct rlimit64 __user *",
+                "value": "0x0"
+            },
+            {
+                "description": "old_rlim",
+                "type": "struct rlimit64 __user *",
+                "value": "0x7ffefb9ed740"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 11,
+        "syscall_name": "munmap",
+        "args": [
+            {
+                "description": "addr",
+                "type": "unsigned long",
+                "value": 139849861873664
+            },
+            {
+                "description": "len",
+                "type": "size_t",
+                "value": 107411
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "11:56:42.640",
+        "pid": 192833,
+        "syscall_number": 14,
+        "syscall_name": "rt_sigprocmask",
+        "args": [
+            {
+                "description": "how",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "nset",
+                "type": "sigset_t __user *",
+                "value": "0x7f31555357c8"
+            },
+            {
+                "description": "oset",
+                "type": "sigset_t __user *",
+                "value": [
+                    "SIGILL",
+                    "SIGABRT",
+                    "SIGKILL",
+                    "SIGUSR1",
+                    "SIGUSR2",
+                    "SIGPIPE",
+                    "SIGTERM",
+                    "SIGSTKFLT",
+                    "SIGCONT",
+                    "SIGSTOP",
+                    "SIGTSTP",
+                    "SIGTTIN",
+                    "SIGXCPU",
+                    "SIGXFSZ",
+                    "SIGVTALRM",
+                    "SIGWINCH",
+                    "SIGIO",
+                    "SIGPWR",
+                    "SIGSYS",
+                    "SIGRTMIN",
+                    "SIGRTMAX"
+                ]
+            },
+            {
+                "description": "sigsetsize",
+                "type": "size_t",
+                "value": 8
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    }
+]

@@ -2,7 +2,7 @@
     "0": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -18,13 +18,13 @@
         "name": "read",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on EOF, or -1 on error"
+            "description": "bytes read, 0 on EOF, or errno code"
         }
     },
     "1": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -40,7 +40,7 @@
         "name": "write",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "2": {
@@ -62,13 +62,13 @@
         "name": "open",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "3": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             }
         ],
@@ -76,7 +76,7 @@
         "name": "close",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "4": {
@@ -86,7 +86,7 @@
                 "description": "filename"
             },
             {
-                "type": "struct __old_kernel_stat __user *",
+                "type": "struct __kernel_stat __user *",
                 "description": "statbuf"
             }
         ],
@@ -94,17 +94,17 @@
         "name": "stat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "5": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
-                "type": "struct __old_kernel_stat __user *",
+                "type": "struct __kernel_stat __user *",
                 "description": "statbuf"
             }
         ],
@@ -112,7 +112,7 @@
         "name": "fstat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "6": {
@@ -122,7 +122,7 @@
                 "description": "filename"
             },
             {
-                "type": "struct __old_kernel_stat __user *",
+                "type": "struct __kernel_stat __user *",
                 "description": "statbuf"
             }
         ],
@@ -130,7 +130,7 @@
         "name": "lstat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "7": {
@@ -152,13 +152,13 @@
         "name": "poll",
         "return": {
             "type": "long",
-            "description": "# of fds with events, 0 on timeout, or -1 on error"
+            "description": "# of fds with events, 0 on timeout, or errno code"
         }
     },
     "8": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -174,33 +174,33 @@
         "name": "lseek",
         "return": {
             "type": "long",
-            "description": "resulting offset, or -1 on error"
+            "description": "resulting offset, or errno code"
         }
     },
     "9": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "addr"
             },
             {
-                "type": "unsigned",
+                "type": "size_t",
                 "description": "len"
             },
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "prot"
             },
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "flags"
             },
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
-                "type": "unsigned",
+                "type": "off_t",
                 "description": "off"
             }
         ],
@@ -230,7 +230,7 @@
         "name": "mprotect",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "11": {
@@ -248,7 +248,7 @@
         "name": "munmap",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "12": {
@@ -292,7 +292,7 @@
         "name": "rt_sigaction",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "14": {
@@ -318,7 +318,7 @@
         "name": "rt_sigprocmask",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "15": {
@@ -338,7 +338,7 @@
     "16": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -346,7 +346,7 @@
                 "description": "cmd"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "argp"
             }
         ],
@@ -354,43 +354,39 @@
         "name": "ioctl",
         "return": {
             "type": "long",
-            "description": "non-negative on success, or -1 on error"
+            "description": "non-negative on success, or errno code"
         }
     },
     "17": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
                 "type": "char __user *",
-                "description": "ubuf"
+                "description": "buf"
             },
             {
-                "type": "compat_size_t",
+                "type": "size_t",
                 "description": "count"
             },
             {
-                "type": "u32",
-                "description": "poshi"
-            },
-            {
-                "type": "u32",
-                "description": "poslo"
+                "type": "loff_t",
+                "description": "pos"
             }
         ],
         "entry_point": "sys_pread64",
         "name": "pread64",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on EOF, or -1 on error"
+            "description": "bytes read, 0 on EOF, or errno code"
         }
     },
     "18": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -398,29 +394,25 @@
                 "description": "ubuf"
             },
             {
-                "type": "compat_size_t",
+                "type": "size_t",
                 "description": "count"
             },
             {
-                "type": "u32",
-                "description": "poshi"
-            },
-            {
-                "type": "u32",
-                "description": "poslo"
+                "type": "loff_t",
+                "description": "pos"
             }
         ],
         "entry_point": "sys_pwrite64",
         "name": "pwrite64",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "19": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -428,7 +420,7 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             }
         ],
@@ -436,13 +428,13 @@
         "name": "readv",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on EOF, or -1 on error"
+            "description": "bytes read, 0 on EOF, or errno code"
         }
     },
     "20": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -450,7 +442,7 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             }
         ],
@@ -458,7 +450,7 @@
         "name": "writev",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "21": {
@@ -476,7 +468,7 @@
         "name": "access",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "22": {
@@ -490,7 +482,7 @@
         "name": "pipe",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "23": {
@@ -512,7 +504,7 @@
                 "description": "exp"
             },
             {
-                "type": "struct __kernel_old_timeval __user *",
+                "type": "struct timeval __user *",
                 "description": "tvp"
             }
         ],
@@ -520,7 +512,7 @@
         "name": "select",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "24": {
@@ -529,7 +521,7 @@
         "name": "sched_yield",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "25": {
@@ -581,7 +573,7 @@
         "name": "msync",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "27": {
@@ -603,7 +595,7 @@
         "name": "mincore",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "28": {
@@ -625,7 +617,7 @@
         "name": "madvise",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "29": {
@@ -647,7 +639,7 @@
         "name": "shmget",
         "return": {
             "type": "long",
-            "description": "shm identifier, or -1 on error"
+            "description": "shm identifier, or errno code"
         }
     },
     "30": {
@@ -669,7 +661,7 @@
         "name": "shmat",
         "return": {
             "type": "pointer",
-            "description": "address of attached segment, or -1 on error"
+            "description": "address of attached segment, or errno code"
         }
     },
     "31": {
@@ -691,7 +683,7 @@
         "name": "shmctl",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "32": {
@@ -705,7 +697,7 @@
         "name": "dup",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "33": {
@@ -723,7 +715,7 @@
         "name": "dup2",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "34": {
@@ -750,7 +742,7 @@
         "name": "nanosleep",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error/interrupt"
+            "description": "0 on success, or errno code/interrupt"
         }
     },
     "36": {
@@ -760,7 +752,7 @@
                 "description": "which"
             },
             {
-                "type": "struct __kernel_old_itimerval __user *",
+                "type": "struct itimerval __user *",
                 "description": "value"
             }
         ],
@@ -768,7 +760,7 @@
         "name": "getitimer",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "37": {
@@ -792,11 +784,11 @@
                 "description": "which"
             },
             {
-                "type": "struct __kernel_old_itimerval __user *",
+                "type": "struct itimerval __user *",
                 "description": "value"
             },
             {
-                "type": "struct __kernel_old_itimerval __user *",
+                "type": "struct itimerval __user *",
                 "description": "ovalue"
             }
         ],
@@ -804,7 +796,7 @@
         "name": "setitimer",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "39": {
@@ -839,7 +831,7 @@
         "name": "sendfile",
         "return": {
             "type": "long",
-            "description": "bytes transferred, or -1 on error"
+            "description": "bytes transferred, or errno code"
         }
     },
     "41": {
@@ -861,7 +853,7 @@
         "name": "socket",
         "return": {
             "type": "long",
-            "description": "file descriptor for new socket, or -1 on error"
+            "description": "file descriptor for new socket, or errno code"
         }
     },
     "42": {
@@ -883,7 +875,7 @@
         "name": "connect",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "43": {
@@ -905,7 +897,7 @@
         "name": "accept",
         "return": {
             "type": "long",
-            "description": "fd for accepted socket, or -1 on error"
+            "description": "fd for accepted socket, or errno code"
         }
     },
     "44": {
@@ -939,7 +931,7 @@
         "name": "sendto",
         "return": {
             "type": "long",
-            "description": "bytes sent, or -1 on error"
+            "description": "bytes sent, or errno code"
         }
     },
     "45": {
@@ -973,7 +965,7 @@
         "name": "recvfrom",
         "return": {
             "type": "long",
-            "description": "bytes received, 0 on EOF, or -1 on error"
+            "description": "bytes received, 0 on EOF, or errno code"
         }
     },
     "46": {
@@ -995,7 +987,7 @@
         "name": "sendmsg",
         "return": {
             "type": "long",
-            "description": "bytes sent, or -1 on error"
+            "description": "bytes sent, or errno code"
         }
     },
     "47": {
@@ -1017,7 +1009,7 @@
         "name": "recvmsg",
         "return": {
             "type": "long",
-            "description": "bytes received, 0 on EOF, or -1 on error"
+            "description": "bytes received, 0 on EOF, or errno code"
         }
     },
     "48": {
@@ -1035,7 +1027,7 @@
         "name": "shutdown",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "49": {
@@ -1057,7 +1049,7 @@
         "name": "bind",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "50": {
@@ -1075,7 +1067,7 @@
         "name": "listen",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "51": {
@@ -1097,7 +1089,7 @@
         "name": "getsockname",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "52": {
@@ -1119,7 +1111,7 @@
         "name": "getpeername",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "53": {
@@ -1145,7 +1137,7 @@
         "name": "socketpair",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "54": {
@@ -1175,7 +1167,7 @@
         "name": "setsockopt",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "55": {
@@ -1205,17 +1197,17 @@
         "name": "getsockopt",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "56": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "clone_flags"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "newsp"
             },
             {
@@ -1223,11 +1215,11 @@
                 "description": "parent_tidptr"
             },
             {
-                "type": "unsigned",
+                "type": "int __user *",
                 "description": "child_tidptr"
             },
             {
-                "type": "int __user *",
+                "type": "unsigned long",
                 "description": "tls"
             }
         ],
@@ -1235,7 +1227,7 @@
         "name": "clone",
         "return": {
             "type": "long",
-            "description": "child's TID in parent, 0 in child, or -1 on error"
+            "description": "child's TID in parent, 0 in child, or errno code"
         }
     },
     "57": {
@@ -1244,7 +1236,7 @@
         "name": "fork",
         "return": {
             "type": "long",
-            "description": "child's PID in parent, 0 in child, or -1 on error"
+            "description": "child's PID in parent, 0 in child, or errno code"
         }
     },
     "58": {
@@ -1253,7 +1245,7 @@
         "name": "vfork",
         "return": {
             "type": "long",
-            "description": "child's PID in parent, 0 in child, or -1 on error"
+            "description": "child's PID in parent, 0 in child, or errno code"
         }
     },
     "59": {
@@ -1275,7 +1267,7 @@
         "name": "execve",
         "return": {
             "type": "long",
-            "description": "never returns on success, or -1 on error"
+            "description": "never returns on success, or errno code"
         }
     },
     "60": {
@@ -1315,7 +1307,7 @@
         "name": "wait4",
         "return": {
             "type": "long",
-            "description": "pid of terminated child, 0 if no change, or -1 on error"
+            "description": "pid of terminated child, 0 if no change, or errno code"
         }
     },
     "62": {
@@ -1333,7 +1325,7 @@
         "name": "kill",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "63": {
@@ -1347,7 +1339,7 @@
         "name": "uname",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "64": {
@@ -1369,7 +1361,7 @@
         "name": "semget",
         "return": {
             "type": "long",
-            "description": "semaphore id, or -1 on error"
+            "description": "semaphore id, or errno code"
         }
     },
     "65": {
@@ -1391,7 +1383,7 @@
         "name": "semop",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "66": {
@@ -1417,7 +1409,7 @@
         "name": "semctl",
         "return": {
             "type": "long",
-            "description": "non-negative value on success, or -1 on error"
+            "description": "non-negative value on success, or errno code"
         }
     },
     "67": {
@@ -1431,7 +1423,7 @@
         "name": "shmdt",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "68": {
@@ -1449,7 +1441,7 @@
         "name": "msgget",
         "return": {
             "type": "long",
-            "description": "message queue id, or -1 on error"
+            "description": "message queue id, or errno code"
         }
     },
     "69": {
@@ -1475,7 +1467,7 @@
         "name": "msgsnd",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "70": {
@@ -1505,7 +1497,7 @@
         "name": "msgrcv",
         "return": {
             "type": "long",
-            "description": "bytes copied into msgp, or -1 on error"
+            "description": "bytes copied into msgp, or errno code"
         }
     },
     "71": {
@@ -1527,21 +1519,21 @@
         "name": "msgctl",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "72": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "cmd"
             },
             {
-                "type": "unsigned",
+                "type": "long",
                 "description": "arg"
             }
         ],
@@ -1549,13 +1541,13 @@
         "name": "fcntl",
         "return": {
             "type": "long",
-            "description": "depends on cmd, or -1 on error"
+            "description": "depends on cmd, or errno code"
         }
     },
     "73": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -1567,13 +1559,13 @@
         "name": "flock",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "74": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             }
         ],
@@ -1581,13 +1573,13 @@
         "name": "fsync",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "75": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             }
         ],
@@ -1595,7 +1587,7 @@
         "name": "fdatasync",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "76": {
@@ -1613,13 +1605,13 @@
         "name": "truncate",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "77": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -1631,13 +1623,13 @@
         "name": "ftruncate",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "78": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -1653,7 +1645,7 @@
         "name": "getdents",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on end, or -1 on error"
+            "description": "bytes read, 0 on end, or errno code"
         }
     },
     "79": {
@@ -1663,7 +1655,7 @@
                 "description": "buf"
             },
             {
-                "type": "unsigned",
+                "type": "size_t",
                 "description": "size"
             }
         ],
@@ -1685,13 +1677,13 @@
         "name": "chdir",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "81": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             }
         ],
@@ -1699,7 +1691,7 @@
         "name": "fchdir",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "82": {
@@ -1717,7 +1709,7 @@
         "name": "rename",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "83": {
@@ -1735,7 +1727,7 @@
         "name": "mkdir",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "84": {
@@ -1749,7 +1741,7 @@
         "name": "rmdir",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "85": {
@@ -1767,7 +1759,7 @@
         "name": "creat",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "86": {
@@ -1785,7 +1777,7 @@
         "name": "link",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "87": {
@@ -1799,7 +1791,7 @@
         "name": "unlink",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "88": {
@@ -1817,7 +1809,7 @@
         "name": "symlink",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "89": {
@@ -1839,7 +1831,7 @@
         "name": "readlink",
         "return": {
             "type": "long",
-            "description": "bytes placed in buf, or -1 on error"
+            "description": "bytes placed in buf, or errno code"
         }
     },
     "90": {
@@ -1857,13 +1849,13 @@
         "name": "chmod",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "91": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -1875,7 +1867,7 @@
         "name": "fchmod",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "92": {
@@ -1897,13 +1889,13 @@
         "name": "chown",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "93": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -1919,7 +1911,7 @@
         "name": "fchown",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "94": {
@@ -1941,7 +1933,7 @@
         "name": "lchown",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "95": {
@@ -1961,7 +1953,7 @@
     "96": {
         "args": [
             {
-                "type": "struct __kernel_old_timeval __user *",
+                "type": "struct timeval __user *",
                 "description": "tv"
             },
             {
@@ -1973,7 +1965,7 @@
         "name": "gettimeofday",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "97": {
@@ -1991,7 +1983,7 @@
         "name": "getrlimit",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "98": {
@@ -2009,7 +2001,7 @@
         "name": "getrusage",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "99": {
@@ -2023,7 +2015,7 @@
         "name": "sysinfo",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "100": {
@@ -2037,7 +2029,7 @@
         "name": "times",
         "return": {
             "type": "long",
-            "description": "elapsed jiffies on success, or -1 on error"
+            "description": "elapsed jiffies on success, or errno code"
         }
     },
     "101": {
@@ -2063,7 +2055,7 @@
         "name": "ptrace",
         "return": {
             "type": "long",
-            "description": "depends on request, or -1 on error"
+            "description": "depends on request, or errno code"
         }
     },
     "102": {
@@ -2094,7 +2086,7 @@
         "name": "syslog",
         "return": {
             "type": "long",
-            "description": "bytes read, or -1 on error"
+            "description": "bytes read, or errno code"
         }
     },
     "104": {
@@ -2117,7 +2109,7 @@
         "name": "setuid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "106": {
@@ -2131,7 +2123,7 @@
         "name": "setgid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "107": {
@@ -2167,7 +2159,7 @@
         "name": "setpgid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "110": {
@@ -2194,7 +2186,7 @@
         "name": "setsid",
         "return": {
             "type": "long",
-            "description": "session ID on success, or -1 on error"
+            "description": "session ID on success, or errno code"
         }
     },
     "113": {
@@ -2212,7 +2204,7 @@
         "name": "setreuid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "114": {
@@ -2230,7 +2222,7 @@
         "name": "setregid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "115": {
@@ -2248,7 +2240,7 @@
         "name": "getgroups",
         "return": {
             "type": "long",
-            "description": "# of groups on success, or -1 on error"
+            "description": "# of groups on success, or errno code"
         }
     },
     "116": {
@@ -2266,7 +2258,7 @@
         "name": "setgroups",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "117": {
@@ -2288,7 +2280,7 @@
         "name": "setresuid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "118": {
@@ -2310,7 +2302,7 @@
         "name": "getresuid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "119": {
@@ -2332,7 +2324,7 @@
         "name": "setresgid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "120": {
@@ -2354,7 +2346,7 @@
         "name": "getresgid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "121": {
@@ -2368,7 +2360,7 @@
         "name": "getpgid",
         "return": {
             "type": "long",
-            "description": "process group ID on success, or -1 on error"
+            "description": "process group ID on success, or errno code"
         }
     },
     "122": {
@@ -2410,7 +2402,7 @@
         "name": "getsid",
         "return": {
             "type": "long",
-            "description": "session ID on success, or -1 on error"
+            "description": "session ID on success, or errno code"
         }
     },
     "125": {
@@ -2428,7 +2420,7 @@
         "name": "capget",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "126": {
@@ -2446,7 +2438,7 @@
         "name": "capset",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "127": {
@@ -2464,7 +2456,7 @@
         "name": "rt_sigpending",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "128": {
@@ -2490,7 +2482,7 @@
         "name": "rt_sigtimedwait",
         "return": {
             "type": "long",
-            "description": "signal number on success, or -1 on error/timeout"
+            "description": "signal number on success, or errno code/timeout"
         }
     },
     "129": {
@@ -2512,7 +2504,7 @@
         "name": "rt_sigqueueinfo",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "130": {
@@ -2548,7 +2540,7 @@
         "name": "sigaltstack",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "132": {
@@ -2566,7 +2558,7 @@
         "name": "utime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "133": {
@@ -2588,7 +2580,7 @@
         "name": "mknod",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "135": {
@@ -2602,7 +2594,7 @@
         "name": "personality",
         "return": {
             "type": "long",
-            "description": "previous personality on success, or -1 on error"
+            "description": "previous personality on success, or errno code"
         }
     },
     "136": {
@@ -2620,7 +2612,7 @@
         "name": "ustat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "137": {
@@ -2638,13 +2630,13 @@
         "name": "statfs",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "138": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -2656,7 +2648,7 @@
         "name": "fstatfs",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "139": {
@@ -2666,11 +2658,11 @@
                 "description": "option"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "arg1"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "arg2"
             }
         ],
@@ -2678,7 +2670,7 @@
         "name": "sysfs",
         "return": {
             "type": "long",
-            "description": "depends on option, or -1 on error"
+            "description": "depends on option, or errno code"
         }
     },
     "140": {
@@ -2696,7 +2688,7 @@
         "name": "getpriority",
         "return": {
             "type": "long",
-            "description": "priority on success, or -1 on error"
+            "description": "priority on success, or errno code"
         }
     },
     "141": {
@@ -2718,7 +2710,7 @@
         "name": "setpriority",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "142": {
@@ -2736,7 +2728,7 @@
         "name": "sched_setparam",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "143": {
@@ -2754,7 +2746,7 @@
         "name": "sched_getparam",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "144": {
@@ -2776,7 +2768,7 @@
         "name": "sched_setscheduler",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "145": {
@@ -2790,7 +2782,7 @@
         "name": "sched_getscheduler",
         "return": {
             "type": "long",
-            "description": "policy on success, or -1 on error"
+            "description": "policy on success, or errno code"
         }
     },
     "146": {
@@ -2804,7 +2796,7 @@
         "name": "sched_get_priority_max",
         "return": {
             "type": "long",
-            "description": "max priority on success, or -1 on error"
+            "description": "max priority on success, or errno code"
         }
     },
     "147": {
@@ -2818,7 +2810,7 @@
         "name": "sched_get_priority_min",
         "return": {
             "type": "long",
-            "description": "min priority on success, or -1 on error"
+            "description": "min priority on success, or errno code"
         }
     },
     "148": {
@@ -2836,7 +2828,7 @@
         "name": "sched_rr_get_interval",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "149": {
@@ -2854,7 +2846,7 @@
         "name": "mlock",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "150": {
@@ -2872,7 +2864,7 @@
         "name": "munlock",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "151": {
@@ -2886,7 +2878,7 @@
         "name": "mlockall",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "152": {
@@ -2895,7 +2887,7 @@
         "name": "munlockall",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "153": {
@@ -2904,7 +2896,7 @@
         "name": "vhangup",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "154": {
@@ -2926,7 +2918,7 @@
         "name": "modify_ldt",
         "return": {
             "type": "long",
-            "description": "depends on func, or -1 on error"
+            "description": "depends on func, or errno code"
         }
     },
     "155": {
@@ -2944,7 +2936,7 @@
         "name": "pivot_root",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "156": {
@@ -2983,7 +2975,7 @@
         "name": "prctl",
         "return": {
             "type": "long",
-            "description": "depends on option, or -1 on error"
+            "description": "depends on option, or errno code"
         }
     },
     "158": {
@@ -2993,7 +2985,7 @@
                 "description": "option"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "arg2"
             }
         ],
@@ -3001,7 +2993,7 @@
         "name": "arch_prctl",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "159": {
@@ -3015,7 +3007,7 @@
         "name": "adjtimex",
         "return": {
             "type": "long",
-            "description": "clock state, or -1 on error"
+            "description": "clock state, or errno code"
         }
     },
     "160": {
@@ -3033,7 +3025,7 @@
         "name": "setrlimit",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "161": {
@@ -3047,7 +3039,7 @@
         "name": "chroot",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "162": {
@@ -3056,7 +3048,7 @@
         "name": "sync",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "163": {
@@ -3070,13 +3062,13 @@
         "name": "acct",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "164": {
         "args": [
             {
-                "type": "struct __kernel_old_timeval __user *",
+                "type": "struct timeval __user *",
                 "description": "tv"
             },
             {
@@ -3088,7 +3080,7 @@
         "name": "settimeofday",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "165": {
@@ -3106,7 +3098,7 @@
                 "description": "type"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "flags"
             },
             {
@@ -3118,7 +3110,7 @@
         "name": "mount",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "166": {
@@ -3136,7 +3128,7 @@
         "name": "umount2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "167": {
@@ -3154,7 +3146,7 @@
         "name": "swapon",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "168": {
@@ -3168,7 +3160,7 @@
         "name": "swapoff",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "169": {
@@ -3194,7 +3186,7 @@
         "name": "reboot",
         "return": {
             "type": "long",
-            "description": "never returns on success, or -1 on error"
+            "description": "never returns on success, or errno code"
         }
     },
     "170": {
@@ -3212,7 +3204,7 @@
         "name": "sethostname",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "171": {
@@ -3230,7 +3222,7 @@
         "name": "setdomainname",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "172": {
@@ -3244,7 +3236,7 @@
         "name": "iopl",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "173": {
@@ -3266,7 +3258,7 @@
         "name": "ioperm",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "175": {
@@ -3288,7 +3280,7 @@
         "name": "init_module",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "176": {
@@ -3306,7 +3298,7 @@
         "name": "delete_module",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "179": {
@@ -3332,7 +3324,7 @@
         "name": "quotactl",
         "return": {
             "type": "long",
-            "description": "depends on cmd, or -1 on error"
+            "description": "depends on cmd, or errno code"
         }
     },
     "186": {
@@ -3351,15 +3343,11 @@
                 "description": "fd"
             },
             {
-                "type": "u32",
-                "description": "offhi"
+                "type": "loff_t",
+                "description": "offset"
             },
             {
-                "type": "u32",
-                "description": "offlo"
-            },
-            {
-                "type": "compat_size_t",
+                "type": "size_t",
                 "description": "count"
             }
         ],
@@ -3367,7 +3355,7 @@
         "name": "readahead",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "188": {
@@ -3397,7 +3385,7 @@
         "name": "setxattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "189": {
@@ -3427,7 +3415,7 @@
         "name": "lsetxattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "190": {
@@ -3457,7 +3445,7 @@
         "name": "fsetxattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "191": {
@@ -3483,7 +3471,7 @@
         "name": "getxattr",
         "return": {
             "type": "long",
-            "description": "size of value on success, or -1 on error"
+            "description": "size of value on success, or errno code"
         }
     },
     "192": {
@@ -3509,7 +3497,7 @@
         "name": "lgetxattr",
         "return": {
             "type": "long",
-            "description": "size of value on success, or -1 on error"
+            "description": "size of value on success, or errno code"
         }
     },
     "193": {
@@ -3535,7 +3523,7 @@
         "name": "fgetxattr",
         "return": {
             "type": "long",
-            "description": "size of value on success, or -1 on error"
+            "description": "size of value on success, or errno code"
         }
     },
     "194": {
@@ -3557,7 +3545,7 @@
         "name": "listxattr",
         "return": {
             "type": "long",
-            "description": "size of list on success, or -1 on error"
+            "description": "size of list on success, or errno code"
         }
     },
     "195": {
@@ -3579,7 +3567,7 @@
         "name": "llistxattr",
         "return": {
             "type": "long",
-            "description": "size of list on success, or -1 on error"
+            "description": "size of list on success, or errno code"
         }
     },
     "196": {
@@ -3601,7 +3589,7 @@
         "name": "flistxattr",
         "return": {
             "type": "long",
-            "description": "size of list on success, or -1 on error"
+            "description": "size of list on success, or errno code"
         }
     },
     "197": {
@@ -3619,7 +3607,7 @@
         "name": "removexattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "198": {
@@ -3637,7 +3625,7 @@
         "name": "lremovexattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "199": {
@@ -3655,7 +3643,7 @@
         "name": "fremovexattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "200": {
@@ -3673,13 +3661,13 @@
         "name": "tkill",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "201": {
         "args": [
             {
-                "type": "__kernel_old_time_t __user *",
+                "type": "time_t __user *",
                 "description": "tloc"
             }
         ],
@@ -3687,7 +3675,7 @@
         "name": "time",
         "return": {
             "type": "long",
-            "description": "seconds since Epoch, or -1 on error"
+            "description": "seconds since Epoch, or errno code"
         }
     },
     "202": {
@@ -3721,7 +3709,7 @@
         "name": "futex",
         "return": {
             "type": "long",
-            "description": "depends on op, or -1 on error"
+            "description": "depends on op, or errno code"
         }
     },
     "203": {
@@ -3743,7 +3731,7 @@
         "name": "sched_setaffinity",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "204": {
@@ -3765,7 +3753,7 @@
         "name": "sched_getaffinity",
         "return": {
             "type": "long",
-            "description": "size of mask in bytes, or -1 on error"
+            "description": "size of mask in bytes, or errno code"
         }
     },
     "206": {
@@ -3783,7 +3771,7 @@
         "name": "io_setup",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "207": {
@@ -3797,7 +3785,7 @@
         "name": "io_destroy",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "208": {
@@ -3827,7 +3815,7 @@
         "name": "io_getevents",
         "return": {
             "type": "long",
-            "description": "# of events read, or -1 on error"
+            "description": "# of events read, or errno code"
         }
     },
     "209": {
@@ -3849,7 +3837,7 @@
         "name": "io_submit",
         "return": {
             "type": "long",
-            "description": "# of iocbs submitted, or -1 on error"
+            "description": "# of iocbs submitted, or errno code"
         }
     },
     "210": {
@@ -3871,7 +3859,7 @@
         "name": "io_cancel",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "213": {
@@ -3885,7 +3873,7 @@
         "name": "epoll_create",
         "return": {
             "type": "long",
-            "description": "epoll file descriptor, or -1 on error"
+            "description": "epoll file descriptor, or errno code"
         }
     },
     "216": {
@@ -3915,13 +3903,13 @@
         "name": "remap_file_pages",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "217": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -3937,7 +3925,7 @@
         "name": "getdents64",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on end, or -1 on error"
+            "description": "bytes read, 0 on end, or errno code"
         }
     },
     "218": {
@@ -3960,7 +3948,7 @@
         "name": "restart_syscall",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "220": {
@@ -3986,7 +3974,7 @@
         "name": "semtimedop",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "221": {
@@ -3996,15 +3984,11 @@
                 "description": "fd"
             },
             {
-                "type": "u32",
-                "description": "offhi"
+                "type": "loff_t",
+                "description": "offset"
             },
             {
-                "type": "u32",
-                "description": "offlo"
-            },
-            {
-                "type": "compat_size_t",
+                "type": "size_t",
                 "description": "len"
             },
             {
@@ -4016,7 +4000,7 @@
         "name": "fadvise64",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "222": {
@@ -4038,7 +4022,7 @@
         "name": "timer_create",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "223": {
@@ -4064,7 +4048,7 @@
         "name": "timer_settime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "224": {
@@ -4082,7 +4066,7 @@
         "name": "timer_gettime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "225": {
@@ -4096,7 +4080,7 @@
         "name": "timer_getoverrun",
         "return": {
             "type": "long",
-            "description": "overrun count on success, or -1 on error"
+            "description": "overrun count on success, or errno code"
         }
     },
     "226": {
@@ -4110,7 +4094,7 @@
         "name": "timer_delete",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "227": {
@@ -4128,7 +4112,7 @@
         "name": "clock_settime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "228": {
@@ -4146,7 +4130,7 @@
         "name": "clock_gettime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "229": {
@@ -4164,7 +4148,7 @@
         "name": "clock_getres",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "230": {
@@ -4230,7 +4214,7 @@
         "name": "epoll_wait",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "233": {
@@ -4256,7 +4240,7 @@
         "name": "epoll_ctl",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "234": {
@@ -4278,7 +4262,7 @@
         "name": "tgkill",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "235": {
@@ -4288,7 +4272,7 @@
                 "description": "filename"
             },
             {
-                "type": "struct __kernel_old_timeval __user *",
+                "type": "struct timeval __user *",
                 "description": "utimes"
             }
         ],
@@ -4296,7 +4280,7 @@
         "name": "utimes",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "237": {
@@ -4330,7 +4314,7 @@
         "name": "mbind",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "238": {
@@ -4352,7 +4336,7 @@
         "name": "set_mempolicy",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "239": {
@@ -4382,7 +4366,7 @@
         "name": "get_mempolicy",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "240": {
@@ -4408,7 +4392,7 @@
         "name": "mq_open",
         "return": {
             "type": "long",
-            "description": "message queue descriptor, or -1 on error"
+            "description": "message queue descriptor, or errno code"
         }
     },
     "241": {
@@ -4422,7 +4406,7 @@
         "name": "mq_unlink",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "242": {
@@ -4452,7 +4436,7 @@
         "name": "mq_timedsend",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "243": {
@@ -4482,7 +4466,7 @@
         "name": "mq_timedreceive",
         "return": {
             "type": "long",
-            "description": "bytes in received message, or -1 on error"
+            "description": "bytes in received message, or errno code"
         }
     },
     "244": {
@@ -4500,7 +4484,7 @@
         "name": "mq_notify",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "245": {
@@ -4522,7 +4506,7 @@
         "name": "mq_getsetattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "246": {
@@ -4548,7 +4532,7 @@
         "name": "kexec_load",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "247": {
@@ -4578,7 +4562,7 @@
         "name": "waitid",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "248": {
@@ -4608,7 +4592,7 @@
         "name": "add_key",
         "return": {
             "type": "long",
-            "description": "key ID on success, or -1 on error"
+            "description": "key ID on success, or errno code"
         }
     },
     "249": {
@@ -4634,7 +4618,7 @@
         "name": "request_key",
         "return": {
             "type": "long",
-            "description": "key ID on success, or -1 on error"
+            "description": "key ID on success, or errno code"
         }
     },
     "250": {
@@ -4664,7 +4648,7 @@
         "name": "keyctl",
         "return": {
             "type": "long",
-            "description": "depends on option, or -1 on error"
+            "description": "depends on option, or errno code"
         }
     },
     "251": {
@@ -4686,7 +4670,7 @@
         "name": "ioprio_set",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "252": {
@@ -4704,7 +4688,7 @@
         "name": "ioprio_get",
         "return": {
             "type": "long",
-            "description": "I/O priority on success, or -1 on error"
+            "description": "I/O priority on success, or errno code"
         }
     },
     "253": {
@@ -4713,7 +4697,7 @@
         "name": "inotify_init",
         "return": {
             "type": "long",
-            "description": "inotify fd on success, or -1 on error"
+            "description": "inotify fd on success, or errno code"
         }
     },
     "254": {
@@ -4735,7 +4719,7 @@
         "name": "inotify_add_watch",
         "return": {
             "type": "long",
-            "description": "watch descriptor on success, or -1 on error"
+            "description": "watch descriptor on success, or errno code"
         }
     },
     "255": {
@@ -4753,7 +4737,7 @@
         "name": "inotify_rm_watch",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "256": {
@@ -4779,7 +4763,7 @@
         "name": "migrate_pages",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "257": {
@@ -4805,7 +4789,7 @@
         "name": "openat",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "258": {
@@ -4827,7 +4811,7 @@
         "name": "mkdirat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "259": {
@@ -4853,7 +4837,7 @@
         "name": "mknodat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "260": {
@@ -4883,7 +4867,7 @@
         "name": "fchownat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "261": {
@@ -4897,7 +4881,7 @@
                 "description": "filename"
             },
             {
-                "type": "struct __kernel_old_timeval __user *",
+                "type": "struct timeval __user *",
                 "description": "utimes"
             }
         ],
@@ -4905,7 +4889,7 @@
         "name": "futimesat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "262": {
@@ -4919,7 +4903,7 @@
                 "description": "filename"
             },
             {
-                "type": "struct stat __user *",
+                "type": "struct __kernel_stat __user *",
                 "description": "statbuf"
             },
             {
@@ -4931,7 +4915,7 @@
         "name": "newfstatat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "263": {
@@ -4953,7 +4937,7 @@
         "name": "unlinkat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "264": {
@@ -4979,7 +4963,7 @@
         "name": "renameat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "265": {
@@ -5009,7 +4993,7 @@
         "name": "linkat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "266": {
@@ -5031,7 +5015,7 @@
         "name": "symlinkat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "267": {
@@ -5057,7 +5041,7 @@
         "name": "readlinkat",
         "return": {
             "type": "long",
-            "description": "bytes placed in buf, or -1 on error"
+            "description": "bytes placed in buf, or errno code"
         }
     },
     "268": {
@@ -5079,7 +5063,7 @@
         "name": "fchmodat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "269": {
@@ -5101,7 +5085,7 @@
         "name": "faccessat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "270": {
@@ -5127,15 +5111,15 @@
                 "description": "tsp"
             },
             {
-                "type": "void __user *",
-                "description": "sig"
+                "type": "const sigset_t __user *",
+                "description": "sigmask"
             }
         ],
         "entry_point": "sys_pselect6",
         "name": "pselect6",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "271": {
@@ -5165,7 +5149,7 @@
         "name": "ppoll",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "272": {
@@ -5179,7 +5163,7 @@
         "name": "unshare",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "273": {
@@ -5197,7 +5181,7 @@
         "name": "set_robust_list",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "274": {
@@ -5219,7 +5203,7 @@
         "name": "get_robust_list",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "275": {
@@ -5253,7 +5237,7 @@
         "name": "splice",
         "return": {
             "type": "long",
-            "description": "bytes spliced, or -1 on error"
+            "description": "bytes spliced, or errno code"
         }
     },
     "276": {
@@ -5279,30 +5263,22 @@
         "name": "tee",
         "return": {
             "type": "long",
-            "description": "bytes teed, or -1 on error"
+            "description": "bytes teed, or errno code"
         }
     },
     "277": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
-                "type": "u32",
-                "description": "off_high"
+                "type": "loff_t",
+                "description": "offset"
             },
             {
-                "type": "u32",
-                "description": "off_low"
-            },
-            {
-                "type": "u32",
-                "description": "nb_high"
-            },
-            {
-                "type": "u32",
-                "description": "nb_low"
+                "type": "loff_t",
+                "description": "nbytes"
             },
             {
                 "type": "unsigned",
@@ -5313,7 +5289,7 @@
         "name": "sync_file_range",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "278": {
@@ -5327,7 +5303,7 @@
                 "description": "uiov"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "nr_segs"
             },
             {
@@ -5339,7 +5315,7 @@
         "name": "vmsplice",
         "return": {
             "type": "long",
-            "description": "bytes spliced, or -1 on error"
+            "description": "bytes spliced, or errno code"
         }
     },
     "279": {
@@ -5373,7 +5349,7 @@
         "name": "move_pages",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "280": {
@@ -5399,7 +5375,7 @@
         "name": "utimensat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "281": {
@@ -5433,7 +5409,7 @@
         "name": "epoll_pwait",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "282": {
@@ -5455,7 +5431,7 @@
         "name": "signalfd",
         "return": {
             "type": "long",
-            "description": "signalfd on success, or -1 on error"
+            "description": "signalfd on success, or errno code"
         }
     },
     "283": {
@@ -5473,7 +5449,7 @@
         "name": "timerfd_create",
         "return": {
             "type": "long",
-            "description": "timerfd on success, or -1 on error"
+            "description": "timerfd on success, or errno code"
         }
     },
     "284": {
@@ -5487,7 +5463,7 @@
         "name": "eventfd",
         "return": {
             "type": "long",
-            "description": "eventfd on success, or -1 on error"
+            "description": "eventfd on success, or errno code"
         }
     },
     "285": {
@@ -5501,27 +5477,19 @@
                 "description": "mode"
             },
             {
-                "type": "u32",
-                "description": "offhi"
+                "type": "loff_t",
+                "description": "offset"
             },
             {
-                "type": "u32",
-                "description": "offlo"
-            },
-            {
-                "type": "u32",
-                "description": "lenhi"
-            },
-            {
-                "type": "u32",
-                "description": "lenlo"
+                "type": "loff_t",
+                "description": "len"
             }
         ],
         "entry_point": "sys_fallocate",
         "name": "fallocate",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "286": {
@@ -5547,7 +5515,7 @@
         "name": "timerfd_settime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "287": {
@@ -5565,7 +5533,7 @@
         "name": "timerfd_gettime",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "288": {
@@ -5591,7 +5559,7 @@
         "name": "accept4",
         "return": {
             "type": "long",
-            "description": "fd for accepted socket, or -1 on error"
+            "description": "fd for accepted socket, or errno code"
         }
     },
     "289": {
@@ -5617,7 +5585,7 @@
         "name": "signalfd4",
         "return": {
             "type": "long",
-            "description": "signalfd on success, or -1 on error"
+            "description": "signalfd on success, or errno code"
         }
     },
     "290": {
@@ -5635,7 +5603,7 @@
         "name": "eventfd2",
         "return": {
             "type": "long",
-            "description": "eventfd on success, or -1 on error"
+            "description": "eventfd on success, or errno code"
         }
     },
     "291": {
@@ -5649,7 +5617,7 @@
         "name": "epoll_create1",
         "return": {
             "type": "long",
-            "description": "epoll file descriptor, or -1 on error"
+            "description": "epoll file descriptor, or errno code"
         }
     },
     "292": {
@@ -5671,7 +5639,7 @@
         "name": "dup3",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "293": {
@@ -5689,7 +5657,7 @@
         "name": "pipe2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "294": {
@@ -5703,13 +5671,13 @@
         "name": "inotify_init1",
         "return": {
             "type": "long",
-            "description": "inotify fd on success, or -1 on error"
+            "description": "inotify fd on success, or errno code"
         }
     },
     "295": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -5717,29 +5685,25 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             },
             {
-                "type": "unsigned",
-                "description": "pos_l"
-            },
-            {
-                "type": "unsigned",
-                "description": "pos_h"
+                "type": "loff_t",
+                "description": "pos"
             }
         ],
         "entry_point": "sys_preadv",
         "name": "preadv",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on EOF, or -1 on error"
+            "description": "bytes read, 0 on EOF, or errno code"
         }
     },
     "296": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -5747,23 +5711,19 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             },
             {
-                "type": "unsigned",
-                "description": "pos_l"
-            },
-            {
-                "type": "unsigned",
-                "description": "pos_h"
+                "type": "loff_t",
+                "description": "pos"
             }
         ],
         "entry_point": "sys_pwritev",
         "name": "pwritev",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "297": {
@@ -5789,7 +5749,7 @@
         "name": "rt_tgsigqueueinfo",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "298": {
@@ -5819,7 +5779,7 @@
         "name": "perf_event_open",
         "return": {
             "type": "long",
-            "description": "file descriptor for perf event, or -1 on error"
+            "description": "file descriptor for perf event, or errno code"
         }
     },
     "299": {
@@ -5849,7 +5809,7 @@
         "name": "recvmmsg",
         "return": {
             "type": "long",
-            "description": "# of messages received, or -1 on error"
+            "description": "# of messages received, or errno code"
         }
     },
     "300": {
@@ -5867,7 +5827,7 @@
         "name": "fanotify_init",
         "return": {
             "type": "long",
-            "description": "fanotify fd on success, or -1 on error"
+            "description": "fanotify fd on success, or errno code"
         }
     },
     "301": {
@@ -5897,7 +5857,7 @@
         "name": "fanotify_mark",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "302": {
@@ -5923,7 +5883,7 @@
         "name": "prlimit64",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "303": {
@@ -5941,7 +5901,7 @@
                 "description": "handle"
             },
             {
-                "type": "void __user *",
+                "type": "int __user *",
                 "description": "mnt_id"
             },
             {
@@ -5953,7 +5913,7 @@
         "name": "name_to_handle_at",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "304": {
@@ -5975,7 +5935,7 @@
         "name": "open_by_handle_at",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     },
     "305": {
@@ -5993,7 +5953,7 @@
         "name": "clock_adjtime",
         "return": {
             "type": "long",
-            "description": "clock state, or -1 on error"
+            "description": "clock state, or errno code"
         }
     },
     "306": {
@@ -6007,7 +5967,7 @@
         "name": "syncfs",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "307": {
@@ -6033,7 +5993,7 @@
         "name": "sendmmsg",
         "return": {
             "type": "long",
-            "description": "# of messages sent, or -1 on error"
+            "description": "# of messages sent, or errno code"
         }
     },
     "308": {
@@ -6051,7 +6011,7 @@
         "name": "setns",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "309": {
@@ -6073,7 +6033,7 @@
         "name": "getcpu",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "310": {
@@ -6107,7 +6067,7 @@
         "name": "process_vm_readv",
         "return": {
             "type": "long",
-            "description": "bytes read, or -1 on error"
+            "description": "bytes read, or errno code"
         }
     },
     "311": {
@@ -6141,7 +6101,7 @@
         "name": "process_vm_writev",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "312": {
@@ -6171,7 +6131,7 @@
         "name": "kcmp",
         "return": {
             "type": "long",
-            "description": "comparison result (0, 1, 2, 3), or -1 on error"
+            "description": "comparison result (0, 1, 2, 3), or errno code"
         }
     },
     "313": {
@@ -6193,7 +6153,7 @@
         "name": "finit_module",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "314": {
@@ -6215,7 +6175,7 @@
         "name": "sched_setattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "315": {
@@ -6241,7 +6201,7 @@
         "name": "sched_getattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "316": {
@@ -6271,7 +6231,7 @@
         "name": "renameat2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "317": {
@@ -6293,7 +6253,7 @@
         "name": "seccomp",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "318": {
@@ -6315,7 +6275,7 @@
         "name": "getrandom",
         "return": {
             "type": "long",
-            "description": "bytes copied to buf, or -1 on error"
+            "description": "bytes copied to buf, or errno code"
         }
     },
     "319": {
@@ -6333,7 +6293,7 @@
         "name": "memfd_create",
         "return": {
             "type": "long",
-            "description": "memfd on success, or -1 on error"
+            "description": "memfd on success, or errno code"
         }
     },
     "320": {
@@ -6363,7 +6323,7 @@
         "name": "kexec_file_load",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "321": {
@@ -6385,7 +6345,7 @@
         "name": "bpf",
         "return": {
             "type": "long",
-            "description": "depends on cmd, or -1 on error"
+            "description": "depends on cmd, or errno code"
         }
     },
     "322": {
@@ -6415,7 +6375,7 @@
         "name": "execveat",
         "return": {
             "type": "long",
-            "description": "never returns on success, or -1 on error"
+            "description": "never returns on success, or errno code"
         }
     },
     "323": {
@@ -6429,7 +6389,7 @@
         "name": "userfaultfd",
         "return": {
             "type": "long",
-            "description": "userfaultfd on success, or -1 on error"
+            "description": "userfaultfd on success, or errno code"
         }
     },
     "324": {
@@ -6451,7 +6411,7 @@
         "name": "membarrier",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "325": {
@@ -6473,7 +6433,7 @@
         "name": "mlock2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "326": {
@@ -6507,13 +6467,13 @@
         "name": "copy_file_range",
         "return": {
             "type": "long",
-            "description": "bytes copied, or -1 on error"
+            "description": "bytes copied, or errno code"
         }
     },
     "327": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -6521,15 +6481,15 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "pos_l"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "pos_h"
             },
             {
@@ -6541,13 +6501,13 @@
         "name": "preadv2",
         "return": {
             "type": "long",
-            "description": "bytes read, 0 on EOF, or -1 on error"
+            "description": "bytes read, 0 on EOF, or errno code"
         }
     },
     "328": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -6555,15 +6515,15 @@
                 "description": "vec"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "vlen"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "pos_l"
             },
             {
-                "type": "unsigned",
+                "type": "unsigned long",
                 "description": "pos_h"
             },
             {
@@ -6575,7 +6535,7 @@
         "name": "pwritev2",
         "return": {
             "type": "long",
-            "description": "bytes written, or -1 on error"
+            "description": "bytes written, or errno code"
         }
     },
     "329": {
@@ -6601,7 +6561,7 @@
         "name": "pkey_mprotect",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "330": {
@@ -6619,7 +6579,7 @@
         "name": "pkey_alloc",
         "return": {
             "type": "long",
-            "description": "protection key on success, or -1 on error"
+            "description": "protection key on success, or errno code"
         }
     },
     "331": {
@@ -6633,7 +6593,7 @@
         "name": "pkey_free",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "332": {
@@ -6663,7 +6623,7 @@
         "name": "statx",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "333": {
@@ -6697,7 +6657,7 @@
         "name": "io_pgetevents",
         "return": {
             "type": "long",
-            "description": "# of events read, or -1 on error"
+            "description": "# of events read, or errno code"
         }
     },
     "334": {
@@ -6723,7 +6683,7 @@
         "name": "rseq",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "335": {
@@ -6732,7 +6692,7 @@
         "name": "uretprobe",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "424": {
@@ -6758,7 +6718,7 @@
         "name": "pidfd_send_signal",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "425": {
@@ -6776,13 +6736,13 @@
         "name": "io_uring_setup",
         "return": {
             "type": "long",
-            "description": "io_uring fd on success, or -1 on error"
+            "description": "io_uring fd on success, or errno code"
         }
     },
     "426": {
         "args": [
             {
-                "type": "unsigned int",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -6798,25 +6758,21 @@
                 "description": "flags"
             },
             {
-                "type": "const void __user *",
+                "type": "const sigset_t __user *",
                 "description": "argp"
-            },
-            {
-                "type": "size_t",
-                "description": "argsz"
             }
         ],
         "entry_point": "sys_io_uring_enter",
         "name": "io_uring_enter",
         "return": {
             "type": "long",
-            "description": "# of submitted SQEs, or -1 on error"
+            "description": "# of submitted SQEs, or errno code"
         }
     },
     "427": {
         "args": [
             {
-                "type": "unsigned int",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -6836,7 +6792,7 @@
         "name": "io_uring_register",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "428": {
@@ -6858,7 +6814,7 @@
         "name": "open_tree",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     },
     "429": {
@@ -6888,7 +6844,7 @@
         "name": "move_mount",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "430": {
@@ -6906,7 +6862,7 @@
         "name": "fsopen",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     },
     "431": {
@@ -6936,7 +6892,7 @@
         "name": "fsconfig",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "432": {
@@ -6958,7 +6914,7 @@
         "name": "fsmount",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     },
     "433": {
@@ -6980,7 +6936,7 @@
         "name": "fspick",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     },
     "434": {
@@ -6998,7 +6954,7 @@
         "name": "pidfd_open",
         "return": {
             "type": "long",
-            "description": "pidfd on success, or -1 on error"
+            "description": "pidfd on success, or errno code"
         }
     },
     "435": {
@@ -7016,13 +6972,13 @@
         "name": "clone3",
         "return": {
             "type": "long",
-            "description": "child's PID in parent, 0 in child, or -1 on error"
+            "description": "child's PID in parent, 0 in child, or errno code"
         }
     },
     "436": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -7038,7 +6994,7 @@
         "name": "close_range",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "437": {
@@ -7064,7 +7020,7 @@
         "name": "openat2",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "438": {
@@ -7086,7 +7042,7 @@
         "name": "pidfd_getfd",
         "return": {
             "type": "long",
-            "description": "new file descriptor, or -1 on error"
+            "description": "new file descriptor, or errno code"
         }
     },
     "439": {
@@ -7112,7 +7068,7 @@
         "name": "faccessat2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "440": {
@@ -7142,7 +7098,7 @@
         "name": "process_madvise",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "441": {
@@ -7176,7 +7132,7 @@
         "name": "epoll_pwait2",
         "return": {
             "type": "long",
-            "description": "# of ready fds, 0 on timeout, or -1 on error"
+            "description": "# of ready fds, 0 on timeout, or errno code"
         }
     },
     "442": {
@@ -7206,13 +7162,13 @@
         "name": "mount_setattr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "443": {
         "args": [
             {
-                "type": "unsigned",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -7232,7 +7188,7 @@
         "name": "quotactl_fd",
         "return": {
             "type": "long",
-            "description": "depends on cmd, or -1 on error"
+            "description": "depends on cmd, or errno code"
         }
     },
     "444": {
@@ -7254,7 +7210,7 @@
         "name": "landlock_create_ruleset",
         "return": {
             "type": "long",
-            "description": "ruleset fd on success, or -1 on error"
+            "description": "ruleset fd on success, or errno code"
         }
     },
     "445": {
@@ -7280,7 +7236,7 @@
         "name": "landlock_add_rule",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "446": {
@@ -7298,7 +7254,7 @@
         "name": "landlock_restrict_self",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "447": {
@@ -7312,7 +7268,7 @@
         "name": "memfd_secret",
         "return": {
             "type": "long",
-            "description": "memfd on success, or -1 on error"
+            "description": "memfd on success, or errno code"
         }
     },
     "448": {
@@ -7330,7 +7286,7 @@
         "name": "process_mrelease",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "449": {
@@ -7360,7 +7316,7 @@
         "name": "futex_waitv",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "450": {
@@ -7386,13 +7342,13 @@
         "name": "set_mempolicy_home_node",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "451": {
         "args": [
             {
-                "type": "unsigned int",
+                "type": "int",
                 "description": "fd"
             },
             {
@@ -7412,7 +7368,7 @@
         "name": "cachestat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "452": {
@@ -7438,7 +7394,7 @@
         "name": "fchmodat2",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "453": {
@@ -7460,7 +7416,7 @@
         "name": "map_shadow_stack",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "454": {
@@ -7486,7 +7442,7 @@
         "name": "futex_wake",
         "return": {
             "type": "long",
-            "description": "# of waiters woken, or -1 on error"
+            "description": "# of waiters woken, or errno code"
         }
     },
     "455": {
@@ -7520,7 +7476,7 @@
         "name": "futex_wait",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "456": {
@@ -7546,7 +7502,7 @@
         "name": "futex_requeue",
         "return": {
             "type": "long",
-            "description": "# of waiters woken, or -1 on error"
+            "description": "# of waiters woken, or errno code"
         }
     },
     "457": {
@@ -7572,7 +7528,7 @@
         "name": "statmount",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "458": {
@@ -7598,7 +7554,7 @@
         "name": "listmount",
         "return": {
             "type": "long",
-            "description": "# of mount IDs on success, or -1 on error"
+            "description": "# of mount IDs on success, or errno code"
         }
     },
     "459": {
@@ -7624,7 +7580,7 @@
         "name": "lsm_get_self_attr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "460": {
@@ -7650,7 +7606,7 @@
         "name": "lsm_set_self_attr",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "461": {
@@ -7672,7 +7628,7 @@
         "name": "lsm_list_modules",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "462": {
@@ -7694,7 +7650,7 @@
         "name": "mseal",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "463": {
@@ -7728,7 +7684,7 @@
         "name": "setxattrat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "464": {
@@ -7762,7 +7718,7 @@
         "name": "getxattrat",
         "return": {
             "type": "long",
-            "description": "size of value on success, or -1 on error"
+            "description": "size of value on success, or errno code"
         }
     },
     "465": {
@@ -7792,7 +7748,7 @@
         "name": "listxattrat",
         "return": {
             "type": "long",
-            "description": "size of list on success, or -1 on error"
+            "description": "size of list on success, or errno code"
         }
     },
     "466": {
@@ -7818,7 +7774,7 @@
         "name": "removexattrat",
         "return": {
             "type": "long",
-            "description": "0 on success, or -1 on error"
+            "description": "0 on success, or errno code"
         }
     },
     "467": {
@@ -7848,7 +7804,7 @@
         "name": "open_tree_attr",
         "return": {
             "type": "long",
-            "description": "file descriptor on success, or -1 on error"
+            "description": "file descriptor on success, or errno code"
         }
     }
 }

@@ -378,6 +378,7 @@ def format_arg(pid: int, raw: int, arg_type: str, arg_desc: str, syscall_name: s
         "recvfrom": "addr",
         "recvmsg": "msg",
         "getsockopt": "optval",
+        "get_groups": "grouplist",
         # Sistema e processos
         "uname": "buf",
         "getrusage": "rusage",
@@ -436,27 +437,38 @@ def format_arg(pid: int, raw: int, arg_type: str, arg_desc: str, syscall_name: s
             return hex(raw)
 
     # tipos numericos
-    num_ref = {
-        "int": 32,
-        "unsigned": 32,
-        "unsigned int": 32,
-        "long": 64,
-        "unsigned long": 64,
-        "size_t": 64,
-        "off_t": 64,
-        "pid_t": 32,
-        "key_t": 32,
-        "uid_t": 32,
-        "gid_t": 32,
-        "u32": 32,
-        "u16": 16,
-        "sigset_t": 64,
+    signed_types = {
+        "int",
+        "long",
+        "off_t",
+        "loff_t",
+        "pid_t",
+        "key_t",
+        "uid_t",
+        "gid_t",
     }
-    for t, bits in num_ref.items():
-        if arg_type == t or arg_type == t + " __user *":
-            return int(raw) & ((1 << bits) - 1)
-        if arg_type == t or arg_type == t + " *":
-            return int(raw)
+    unsigned_types = {
+        "unsigned",
+        "unsigned int",
+        "unsigned long",
+        "size_t",
+        "u32",
+        "u16",
+        "sigset_t",
+    }
+    base_type = arg_type.replace(" __user *", "").replace(" *", "")
+
+    if base_type in signed_types:
+        # Para signed, já está correto
+        return raw
+
+    if base_type in unsigned_types:
+        bits = 32
+        if "long" in base_type or "size_t" in base_type:
+            bits = 64
+        if "u16" in base_type:
+            bits = 16
+        return raw & ((1 << bits) - 1)
 
     # ponteiro generico
     if arg_type.endswith("*"):

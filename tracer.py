@@ -103,34 +103,17 @@ def ptrace(request, pid, addr, data=0):
 def handle_ptrace_event(pid, event, traced_pids):
     """Lida com um evento ptrace (fork, clone, exec)."""
     if event in (PTRACE_EVENT_FORK, PTRACE_EVENT_VFORK, PTRACE_EVENT_CLONE):
-        print(f"adicionando novo processo: {pid} com evento {event}")
+        if DEBUG:
+            print(f"adicionando novo processo: {pid} com evento {event}")
         new_pid = ctypes.c_ulong()
         ptrace(PTRACE_GETEVENTMSG, pid, 0, ctypes.addressof(new_pid))
         traced_pids.append(new_pid.value)
-        ptrace(
-            PTRACE_SETOPTIONS,
-            new_pid.value,
-            0,
-            PTRACE_O_TRACESYSGOOD
-            | PTRACE_O_TRACEFORK
-            | PTRACE_O_TRACEVFORK
-            | PTRACE_O_TRACECLONE
-            | PTRACE_O_TRACEEXEC,
-        )
+        ptrace(PTRACE_SETOPTIONS, new_pid.value, 0, PTRACE_DEFAULT_OPTIONS)
         ptrace(PTRACE_SYSCALL, new_pid.value, 0)
         ptrace(PTRACE_SYSCALL, pid, 0)
 
     elif event == PTRACE_EVENT_EXEC:
-        ptrace(
-            PTRACE_SETOPTIONS,
-            pid,
-            0,
-            PTRACE_O_TRACESYSGOOD
-            | PTRACE_O_TRACEFORK
-            | PTRACE_O_TRACEVFORK
-            | PTRACE_O_TRACECLONE
-            | PTRACE_O_TRACEEXEC,
-        )
+        ptrace(PTRACE_SETOPTIONS, pid, 0, PTRACE_O_TRACESYSGOOD)
         ptrace(PTRACE_SYSCALL, pid, 0)
 
 
@@ -320,6 +303,7 @@ def attach_and_trace(target_pid: int, log_name: str):
         #  Libera o processo até a próxima syscall
         ptrace(PTRACE_SYSCALL, target_pid, 0)
         print("Iniciando o loop de rastreamento...")
+        print("Pressione Ctrl+C para interromper o rastreamento")
         trace_loop(target_pid, log_name)
 
     except OSError as e:
