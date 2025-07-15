@@ -7,7 +7,7 @@ LOGS_DIR = "logs"
 
 
 def format_syscall_entry(entry, index):
-    """Formata uma única entrada de syscall para exibição."""
+    """Formata uma syscall para exibição."""
     pid = entry.get("pid", "?")
     syscall_name = entry.get("syscall_name", "?")
     ret = entry.get("return", "?")
@@ -33,10 +33,7 @@ def format_syscall_entry(entry, index):
 
 
 def display_log_content(log_file_path):
-    """
-    Carrega, formata e exibe o conteúdo de um log JSON usando um paginador.
-    Esta abordagem evita a sobreposição do menu ao usar um processo bloqueante.
-    """
+    """formata e exibe um arquivo de log usando um paginador."""
     try:
         with open(log_file_path, "r") as f:
             syscalls = json.load(f)
@@ -58,10 +55,10 @@ def display_log_content(log_file_path):
     # Usa less para exibir os logs e subprocess.run para evitar concorrencia
     command = ["less", "-R", temp_filename]
     try:
-        print(f"\nExibindo '{log_filename}'. Pressione 'q' para sair e voltar ao menu.")
+        print(f"\nExibindo '{log_filename}'. Pressione 'q' para sair e voltar ao menu")
         run(command, check=True)
     except FileNotFoundError:
-        print("\nAVISO: Comando 'less' não encontrado. Imprimindo diretamente.\n")
+        print("\nAVISO: Comando 'less' não encontrado. Imprimindo diretamente\n")
         try:
             with open(temp_filename, "r", encoding="utf-8") as f:
                 print(f.read())
@@ -73,7 +70,7 @@ def display_log_content(log_file_path):
         # Remove o arquivo temporário
         os.remove(temp_filename)
 
-    print("\n[+] Visualização do log finalizada. Retornando ao menu.")
+    print("\n[+] Visualização do log finalizada. Retornando ao menu")
 
 
 # Função para ler o arquivo JSON

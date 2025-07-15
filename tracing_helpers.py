@@ -188,8 +188,15 @@ def read_c_string(pid: int, addr: int) -> str:
             byte = (word >> (i * 8)) & 0xFF  # valor de cada byte
             if byte == 0 or count > 30:
                 # encerra e decodifica os bytes como string utf-8
-                return bytes(bytes_).decode("utf-8", errors="replace")
-            bytes_.append(byte)
+                s = bytes(bytes_).decode("utf-8", errors="replace")
+                if count > 30:
+                    s = s + "..."
+                return s
+            if byte == ord("\n"):  # evita quebras de linha
+                bytes_.append(ord("\\"))
+                bytes_.append(ord("n"))
+            else:
+                bytes_.append(byte)
             count += 1
         offset += 8  # pula os 8 bytes
 

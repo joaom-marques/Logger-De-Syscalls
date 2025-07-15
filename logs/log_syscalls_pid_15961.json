@@ -1,0 +1,755 @@
+[
+    {
+        "timestamp": "19:48:44.267",
+        "pid": 15961,
+        "syscall_number": 219,
+        "syscall_name": "restart_syscall",
+        "args": [],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:44.396",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:44.396",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:44.397",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:45.398",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:45.399",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:45.399",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:46.400",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:46.401",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:46.401",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:47.402",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:47.402",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:47.403",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:48.404",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:48.404",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:48.405",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:49.406",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:49.406",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:49.407",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:50.407",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:50.408",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:50.408",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:51.410",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:51.410",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:51.411",
+        "pid": 15961,
+        "syscall_number": 230,
+        "syscall_name": "clock_nanosleep",
+        "args": [
+            {
+                "description": "which_clock",
+                "type": "clockid_t",
+                "value": 0
+            },
+            {
+                "description": "flags",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "description": "rqtp",
+                "type": "const struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            },
+            {
+                "description": "rmtp",
+                "type": "struct __kernel_timespec __user *",
+                "value": "{tv_sec=1, tv_nsec=0}"
+            }
+        ],
+        "return": {
+            "value": 0,
+            "description": "0 on success, or error number on failure"
+        }
+    },
+    {
+        "timestamp": "19:48:52.412",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "running\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 43
+            }
+        ],
+        "return": {
+            "value": 43,
+            "description": "bytes written, or errno code"
+        }
+    },
+    {
+        "timestamp": "19:48:52.412",
+        "pid": 15961,
+        "syscall_number": 1,
+        "syscall_name": "write",
+        "args": [
+            {
+                "description": "fd",
+                "type": "int",
+                "value": 1
+            },
+            {
+                "description": "buf",
+                "type": "const char __user *",
+                "value": "\\n\nunning\\n\nrunning\\n\nrunning\\n\nrunning\\n"
+            },
+            {
+                "description": "count",
+                "type": "size_t",
+                "value": 1
+            }
+        ],
+        "return": {
+            "value": 1,
+            "description": "bytes written, or errno code"
+        }
+    }
+]
